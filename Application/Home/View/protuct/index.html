@@ -29,7 +29,12 @@
                     <div class="block row-menu">
                         <div class="h2"><h2>产品中心</h2></div>
                         <div class="ul">
-                            <ul><li class="on col1"><a href="/jnftj/">泥巴土坛酒</a></li><li class="col2"><a href="/yuanjiang/">酱香定制酒</a></li><li class="col3"><a href="/sanjiu/">茅台镇散酒</a></li><li class="col4"><a href="/cpzx/yuanjiangjiu/">茅台镇原浆酒</a></li><li class="col5"><a href="/hunyan/">婚宴酒</a></li><li class="col6 col-1"><a href="/zscp/">特色白酒</a></li></ul>
+                            <ul>
+                                <volist name="protuct" id="vo" key="k" >
+                                    <li <eq name="Think.get.id" value="$vo.id" >class=" on col{$k}" <else /> class="col{$k}"  </eq>><a href="{:U('protuct/index',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                                </volist>
+
+                            </ul>
                         </div>
                     </div>
 
@@ -37,15 +42,9 @@
                         <div class="h2"><h2>热门推荐</h2></div>
                         <div class="ul">
                             <ul>
-                                <li><a href="http://www.daqianchao.com/jnftj/851.html"><i>139</i><em>1</em><span>酒醅原浆窖泥封坛酒</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/1141.html"><i>131</i><em>2</em><span>窖泥封坛酒手提袋版</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/2321.html"><i>100</i><em>3</em><span>泥巴土坛酒木箱装</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/1140.html"><i>94</i><em>4</em><span>窖泥封坛酒纸盒装</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/1128.html"><i>79</i><em>5</em><span>茅台镇酒醅原浆古坛老酒</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/1139.html"><i>71</i><em>6</em><span>窖泥封坛酒一坛装</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/1142.html"><i>59</i><em>7</em><span>窖泥封坛酒木箱装</span></a></li>
-                                <li><a href="http://www.daqianchao.com/jnftj/1551.html"><i>58</i><em>8</em><span>茅台镇泥巴土坛酒</span></a></li>
-
+                                <volist name="hot" id="vo" key="k">
+                                    <li><a href="{:U('protuct/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><i>{$vo.lan|default=''}</i><em>{$k}</em><span>{$vo.title}</span></a></li>
+                                </volist>
                             </ul>
                         </div>
                     </div>
@@ -56,53 +55,21 @@
                     <div class="block row-list">
                         <div class="ul b-list">
                             <ul>
+                                <volist name="detail" id="vo" >
                                 <li>
                                     <div class="c-box">
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/851.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170405/6-1F4051151095K.jpg" width="300" height="300" /><em>酒醅原浆窖泥封坛酒</em></a>
-                                        <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
+                                        <a class="c-img" href="{:U('protuct/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="300" /><em>{$vo.title}</em></a>
+                                        <span><i>香型：{$vo.xiang|default=''}</i><i>酒精度：{$vo.du|default=''}</i></span>
                                     </div>
-                                </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/1128.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180125/6-1P1251F525102.jpg" width="300" height="300" /><em>茅台镇酒醅原浆古坛老酒</em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/1139.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q62339551.jpg" width="300" height="300" /><em>窖泥封坛酒一坛装</em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/1140.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q62535515.jpg" width="300" height="300" /><em>窖泥封坛酒纸盒装</em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/1141.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q62600a6.jpg" width="300" height="300" /><em>窖泥封坛酒手提袋版</em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/1142.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q6264B17.jpg" width="300" height="300" /><em>窖泥封坛酒木箱装</em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/1551.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170913/6-1F913101241V1.jpg" width="300" height="300" /><em><b>茅台镇泥巴土坛酒</b></em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/jnftj/2321.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180621/thumb_300_300_3-1P62115453L29.jpg" width="300" height="300" /><em>泥巴土坛酒木箱装</em></a>
-                                    <span><i>香型：酱香型</i><i>酒精度：53%</i></span>
-                                </div>
-                            </li>
+                                </li>
+                                </volist>
                             </ul>
                         </div>
                         <div class="ul d-pager">
                             <ul>
-                                <li><span class="pageinfo">共 <strong>1</strong>页<strong>8</strong>条记录</span></li>
-
+                                <for start="0" end="$size" name="i" >
+                                    <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('protuct/index',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
+                                </for>
                             </ul>
                         </div>
                     </div>

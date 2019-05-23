@@ -44,7 +44,7 @@
                         <div class="ul">
                             <ul>
                                 <volist name="hot" id="vo" key="k">
-                                <li><a href="{:U('cooperation/detail',array('id'=>$vo.id))}"><i>{$vo.lan|default=''}</i><em>{$k}</em><span>{$vo.title}</span></a></li>
+                                    <li><a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><i>{$vo.lan|default=''}</i><em>{$k}</em><span>{$vo.title}</span></a></li>
                                 </volist>
                             </ul>
                         </div>
@@ -60,10 +60,10 @@
                                 <volist name="detail" id="vo" >
                                     <li>
                                         <div class="c-box">
-                                            <a class="c-img" href="{:U('Cooperation/detail',array('id'=>$vo['id']))}">
+                                            <a class="c-img" href="{:U('Cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
                                                 <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="220" /></a>
                                             <span>
-                                                <a href="{:U('Cooperation/detail',array('id'=>$vo['id']))}">{$vo.title}</a>
+                                                <a href="{:U('Cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a>
                                             </span>
                                         </div>
                                     </li>
@@ -71,18 +71,14 @@
 
                             </ul>
                         </div>
-
                         <div class="ul d-pager">
-                            {$page}
-                            <!--<ul>-->
-                                <!--&lt;!&ndash;<li>首页</li>&ndash;&gt;-->
-                                <!--<li class="thisclass"></li>-->
-                                <!--&lt;!&ndash;<li><a href="list_37_2.html">2</a></li>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<li><a href="list_37_2.html">下一页</a></li>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<li><a href="list_37_2.html">末页</a></li>&ndash;&gt;-->
-                                <!--&lt;!&ndash;<li><span class="pageinfo">共 <strong>2</strong>页<strong>10</strong>条</span></li>&ndash;&gt;-->
-                            <!--</ul>-->
+                            <ul>
+                                <for start="0" end="$size" name="i" >
+                                    <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('cooperation/index',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
+                                </for>
+                            </ul>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -108,4 +104,3 @@
 <include file="public/kefu" />
 </body>
 </html>
-

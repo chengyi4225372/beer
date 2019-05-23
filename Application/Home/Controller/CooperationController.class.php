@@ -31,15 +31,16 @@ class CooperationController extends  BaseController
         $pid= I('get.id');
         $hot=$this->hot($pid);
         $this->assign('hot',$hot);
-        $model = M($this->table);
-        $detail =$model->where(array('pid'=>$pid))->order('id desc')->page($_GET['p'].',2')->select();
-        $this->assign('detail',$detail);
+        $good = M($this->table);
         //总数
-        $count =$model->where(array('pid'=>$pid))->count();
-        $pages = 2;
-        $size = ceil($count/$pages);
+        $count = $good->where(array('pid'=>$pid))->count();
+        //每页显示条数
+        $psize ='2';
+        //总页数
+        $size = $count/$psize;
+        $detail = $good->where(array('pid'=>$pid))->order('id desc')->page($_GET['p'].',2')->select();
+        $this->assign('detail',$detail);
         $this->assign('size',$size);
-
         $this->display();
     }
     public function detail(){

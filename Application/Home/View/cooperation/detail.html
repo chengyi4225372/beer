@@ -1,6 +1,5 @@
-
 <include file="public/head" />
-    <link href="/Public/index/templets/in_dd/css/show_arc.css" type="text/css" rel="stylesheet" />
+<link href="/Public/index/templets/in_dd/css/show_arc.css" type="text/css" rel="stylesheet" />
 
 
 <include file="public/top" />
@@ -37,11 +36,9 @@
                         <div class="h2"><h2>合作加盟</h2></div>
                         <div class="ul">
                             <ul>
-                                <li class="col1"><a href="/jiameng/#info3/">合作流程</a></li>
-                                <li class="col2"><a href="/jiameng/#info2/">合作政策</a></li>
-                                <li class="col3"><a href="/jiameng/#submit/">合作申请</a></li>
-                                <li class="col4"><a href="/xinwen/zhangshang/">常见问题</a></li>
-                                <li class="on col5 col-1"><a href="/kehu/">合作案例</a></li>
+                                <volist name="good" id="vo" key="k" >
+                                    <li <eq name="Think.get.pid" value="$vo.id" >class=" on col{$k}" <else /> class="col{$k}"  </eq>><a href="{:U('cooperation/index',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                                </volist>
                             </ul>
                         </div>
                     </div>
@@ -50,17 +47,9 @@
                         <div class="h2"><h2>热门推荐</h2></div>
                         <div class="ul">
                             <ul>
-                                <li><a href="http://www.daqianchao.com/kehu/2364.html"><i>1014</i><em>1</em><span>四川省巴中市2018年5月2日，签订</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1545.html"><i>662</i><em>2</em><span>福建宁德市陈姐和林姐成功代理</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1317.html"><i>597</i><em>3</em><span>热烈庆祝重庆市习老板成功成为公</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/2362.html"><i>596</i><em>4</em><span>山东省临沂市张总2018年7月10日</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/2213.html"><i>577</i><em>5</em><span>祝贺江西赣州欧阳总成功成为洞藏</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/2363.html"><i>523</i><em>6</em><span>海南省海口市林总与公司美女招商</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1640.html"><i>519</i><em>7</em><span>热烈庆贺钟先生加盟贵州大黔朝开</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1309.html"><i>453</i><em>8</em><span>2017年4月26日安顺杜总代理公司</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1316.html"><i>449</i><em>9</em><span>浙江金华李老板成为公司洞藏老酒</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1152.html"><i>438</i><em>10</em><span>好 酱香型白酒代理.不需要浮夸.</span></a></li>
-
+                                <volist name="hot" id="vo" key="k">
+                                    <li><a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><i>{$vo.lan|default=''}</i><em>{$k}</em><span>{$vo.title}</span></a></li>
+                                </volist>
                             </ul>
                         </div>
                     </div>
@@ -81,7 +70,7 @@
                     <div class="block row-content">
                         <div class="b-content">
                             <div class="d-content">
-                                 {$detail.content}
+                                {$detail.content|htmlspecialchars_decode}
                             </div>
                         </div>
                     </div>
@@ -126,4 +115,3 @@
 <include file="public/kefu" />
 </body>
 </html>
-
