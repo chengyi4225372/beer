@@ -12,6 +12,11 @@ use Home\Controller\BaseController;
 
 class DrinkController extends  BaseController
 {
+
+    public function baijiu(){
+         $this->display();
+     }
+
     public function index(){
         return $this->display();
     }

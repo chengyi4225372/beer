@@ -23,14 +23,9 @@
                             <div>
                                 <span><a rel="nofollow" href="http://www.daqianchao.com/yuanjiang/">定制酒系列<u>/ Custom Wine</u></a></span>
                                 <dl class="c-d">
-                                    <dd><a href="/yuanjiang/1466.html">婚宴定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1467.html">私人定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1537.html">收藏定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1533.html">寿宴定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1467.html">个性化定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1539.html">接待定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1535.html">周年庆定制酒</a></dd>
-                                    <dd><a href="/yuanjiang/1510.html">企业定制酒</a></dd>
+                                    <volist name="zbeer" id="vo">
+                                        <dd><a href="{$vo.url|default='#'}">{$vo.title}</a></dd>
+                                    </volist>
                                 </dl>
                             </div>
                         </li>
@@ -39,24 +34,22 @@
                                 <span><a rel="nofollow" href="http://www.daqianchao.com/sanjiu/">散酒系列<u>/ Bulk Wine</u></a></span>
                                 <dl class="c-d">
                                     <dt>按规格分类：</dt>
-                                    <dd><a href="/sanjiu/1257.html">一号散酒</a></dd>
-                                    <dd><a href="/sanjiu/1258.html">二号散酒</a></dd>
-                                    <dd><a href="/sanjiu/1259.html">三号散酒</a></dd>
-                                    <dd><a href="/sanjiu/1260.html">四号散酒</a></dd>
-                                    <dd><a href="/sanjiu/1261.html">五号散酒</a></dd>
-                                    <dd><a href="/sanjiu/860.html">六号散酒</a></dd>
+                                      <volist name="sbeer" id="vo" offset="0" length="6" >
+                                          <dd><a href="{$vo.url|default='#'}">{$vo.title}</a></dd>
+                                      </volist>
+
                                 </dl>
                                 <dl>
                                     <dt>按包装分类：</dt>
-                                    <dd><a href="/sanjiu/1210.html">大桶散装白酒</a></dd>
-                                    <dd><a href="/sanjiu/">小瓶散装白酒</a></dd>
-                                    <dd><a href="/sanjiu/1541.html">大坛散装白酒</a></dd>
+                                    <volist name="sbeer" id="vo" offset="6" length="3" >
+                                    <dd><a href="{$vo.url|default='#'}">{$vo.title}</a></dd>
+                                    </volist>
                                 </dl>
                                 <dl>
                                     <dt>按斤分类：</dt>
-                                    <dd><a href="/sanjiu/1210.html">一斤散酒</a></dd>
-                                    <dd><a href="/sanjiu/1210.html">两斤散酒</a></dd>
-                                    <dd><a href="/sanjiu/1210.html">三斤散酒</a></dd>
+                                    <volist name="sbeer" id="vo" offset="9" length="3" >
+                                    <dd><a href="{$vo.url|default='#'}">{$vo.title}</a></dd>
+                                    </volist>
                                 </dl>
                             </div>
                         </li>
@@ -64,10 +57,9 @@
                             <div>
                                 <span><a rel="nofollow" href="http://www.daqianchao.com/qiye/">关于我们<u>/ About Us</u></a></span>
                                 <dl>
-                                    <dd><a rel="nofollow" href="http://www.daqianchao.com/qiye/">企业简介</a></dd>
-                                    <dd><a rel="nofollow" href="http://www.daqianchao.com/qiye/">发展历程</a></dd>
-                                    <dd><a rel="nofollow" href="http://www.daqianchao.com/xinwen/">酒类动态</a></dd>
-                                    <dd><a rel="nofollow" href="http://www.daqianchao.com/jiameng/">商务合作</a></dd>
+                                    <volist name="about" id="vo" >
+                                    <dd><a rel="nofollow" href="{$vo.url|default='#'}">{$vo.title}</a></dd>
+                                    </volist>
                                 </dl>
                             </div>
                         </li>

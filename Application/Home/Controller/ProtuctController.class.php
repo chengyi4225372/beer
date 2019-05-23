@@ -12,8 +12,13 @@ use Home\Controller\BaseController;
 
 class ProtuctController extends  BaseController
 {
+
+    public function cp(){
+        $this->display();
+    }
+
     public function index(){
-        return $this->display();
+        $this->display();
     }
 
 }

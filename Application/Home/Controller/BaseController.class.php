@@ -18,6 +18,10 @@ class  BaseController extends Controller
    public $bai_table ='bai_cates';
    public $ding_table ='ding_cates';
 
+   public $zbeer ='zbeer';
+   public $sbeer ='sbeer';
+   public $about ='about';
+
    public function __construct()
    {
        parent::__construct();
@@ -33,7 +37,12 @@ class  BaseController extends Controller
        $this->assign('bai',$bai);
        $ding = M($this->ding_table)->select();
        $this->assign('ding',$ding);
-
+       $zbeer = M($this->zbeer)->select();
+       $sbeer = M($this->sbeer)->select();
+       $about = M($this->about)->select();
+       $this->assign('zbeer',$zbeer);
+       $this->assign('sbeer',$sbeer);
+       $this->assign('about',$about);
    }
 
 }

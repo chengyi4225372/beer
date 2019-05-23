@@ -14,7 +14,7 @@ class AboutModel extends Model
      */
     public function getlist(){
         $model=M($this->table);
-        $list = $model->order("id desc")->limit(10)->select();
+        $list = $model->order('id desc')->limit(10)->select();
         return $list;
     }
 

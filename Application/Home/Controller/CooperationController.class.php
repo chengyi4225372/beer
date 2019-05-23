@@ -14,6 +14,12 @@ class CooperationController extends  BaseController
 {
     public $table = 'good';
 
+
+    public function jiamen(){
+        $this->display();
+    }
+
+
     //热门
     public function hot($id){
         $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id))->order('id desc')->limit(10)->select();

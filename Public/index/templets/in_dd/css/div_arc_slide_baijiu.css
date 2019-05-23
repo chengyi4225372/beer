@@ -1,0 +1,19 @@
+
+.div-slide .div {width: 100%;margin-bottom: 20px;}
+.div-slide .row-slide {height: 500px;}
+.div-slide .row-slide li {display: none;height: 500px;}
+.div-slide .row-slide li:nth-of-type(1) {display: block;}
+.div-slide .row-slide li .c-img {display: block;height: 100%;overflow: hidden;}
+.div-slide .row-slide li img {width: 100%;height: 100%;background-size: auto 100%!important;}
+.div-slide .row-slide .c-bar {bottom: 20px;}
+.div-slide .row-slide .c-bar a {
+    width: 12px;height: 12px;border: 2px solid rgba(255, 0, 0, 0.3);border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);background-clip: padding-box;
+}
+.div-slide .row-slide .c-bar a.on {border: 2px solid rgba(255, 255, 255, 0.3);background: rgba(255, 0, 0, 0.7);}
+.div-slide .row-slide .c-page {
+    display: block;left: 200px;width: 50px;height: 60px;line-height: 60px;font-size: 30px;
+    transition: transform 0.2s;transform: translate(-250px, 0);border-radius: 5px;
+}
+.div-slide .row-slide .c-next {left: auto;right: 200px;transform: translate(250px, 0);}
+.div-slide .row-slide:hover .c-page {transform: translate(0, 0);}
