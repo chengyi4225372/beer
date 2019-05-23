@@ -11,9 +11,12 @@ use Think\Controller;
 use Home\Controller\BaseController;
 class CompanyController extends  BaseController
 {
-
+    public $table ='moves';
 
     public function index(){
+        $id =I('get.id');
+        $res= M($this->table)->where(array('id'=>$id))->find();
+        $this->assign('res',$res);
         $this->display();
     }
 
@@ -31,6 +34,10 @@ class CompanyController extends  BaseController
     }
 
     public function cvideo(){
+        $this->display();
+    }
+
+    public function lianxi(){
         $this->display();
     }
 }

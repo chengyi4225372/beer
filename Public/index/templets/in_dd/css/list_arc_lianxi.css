@@ -1,0 +1,44 @@
+
+@import "init.css";
+@import "head.css";
+@import "foot.css";
+@import "box_arc.css";
+
+.main .div {width: 1000px;}
+.main .d-map {height: 350px;}
+
+.div-path .box {padding: 10px;border-bottom: 2px solid #f2d374;background: #eee;}
+.div-path .row-path {text-align: left;}
+
+.div-msg .box {background: #111;}
+
+.div-msg .row-title img {display: block;width: 100%;overflow: hidden;}
+
+.div-msg .row-form {float: left;width: 50%;}
+.div-msg .row-form .ul {padding: 0px 20px;}
+.div-msg .row-form li {display: block;margin-top: 15px;font-size: 12px;color: #fff;}
+.div-msg .row-form li .c-input, .div-msg .row-form li textarea {
+    width: calc(100% - 10px);font-size: 12px;color: #fff;box-shadow: 0px 0px 0px 1px #f30 inset;
+    border: none;border-radius: 3px;background: rgba(255, 255, 255, 0.1);
+    background-clip: padding-box;
+}
+.div-msg .row-form li .c-input {
+    height: 29px;line-height: 29px;padding: 1px 5px 0px 5px;
+}
+.div-msg .row-form li textarea {
+    display: block;height: 65px;line-height: 20px;padding: 5px;overflow: hidden;font-size: 14px;
+}
+.div-msg .row-form li.col-submit {text-align: right;font-size: 0;}
+.div-msg .row-form li.col-submit input {
+	display: inline-block;height: 30px;line-height: 30px;margin-left: 15px;padding: 0px 30px;overflow: hidden;
+	font-size: 14px;font-family: "microsoft yahei";border: none;border-radius: 3px;background: #f5f5f5;
+}
+.div-msg .row-form li.col-submit .c-ok {color: #fff;background: #f00;}
+
+.div-msg .row-info li {display: block;margin-top: 15px;font-size: 16px;color: #eee;}
+.div-msg .row-info li b {
+    float: left;width: 90px;height: 30px;line-height: 32px;padding-right: 10px;overflow: hidden;
+}
+.div-msg .row-info li span {line-height: 20px;padding-top: 6px;}
+
+.div-msg .row-map {padding: 20px;clear: both;}

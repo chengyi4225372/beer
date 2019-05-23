@@ -39,14 +39,15 @@
                         </li>
 
                         <li>
-                            <span><a href="{:U('company/index')}">走进大黔朝</a> </span>
+                            <span><a href="{:U('company/fz')}">走进大黔朝</a> </span>
                             <dl>
                                 <dd><a href="{:U('company/cjd')}">藏酒洞</a></dd>
                                 <dd><a href="{:U('company/cvideo')}">洞藏酒视频</a></dd>
                                 <dd><a href="{:U('company/fz')}">发展历程</a></dd>
                                 <dd><a href="{:U('company/gy')}">传承工艺</a></dd>
+                                <dd><a href="{:U('company/lianxi')}">联系我们</a></dd>
                                 <volist name="moves" id="vo">
-                                <dd><a href="{:U('company/index')}?id={$vo.id}">{$vo.title}</a></dd>
+                                <dd><a href="{:U('company/index',array('id'=>$vo['id']))}">{$vo.title}</a></dd>
                                  </volist>
                                 <!--
 

@@ -25,7 +25,7 @@ class  BaseController extends Controller
    public function __construct()
    {
        parent::__construct();
-       $moves = M($this->moves_table)->select();
+       $moves = M($this->moves_table)->where(array('is_deleted'=>0))->select();
        $this->assign('moves',$moves);
        $good =M($this->good_table)->select();
        $this->assign('good',$good);
