@@ -24,8 +24,8 @@ class  BaseController extends Controller
 
 
 
-    public function __construct(){
-        parent::__construct();
+    public function _initialize(){
+       // parent::__construct();
         if(!is_mobile_request()){
             C('DEFAULT_MODULE','Home');
         }
