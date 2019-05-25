@@ -44,6 +44,7 @@ class ProtuctController extends  BaseController
         $this->assign('size',$size);
         $this->display();
     }
+
     public function detail(){
         $id=I('get.id');
         $detail = M($this->table)->where(array('id'=>$id))->find();
@@ -56,7 +57,6 @@ class ProtuctController extends  BaseController
         //白酒专栏
         $baijiu = M($this->hezuo)->where(array('pid'=>11))->order('id desc')->limit(6)->select();
         $this->assign('baijiu',$baijiu);
-
         $this->display();
     }
 
