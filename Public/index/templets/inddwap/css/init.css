@@ -1,0 +1,88 @@
+
+@import "base.css";
+@import "d_slide.css";
+@import "d_reset.css";
+
+img {max-width: 100%;}
+
+.main .d-img .c-img {display: block;position: relative;height: 0;padding-top: 100%;overflow: hidden;}
+.main .d-img .c-img img {
+    display: block;position: absolute;left: 0;top: 0;width: 100%;height: 100%;overflow: hidden;
+}
+.main .d-img .c-text {
+    display: block;position: absolute;left: 0;bottom: 0;width: calc(100% - 10px);height: 30px;line-height: 32px;
+    padding: 0px 5px;overflow: hidden;text-align: center;text-shadow: 0px 0px 2px #666;color: #eee;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.main .d-video .c-img {position: relative;}
+.main .d-video .c-img a {display: block;overflow: hidden;}
+.main .d-video .c-img img {display: block;width: 100%;overflow: hidden;}
+.main .d-video .c-img video {display: none;width: 100%;overflow: hidden;}
+.main .d-video .c-img a::after {
+    display: block;position: absolute;left: 50%;top: 50%;width: 50px;height: 50px;content: '';
+    transform: translate(-50%, -50%);transition: border-color 0.2s;
+    box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.3);
+    border: 5px solid rgba(255, 255, 255, 0.6);border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);background-clip: padding-box;
+}
+.main .d-video .c-img a::before {
+    display: block;position: absolute;z-index: 1;left: 50%;top: 50%;width: 0px;height: 0px;content: '';
+    transform: translate(-40%, -50%);transition: border-color 0.2s;
+    border: 15px solid transparent;
+    border-left: 20px solid rgba(255, 255, 255, 0.6);border-right: none;
+}
+.main .d-video .c-img:hover a::after {border-color: rgba(255, 255, 255, 1);}
+.main .d-video .c-img:hover a::before {border-left-color: rgba(255, 255, 255, 1);}
+
+.main .d-video a.c-img::after {
+    display: block;position: absolute;left: 50%;top: 50%;width: 80px;height: 80px;content: '';
+    transform: translate(-50%, -50%);transition: border-color 0.2s;
+    box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.3);
+    border: 5px solid rgba(255, 255, 255, 0.6);border-radius: 50%;
+    background: rgba(0, 0, 0, 0.3);background-clip: padding-box;
+}
+.main .d-video a.c-img::before {
+    display: block;position: absolute;z-index: 1;left: 50%;top: 50%;width: 0px;height: 0px;content: '';
+    transform: translate(-40%, -50%);transition: border-color 0.2s;
+    border: 25px solid transparent;
+    border-left: 35px solid rgba(255, 255, 255, 0.6);border-right: none;
+}
+.main .d-video a.c-img:hover::after {border-color: rgba(255, 255, 255, 1);}
+.main .d-video a.c-img:hover::before {border-left-color: rgba(255, 255, 255, 1);}
+.main .d-video .c-video {
+    display: none;position: relative;height: 0;padding-top: 100%;overflow: hidden;background: #000;
+}
+.main .d-video .c-video video {
+    display: block;position: absolute;left: 0;top: 0;width: 100%;min-height: 100%;overflow: hidden;
+}
+
+.main .d-table li {display: table;width: 100%;}
+.main .d-table .c-tr {display: table-row;}
+.main .d-table .c-tr > * {display: table-cell;vertical-align: middle;}
+
+.main .d-table-ul {display: table;width: 100%;}
+.main .d-table-ul ul {display: table-row;}
+.main .d-table-ul li {display: table-cell;vertical-align: middle;}
+
+.main .d-dot li {position: relative;padding-left: 12px;}
+.main .d-dot li::after {
+    display: block;position: absolute;left: 3px;top: 50%;width: 3px;height: 3px;content: '';
+    transform: translate(0, -50%);border-radius: 50%;background: #666;
+}
+
+.main .d-pager {padding: 10px 10px;text-align: center;font-size: 0;}
+.main .d-pager li {display: inline-block;height: 25px;line-height: 27px;margin: 0px 5px;font-size: 12px;color: #666;}
+.main .d-pager li a {
+    display: inline-block;height: 25px;line-height: 27px;padding: 0px 10px;overflow: hidden;
+    color: #666;box-shadow: 0px 0px 0px 1px #ddd;border-radius: 3px;background: #f5f5f5;
+}
+.main .d-pager li strong {padding: 0px 3px;font-weight: 400;}
+.main .d-pager li.thisclass {padding: 0px 10px;color: #fff;border-radius: 3px;background: #f00;}
+.main .d-pager li.thisclass a {margin: 0;padding: 0;color: #fff;box-shadow: none;background: none;}
+
+.main .d-content {line-height: 23px;color: #666;}
+.main .d-content img, .main .d-content video {display: block;max-width: 100%;height: auto;margin: 0 auto;overflow: hidden;}
+.main .d-content video {position: relative;z-index: 1;width: 100%;}
+.main .d-content img + br {display: none;}
+.main .d-content a {color: #049;}

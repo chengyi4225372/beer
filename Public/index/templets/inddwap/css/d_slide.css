@@ -1,0 +1,35 @@
+
+/*** d_slide.css ***/
+
+.slide {position: relative;}
+
+.slide .c-page {
+    display: none;position: absolute;z-index: 999;left: 0;top: 50%;width: 20px;height: 40px;line-height: 40px;
+    margin-top: -20px;overflow: hidden;font-size: 14px;font-weight: 700;font-family: simsun;
+    text-align: center;color: #fff;opacity: 0.7;
+    background-color: #333;
+}
+.slide .c-page:hover {text-decoration: none;background-color: #111;}
+.slide.c-one .c-page {display: none!important;}
+
+.slide .c-next {left: auto;right: 0;}
+.slide li .c-img {display: block;overflow: hidden;}
+.slide li .c-img img {display: block;width: 100%;overflow: hidden;}
+.slide li span {
+    display: block;width: calc(100% - 10px);height: 20px;line-height: 20px;padding: 3px 5px 2px 5px;
+    text-align: left;font-size: 14px;
+}
+
+.slide .c-bar {position: absolute;right: 10px;bottom: 10px;overflow: visible;font-size: 0;}
+.slide.c-center .c-bar {left: 50%;right: auto;transform: translate(-50%, 0);
+    -moz-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);}
+.slide.c-one .c-bar {display: none;}
+
+.slide .c-bar a {
+    display: inline-block;width: 10px;height: 10px;margin: 0px 3px;overflow: hidden;text-align: center;
+    text-indent: -2000px;vertical-align: top;font-family: arial;background: #f5f5f5;
+}
+.slide .c-bar a.on {color: #fff;background: #ccc;}

@@ -26,11 +26,9 @@ class IndexController extends BaseController
          //服务与产品
         $service = M($this->service)->select();
         $this->assign('service',$service);
-
         //酒业新闻
         $bai  =M($this->bai)->where(array('pid'=>12))->order('id desc')->limit(3)->select();
         $this->assign('bai',$bai);
-
         $this->display();
     }
 

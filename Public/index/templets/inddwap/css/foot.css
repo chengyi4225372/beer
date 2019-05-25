@@ -1,0 +1,181 @@
+
+@import "d_call.css";
+
+.foot .row-info {padding: 10px 10px 20px 10px;background: #000; color: #eee;}
+.foot .row-info p {display: block;line-height: 20px;margin-top: 10px;text-align: center;font-size: 14px;}
+
+.foot-nav {height: 40px;}
+.foot-nav .div {
+    position: fixed;left: 0;bottom: 0;z-index: 99;width: 100%;max-width: none;height: 40px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);background: #fff;background-clip: padding-box;
+}
+.foot-nav .row-link li {float: left;width: 33.33%;}
+.foot-nav .row-link li a {
+    display: block;height: 40px;line-height: 64px;overflow: hidden;text-align: center;font-size: 12px;
+    color: #fff;background: #ef6000 url(../images/icon_home_w.png) center 3px no-repeat;
+    background-size: 20px 20px;
+}
+.foot-nav .row-link li.col-tel a {background-image: url(../images/icon_tel_w.png);}
+.foot-nav .row-link li.col-qq a {background-image: url(../images/icon_qq_w.png);}
+.foot-nav .row-link li.col-msg a {background-image: url(../images/icon_msg_w.png);}
+
+.div-sq .div {
+    display: none;position: fixed;left: 5px;bottom: 60px;
+}
+.div-sq .row-sq a {
+    display: table-cell;width: 45px;height: 45px;line-height: 15px;overflow: hidden;
+    text-align: center;vertical-align: middle;font-size: 12px; color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.2);border-radius: 50%;background: rgba(239, 96, 0, 0.8);
+}
+.alizi-editor{
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.alizi-order{
+    min-width: 300px;
+    max-width: 640px;
+    margin: 0 auto;
+    overflow: hidden;
+    font-size: 1rem;
+    font-weight: normal;
+}
+.alizi-order .rows-params {
+    padding-left: 5.5rem;
+    line-height: 2rem;
+    padding: 2px 0;
+    line-height: 2rem;
+    position: relative;
+}
+.alizi-total-price {
+    color: #f60;
+    font-size: 1.5rem;
+}
+.alizi-request {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f60;
+    float: left;
+    display: inline-block;
+    line-height: 2rem;
+    margin-left: 3px;
+}
+.alizi-alert {
+    padding: .8rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    background-color: #fbeedf;
+    border: 1px solid #eed3d7;
+    border-radius: .2rem;
+    color: #c00;
+    line-height: 1.5rem;
+}
+.alizi-input-text {
+    text-indent: .3rem;
+    width: 98%;
+    display: inline-block;
+    padding: .5rem 0;
+    margin-right: 1px;
+    color: #555555;
+    border: 1px solid #cccccc;
+    font-family: MicroSoft Yahei;
+    outline: none;
+    transition: all 0.2s linear 0s;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    border-radius: 2px;
+    font-size: 1.1rem;
+}
+.alizi-input-text {
+    padding: 0.3rem;
+    width: 97%;
+}
+button, input, select, textarea, ul, ol, dl, p, li {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+.alizi-params {
+    float: left;
+    padding: .4rem;
+    font-size: 1rem;
+    color: #666;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: .1rem;
+    margin-right: 4px;
+    margin-bottom: 4px;
+    text-decoration: none;
+    transition: all 0.3s linear 0s;
+    max-width: 95%;
+
+}
+
+.alizi-params:hover {
+    background-color: #ccc;
+    text-decoration: none;
+}
+label {
+    cursor: default;
+}
+
+select, .alizi-input-text{padding:0.3rem;width: 97%;}
+.alizi-title{display:none;}
+.alizi-box-params{position:relative;}
+.alizi-order .rows-head{position:absolute;left:10px;width:5rem;font-weight:normal;border-bottom:none;padding:2px 0;text-align:right;}
+.alizi-order .rows-params{padding-left:5.5rem;line-height:2rem;}
+
+.alizi-side .alizi-title{background-position:-10px -55px;}
+.alizi-side{margin-left:-1px;border-left:1px solid #0C0;}
+.alizi-side.alizi-full-row{border-top:4px solid #0C0;}
+
+.alizi-payment label{background-position: left 2px;padding-left:32px;}
+.alizi-payment .alizi-payment-2{background-position:4px -42px;}
+.alizi-payment .alizi-payment-3,.alizi-payment .alizi-payment-9{background-position:2px -90px;}
+.alizi-payment .alizi-payment-5,.alizi-payment .alizi-payment-4{background-position:2px -142px;}
+.alizi-payment .alizi-payment-6{background-position:2px -190px;}
+.alizi-payment .alizi-payment-7{background-position:2px -242px;}
+.alizi-payment .alizi-payment-8{background-position:2px -292px;}
+.alizi-payment a.active,.alizi-payment label.active,.alizi-payment a:hover,.alizi-payment label:hover{background-position:-200px 2px;}
+.alizi-payment .alizi-payment-2.active,.alizi-payment .alizi-payment-2:hover{background-position:-200px -42px;;}
+.alizi-payment .alizi-payment-3.active,.alizi-payment .alizi-payment-3:hover,.alizi-payment .alizi-payment-9.active,.alizi-payment .alizi-payment-9:hover{background-position:-200px -90px;}
+.alizi-payment .alizi-payment-5.active,.alizi-payment .alizi-payment-5:hover,.alizi-payment .alizi-payment-4.active,.alizi-payment .alizi-payment-4:hover{background-position:-200px -142px;}
+.alizi-payment .alizi-payment-6.active,.alizi-payment .alizi-payment-6:hover{background-position:-200px -190px;}
+.alizi-payment .alizi-payment-7.active,.alizi-payment .alizi-payment-7:hover{background-position:-200px -242px;}
+.alizi-payment .alizi-payment-8.active,.alizi-payment .alizi-payment-8:hover{background-position:-200px -292px;}
+
+.rows-id-params .rows-params a{padding:2px 15px;border-radius:5px;}
+.rows-id-params .rows-head,.rows-id-extends .rows-head{float:none;position:relative;}
+.rows-id-params .rows-params,.rows-id-extends .rows-params{margin-left:0;padding-left:0;}
+.rows-id-extends .alizi-group{margin-right:5px;padding:2px 15px;border:1px solid #ccc;border-radius:5px;cursor:pointer;background:#fff;transition: all 0.3s linear 0s;}
+.rows-id-extends .alizi-group-box{display:none;}
+
+.alizi-order{border:none;}
+.alizi-order-wrap{padding: 5px;background:#f5f5f5;}
+.alizi-box{margin:0 5px 10px 5px;padding:10px;border-radius: 5px;box-shadow: 0 1px 2px 2px #E4E4E4;background: #fafafa;}
+.alizi-side{border:none !important;margin:0;}
+.alizi-delivery{margin:10px 0;padding:10px 5px;}
+
+.alizi-params.active{background-color:#f60 !important;}
+
+.alizi-box-notice{float:right;width: 30%;padding-top:10px;padding-bottom:01px;}
+.alizi-box-notice .alizi-side{width:100%;}
+.alizi-full-row.alizi-box{float:none;width:100%;margin: 0; padding: 0;}
+#alizi-submit{
+    width: 100%;
+    display: inline-block;
+    padding: 1rem 0;
+    margin-bottom: 0;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #f60;
+    border: 1px solid #f60;
+    border-radius: .2rem;
+    cursor: pointer;
+    outline: none;
+    font-family: MicroSoft Yahei;
+    -webkit-appearance: none;
+}

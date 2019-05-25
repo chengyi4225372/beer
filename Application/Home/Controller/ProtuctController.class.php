@@ -14,7 +14,14 @@ class ProtuctController extends  BaseController
 {
    public $table='protuct';
 
-    //热门
+   public $hezuo = 'good';
+
+    //产品推荐
+    public function tui($id){
+        $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id))->order('id desc')->limit(4)->select();
+        return $res?$res:'';
+    }
+
     public function hot($id){
         $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id))->order('id desc')->limit(10)->select();
         return $res?$res:'';
@@ -38,12 +45,18 @@ class ProtuctController extends  BaseController
         $this->display();
     }
     public function detail(){
-
         $id=I('get.id');
         $detail = M($this->table)->where(array('id'=>$id))->find();
-        $hot = $this->hot($detail['pid']);
+        $hot = $this->tui($detail['pid']);
         $this->assign('hot',$hot);
         $this->assign('detail',$detail);
+        //合作案例
+        $hezuo  = M($this->hezuo)->where(array('pid'=>10))->order('id desc')->limit(6)->select();
+        $this->assign('hezuo',$hezuo);
+        //白酒专栏
+        $baijiu = M($this->hezuo)->where(array('pid'=>11))->order('id desc')->limit(6)->select();
+        $this->assign('baijiu',$baijiu);
+
         $this->display();
     }
 

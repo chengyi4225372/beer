@@ -1,0 +1,5 @@
+
+.sr-bdimgshare, .bdselect_share_bg, .bdselect_share_box, .bdsharebuttonbox, .nb-invite-wrap-base,
+#LXB_CONTAINER_SHOW, #LXB_CLOSE_BTN, #LXB_INVITE, #LXB_CONTAINER, #LXB_CONTAINER *, #newBridge, #newBridge * {
+    display: none!important;width: 0!important;height: 0!important;visibility: hidden!important;
+}

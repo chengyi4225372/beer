@@ -1,0 +1,56 @@
+
+@import "init.css";
+@import "head.css";
+@import "foot.css";
+@import "box_arc.css";
+
+.main {padding-bottom: 20px;}
+.main .d-content img {width: 790px!important;max-width: none;height: auto!important;}
+
+.div-banner {
+	height: 400px;margin-bottom: 20px;background: url(../images/show_shop_banner1.jpg) top no-repeat;
+	background-size: auto 100%;
+}
+
+.div-path .box {padding: 15px 20px;border: 1px solid #ddd;border-bottom: none;}
+.div-path .row-path {text-align: left;}
+
+.div-goods .box {padding: 20px;border: 1px solid #ddd;border-bottom: none;background: url(../images/price_bg.png);}
+.div-goods .row-gallery {float: left;width: 790px;height: 400px;}
+.div-goods .row-gallery li {display: none;}
+.div-goods .row-gallery li:nth-of-type(1) {display: block;}
+.div-goods .row-gallery li img {width: 100%;}
+
+.div-goods .row-info {min-height: 400px;padding-left: 30px;}
+.div-goods .row-info .b-title {}
+.div-goods .row-info .b-title h1 {
+	display: table-cell;height: 120px;line-height: normal;vertical-align: middle;font-size: 30px;font-weight: 400;color: #333;
+}
+.div-goods .row-info .b-attr {}
+.div-goods .row-info .b-attr li {display: block;margin-top: 15px;font-size: 16px;color: #666;}
+.div-goods .row-info .b-attr li b {float: left;width: 100px;height: 25px;line-height: 27px;padding-right: 10px;overflow: hidden;}
+.div-goods .row-info .b-attr li span {line-height: 20px;padding-top: 3px;overflow: visible;}
+
+.div-content .box {border: 1px solid #ddd;}
+.div-content .h2 {height: 50px;padding: 0px 20px;border-bottom: 1px solid #ddd;}
+.div-content .h2 h2 {float: left;height: 50px;line-height: 52px;overflow: hidden;font-size: 24px;color: #333;}
+
+.div-content .row-content {border-bottom: 1px solid #ddd;}
+.div-content .row-content .b-content {width: 790px;margin: 0 auto;padding: 20px 0px;}
+
+.div-content .row-recommend .ul {padding: 20px 10px;}
+.div-content .row-recommend li {float:left;width: 25%;}
+.div-content .row-recommend li .c-box {margin: 0px 10px;overflow: hidden;}
+.div-content .row-recommend li .c-img {border-radius: 5px;}
+.div-content .row-recommend li .c-img img {transition: transform 0.2s;}
+.div-content .row-recommend li .c-img em {
+	display: block;position: absolute;left: 0;bottom: 0;width: 100%;height: 30px;line-height: 32px;
+	overflow: hidden;text-align: center;text-shadow: 0px 0px 2px #666;font-size: 14px;color: #fff;
+	transition: background 0.2s;background: rgba(0, 0, 0, 0.3);
+}
+.div-content .row-recommend li .c-img:hover img {transform: scale(1.1, 1.1);}
+.div-content .row-recommend li .c-img:hover em {background: rgba(0, 0, 0, 0.1);}
+.div-content .row-recommend li span {
+	height: 25px;line-height: 27px;margin-top: 10px;text-align: center;font-size: 14px;
+}
+.div-content .row-recommend li span i {padding: 0px 5px;}

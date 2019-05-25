@@ -122,7 +122,7 @@ class ProtuctModel extends Model
 
         $model = M('protuct');
         // 判断是否存在
-        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0))->find();
+        $flag = $model->where(array('title' => $param['title'], 'pid'=>$param['pid'],'is_deleted' => 0))->find();
         if ($flag) {
             return array(
                 'data' => $param['title'] . '已经存在了',
@@ -163,7 +163,7 @@ class ProtuctModel extends Model
         $model = M('protuct');
 
         // 判断是否存在
-        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0, 'id' => array('neq', $param['id'])))->find();
+        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0,'pid'=>$param['pid'], 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(

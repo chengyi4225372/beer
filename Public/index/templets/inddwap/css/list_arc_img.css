@@ -1,0 +1,29 @@
+
+@import "head.css";
+@import "footer.css";
+
+.newsshow-wrap{
+	margin-bottom:20px;	
+}
+
+.newsshow-wrap .box{
+	display:block;padding: 0px 10px;
+	overflow:hidden;
+}
+.newsshow-wrap ul{
+	list-style:none;
+}
+
+.newsshow-wrap .row-list li {display: block;margin-top: 10px;}
+.newsshow-wrap .row-list li a {display: block;position: relative;min-height: 60px;overflow: hidden;}
+.newsshow-wrap .row-list li .c-img {float: left;width: 40%;padding-top: 30%;}
+.newsshow-wrap .row-list li .c-img i {
+	display: block;position: absolute;right: 0;bottom: 0;height: 20px;line-height: 22px;padding: 0px 5px 0px 10px;overflow: hidden;
+	clip-path: polygon(5px 0, 100% 0, 100% 100%, 0 100%);color: #fff;background: rgba(0, 0, 0, 0.6);
+}
+.newsshow-wrap .row-list li div {position: absolute;right: 0;top: 0;width: calc(60% - 10px);height: 100%;}
+.newsshow-wrap .row-list li span {height: 40px;max-height: 40px;line-height: 20px;font-size: 16px;}
+.newsshow-wrap .row-list li p {
+	position: absolute;left: 0;bottom: 0;width: 100%;max-height: 40px;line-height: 20px;font-size: 14px;color:#666;
+}
+

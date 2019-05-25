@@ -1,0 +1,6 @@
+
+@import "init.css";
+@import "head_1.css";
+@import "foot.css";
+
+.row-phone .d-phone img{ display: block; overflow: hidden;}
