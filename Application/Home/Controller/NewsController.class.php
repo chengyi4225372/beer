@@ -21,10 +21,10 @@ class NewsController extends  BaseController
         return $arr?$arr:'';
     }
 
-    //分页 todo
+    //分页
     public function index(){
         $pid =  I('get.id');
-         $pages= 10;
+         $pages= 8;
         if(empty($pid)){
             $count =  M($this->table)->where(array('is_deleted'=>0))->count();
             $size = $count/$pages;
