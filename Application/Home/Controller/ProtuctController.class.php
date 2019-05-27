@@ -60,8 +60,6 @@ class ProtuctController extends  BaseController
         $this->display();
     }
 
-
-
     public function cp(){
         $this->display();
     }
