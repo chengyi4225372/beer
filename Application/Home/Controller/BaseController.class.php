@@ -22,10 +22,8 @@ class  BaseController extends Controller
    public $sbeer ='sbeer';
    public $about ='about';
 
-
-
     public function _initialize(){
-        //parent::__construct();
+       // parent::__construct();
         if(is_mobile_request()){
             C('DEFAULT_V_LAYER','Mobile');
         }

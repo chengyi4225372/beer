@@ -40,4 +40,8 @@ class CompanyController extends  BaseController
     public function lianxi(){
         $this->display();
     }
+
+     public function beer(){
+        $this->display(T('company/beer','Mobile'));
+     }
 }

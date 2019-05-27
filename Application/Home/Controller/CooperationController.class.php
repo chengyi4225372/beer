@@ -43,6 +43,7 @@ class CooperationController extends  BaseController
         $this->assign('size',$size);
         $this->display();
     }
+
     public function detail(){
 
          $id=I('get.id');
