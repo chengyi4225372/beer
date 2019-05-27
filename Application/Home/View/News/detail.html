@@ -1,0 +1,109 @@
+<include file="public/head" />
+
+    <link href="/Public/index/templets/in_dd/css/show_arc.css" type="text/css" rel="stylesheet" />
+
+<include file="public/top" />
+
+<include file="public/menu" />
+
+<div id="main" class="main">
+    <div id="div-banner" class="div-banner"></div>
+
+    <div id="div-path" class="div-path">
+        <div class="div">
+            <div class="box">
+                <div class="block row-path">
+                    <div>
+                        <i>当前位置：</i>
+                        <span>
+                            <a href="/">首页</a>
+                                 <small>&gt;</small><a href="{:U('news/index',array('id'=>$info['pid']))}">{$cates.title}</a>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div-arc" class="div-arc" data-id="2470" data-mid="3">
+        <div class="div">
+            <div class="p-menu">
+                <div class="box">
+
+                    <div class="block row-menu">
+                        <div class="h2"><h2>白酒知识</h2></div>
+                        <div class="ul">
+                            <ul>
+                                <volist name="news" id="vo" key="k">
+                                    <li <eq name="Think.get.pid" value="$vo.id">  class="on col{$k}" </eq> ><a href="{:U('news/index',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="block row-hot">
+                        <div class="h2"><h2>热门推荐</h2></div>
+                        <div class="ul">
+                            <ul>
+                                <volist name="hot" id="vo" key="k">
+                                    <li><a href="{:U('news/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><i>{$vo.lan}</i><em>{$k}</em><span>{$vo.title}</span></a></li>
+                                </volist>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="p-arc">
+                <div class="box">
+                    <div class="block row-title">
+                        <h1>{$info.title}</h1>
+                    </div>
+                    <div class="block row-item">
+                        <i class="c-date">发布于：{$info.create_time}</i>
+                        <i class="c-view">浏览量：{$info.lan|default=''}<small></small></i>
+                    </div>
+                    <div class="block row-content">
+                        <div class="b-content">
+                            <div class="d-content">
+                              {$info.content|htmlspecialchars_decode}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="block row-near">
+                        <div class="ul">
+                            <ul>
+                                <empty name="top">
+                                    <li class="col-pre">上一篇：没有了！</li>
+                                    <else />
+                                    <li class="col-pre">上一篇：<a href="{:U('news/detail',array('id'=>$top['id'],'pid'=>$top['pid']))}">{$top.title}</a> </li>
+                                </empty>
+                                <empty name="next">
+                                <li class="col-next">下一篇：没有了 </li>
+                                    <else />
+                                    <li class="col-pre">上一篇：<a href="{:U('news/detail',array('id'=>$next['id'],'pid'=>$next['pid']))}">{$next.title}</a> </li>
+                                </empty>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="block row-relate">
+                        <div class="h2"><h2>相关产品</h2></div>
+                        <div class="ul d-img">
+                            <ul>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="public/kefu" />
+
+<script src="/Public/index/templets/in_dd/js/show_arc.js" type="text/javascript"></script>
+
+<include file="public/foot" />
+</body>
+</html>
+
