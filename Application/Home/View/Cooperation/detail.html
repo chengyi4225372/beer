@@ -18,9 +18,8 @@
                     <div>
                         <i>当前位置：</i>
                         <span>
-                            <a href="/">首页</a><small>&gt;</small>
-                            <a href='http://www.daqianchao.com/jiameng/'>合作加盟</a><small>&gt;</small>
-                            <a href='http://www.daqianchao.com/kehu/'>合作案例</a></span>
+                            <a href="/">首页</a>
+                            <small>&gt;</small><a href="{:U('coopration/index',array('id'=>$info['pid']))}">{$cates.title}</a></span>
                     </div>
                 </div>
             </div>
@@ -57,9 +56,6 @@
             </div>
             <div class="p-arc">
                 <div class="box">
-                    <div class="block row-bb">
-                        <a href="/activity/"><img src="http://www.daqianchao.com/templets/indd/image/show_banner_nhj.jpg" /></a>
-                    </div>
                     <div class="block row-title">
                         <h1>{$detail.title|default=''}</h1>
                     </div>
@@ -77,8 +73,16 @@
                     <div class="block row-near">
                         <div class="ul">
                             <ul>
-                                <li class="col-pre">上一篇：<a href='http://www.daqianchao.com/kehu/2363.html'>海南省海口市林总与公司美女招商经理签约海口的定制酒2000件</a> </li>
-                                <li class="col-next">下一篇：<a href='http://www.daqianchao.com/kehu/2428.html'>2018年9月28日广东潮州代理商张总，黔朝原酱实体店盛大开业。</a> </li>
+                                <empty name="top">
+                                    <li class="col-pre">上一篇：没有了！</li>
+                                    <else />
+                                    <li class="col-pre">上一篇：<a href="{:U('drink/detail',array('id'=>$top['id'],'pid'=>$top['pid']))}">{$top.title}</a> </li>
+                                </empty>
+                                <empty name="next">
+                                    <li class="col-next">下一篇：没有了 </li>
+                                    <else />
+                                    <li class="col-pre">上一篇：<a href="{:U('drink/detail',array('id'=>$next['id'],'pid'=>$next['pid']))}">{$next.title}</a> </li>
+                                </empty>
                             </ul>
                         </div>
                     </div>

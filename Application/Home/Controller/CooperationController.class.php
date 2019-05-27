@@ -13,7 +13,7 @@ use Think\Page;
 class CooperationController extends  BaseController
 {
     public $table = 'good';
-
+    public $cates = 'good_cates';
 
     public function jiamen(){
         $this->display();
@@ -26,19 +26,22 @@ class CooperationController extends  BaseController
         return $res?$res:'';
     }
 
-    //todo 分页
     public function index(){
         $pid= I('get.id');
         $hot=$this->hot($pid);
         $this->assign('hot',$hot);
-        $good = M($this->table);
-        //总数
-        $count = $good->where(array('pid'=>$pid))->count();
         //每页显示条数
-        $psize ='2';
-        //总页数
-        $size = $count/$psize;
-        $detail = $good->where(array('pid'=>$pid))->order('id desc')->page($_GET['p'].',2')->select();
+        $pages= 12;
+        if(empty($pid)){
+            $count =  M($this->table)->where(array('is_deleted'=>0))->count();
+            //总页数
+            $size = $count/$pages;
+            $detail  = M($this->table)->where(array('is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+        }else{
+            $count =  M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->count();
+            $size = $count/$pages;
+            $detail  = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+        }
         $this->assign('detail',$detail);
         $this->assign('size',$size);
         $this->display();
@@ -57,6 +60,26 @@ class CooperationController extends  BaseController
     //合作加盟和政策
     public function info(){
          $this->display();
+    }
+
+
+    //当前所属分类
+    public function cates($pid){
+        $cates = M($this->cates)->field('title')->where(array('id'=>$pid))->find();
+        return $cates;
+    }
+
+
+    //上一篇
+    public function top($id){
+        $top =  M($this->table)->where(array('id'=>array('lt',$id),'is_deleted'=>0))->order(array('id'=>'desc'))->limit(1)->find();
+        return $top?$top:'';
+    }
+
+    //下一篇
+    public function next($id){
+        $next =  M($this->table)->where(array('id'=>array('gt',$id),'is_deleted'=>0))->order('id asc')->limit(1)->find();
+        return $next?$next:'';
     }
 
 }
