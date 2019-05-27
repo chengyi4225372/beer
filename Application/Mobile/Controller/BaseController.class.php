@@ -13,9 +13,9 @@ use Think\Controller;
 class BaseController extends Controller{
 
    public function  _initialize(){
-       //  parent::__construct();
-         if(is_mobile_request()){
-             C('DEFAULT_MODULE','Mobile');
+        // parent::__construct();
+         if(!is_mobile_request()){
+             C('DEFAULT_V_LAYER','Home');
          }
    }
 }

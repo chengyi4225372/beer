@@ -25,9 +25,9 @@ class  BaseController extends Controller
 
 
     public function _initialize(){
-       // parent::__construct();
-        if(!is_mobile_request()){
-            C('DEFAULT_MODULE','Home');
+        //parent::__construct();
+        if(is_mobile_request()){
+            C('DEFAULT_V_LAYER','Mobile');
         }
         $moves = M($this->moves_table)->where(array('is_deleted'=>0))->select();
         $this->assign('moves',$moves);
