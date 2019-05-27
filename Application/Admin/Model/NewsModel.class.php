@@ -27,7 +27,7 @@ class NewsModel extends Model
 
         $model = M('news');
         // 判断是否存在
-        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0))->find();
+        $flag = $model->where(array('title' => $param['title'], 'pid'=>$param['pid'],'is_deleted' => 0))->find();
         if ($flag) {
             return array(
                 'data' => $param['title'] . '已经存在了',
@@ -44,6 +44,7 @@ class NewsModel extends Model
             'content' => $param['content'],
             'is_show' => $param['is_show'],
             'pid'=>$param['pid'],
+            'lan'=>$param['lan'],
         ));
         $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
         return array(
@@ -62,7 +63,7 @@ class NewsModel extends Model
         $model = M('news');
 
         // 判断是否存在
-        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0, 'id' => array('neq', $param['id'])))->find();
+        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0,'pid'=>$param['pid'], 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(
@@ -85,6 +86,7 @@ class NewsModel extends Model
                 'content' => $param['content'],
                 'is_show' => $param['is_show'],
                 'pid'=>$param['pid'],
+                'lan'=>$param['lan'],
             ));
 
         $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');

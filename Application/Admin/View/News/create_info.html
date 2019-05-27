@@ -40,6 +40,14 @@
                                     </div>
                                 </div>
 
+                                <div class="am-form-group">
+                                    <label for="title" class="am-u-sm-3 am-form-label">浏览量 <span class="tpl-form-line-small-title">Lan</span></label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" class="tpl-form-input" id="lan" placeholder="请输入数字" value="{$news_detail.lan}">
+                                        <small>请输入数字</small>
+                                    </div>
+                                </div>
+
                                  <div class="am-form-group">
                                     <label for="desc" class="am-u-sm-3 am-form-label">简介<span class="tpl-form-line-small-title">Desc</span></label>
                                     <div class="am-u-sm-9">
@@ -66,7 +74,7 @@
                                     <label for="user-intro" class="am-u-sm-3 am-form-label">是否推荐热门<span class="tpl-form-line-small-title">IsShow</span></label>
                                     <div class="am-u-sm-9">
                                         <div class="tpl-switch">
-                                            <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" checked="" id="is_show">
+                                            <input type="checkbox" class="ios-switch bigswitch tpl-switch-btn" checked="" id="is_show" disabled="">
                                             <div class="tpl-switch-btn-view">
                                                 <div>
                                                 </div>
@@ -171,7 +179,8 @@
                      pid : $('#pid option:selected').val(),
                      is_show : is_show,
                      img : _this._img_path,
-                     content : $('#content').val()
+                     content : $('#content').val(),
+                      lan:$('#lan').val(),
                 }
 
                 if (!_page_id) {
