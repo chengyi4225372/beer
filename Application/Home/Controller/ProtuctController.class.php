@@ -32,14 +32,16 @@ class ProtuctController extends  BaseController
         $pid= I('get.id');
         $hot=$this->hot($pid);
         $this->assign('hot',$hot);
-        $good = M($this->table);
-        //总数
-        $count = $good->where(array('pid'=>$pid))->count();
-        //每页显示条数
-        $psize ='2';
-        //总页数
-        $size = $count/$psize;
-        $detail = $good->where(array('pid'=>$pid))->order('id desc')->page($_GET['p'].',2')->select();
+        $pages= 8;
+        if(empty($pid)){
+            $count =  M($this->table)->where(array('is_deleted'=>0))->count();
+            $size = $count/$pages;
+            $detail  = M($this->table)->where(array('is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+        }else{
+            $count =  M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->count();
+            $size = $count/$pages;
+            $detail  = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+        }
         $this->assign('detail',$detail);
         $this->assign('size',$size);
         $this->display();
