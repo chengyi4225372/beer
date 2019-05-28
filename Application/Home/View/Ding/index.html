@@ -31,7 +31,11 @@
                     <div class="block row-menu">
                         <div class="h2"><h2>定制酒专栏</h2></div>
                         <div class="ul">
-                            <ul><li class="on col1"><a href="/dingzhi/xinwen/">定制酒资讯</a></li><li class="col2 col-1"><a href="/dingzhi/wenti/">常见问题</a></li></ul>
+                            <ul>
+                                <volist name="ding" id="vo" key="k">
+                                    <li  <eq name="Think.get.id"  value="$vo.id"> class="on col{$k}" </eq> ><a href="{:U('ding/index',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                                </volist>
+                            </ul>
                         </div>
                     </div>
 
@@ -39,9 +43,9 @@
                         <div class="h2"><h2>热门推荐</h2></div>
                         <div class="ul">
                             <ul>
-                                <li><a href="http://www.daqianchao.com/dingzhi/xinwen/1811.html"><i>273</i><em>1</em><span>为什么越来越多人选择定制酒？</span></a></li>
-                                <li><a href="http://www.daqianchao.com/dingzhi/xinwen/1809.html"><i>222</i><em>2</em><span>个性化定制酒为什么受到越来越多</span></a></li>
-                                <li><a href="http://www.daqianchao.com/dingzhi/xinwen/1810.html"><i>213</i><em>3</em><span>企业定制酒有什么作用？</span></a></li>
+                                <volist name="hot" id="vo" key="k">
+                                    <li><a href="{:U('ding/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><i>{$vo.lan}</i><em>{$k}</em><span>{$vo.title}</span></a></li>
+                                </volist>
 
                             </ul>
                         </div>
@@ -53,33 +57,25 @@
                     <div class="block row-list">
                         <div class="ul d-img">
                             <ul>
-                                <li>
-                                    <div class="c-box">
-                                        <span><a href="http://www.daqianchao.com/dingzhi/xinwen/1809.html">个性化定制酒为什么受到越来越多人的喜爱？</a></span>
-                                        <p>个性化定制酒是属于私人品,按照消费者的需求,个性化设计定制属于自己的风格元素在酒瓶上一对一的服务量身打造。...</p>
-                                        <em>发布于：2017-12-05</em>
-                                    </div>
-                                </li><li>
-                                <div class="c-box">
-                                    <span><a href="http://www.daqianchao.com/dingzhi/xinwen/1811.html">为什么越来越多人选择定制酒？</a></span>
-                                    <p>企业定制酒是按照企业自身文化和品牌诉求需要,制造商对企业所需的白酒外包装的设计风格和白酒品质满足其独特要求的一款定制白酒....</p>
-                                    <em>发布于：2017-12-05</em>
-                                </div>
-                            </li><li>
-                                <div class="c-box">
-                                    <span><a href="http://www.daqianchao.com/dingzhi/xinwen/1810.html">企业定制酒有什么作用？</a></span>
-                                    <p>企业定制酒是按照企业自身文化和品牌诉求需要,制造商对企业所需的白酒外包装的设计风格和白酒品质满足其独特要求的一款定制白酒....</p>
-                                    <em>发布于：2017-12-05</em>
-                                </div>
-                            </li>
+                                <volist name="list" id="vo">
+                                    <li>
+                                        <div class="c-box">
+                                            <span><a href="{:U('ding/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a></span>
+                                            <p>{$vo.desc|default=''}</p>
+                                            <em>发布于：{$vo.create_time|strtotime|date="Y-m-d",###}</em>
+                                        </div>
+                                    </li>
+                                </volist>
+
                             </ul>
                         </div>
                     </div>
                     <div class="block row-pager">
                         <div class="ul d-pager">
                             <ul>
-                                <li><span class="pageinfo">共 <strong>1</strong>页<strong>3</strong>条记录</span></li>
-
+                                <for start="0" end="$size" name="i" >
+                                    <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('ding/index',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
+                                </for>
                             </ul>
                         </div>
                     </div>
