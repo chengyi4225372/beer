@@ -44,4 +44,19 @@ class CompanyController extends  BaseController
      public function beer(){
         $this->display(T('company/beer','Mobile'));
      }
+
+     //原料
+    public function yl(){
+        $this->display();
+    }
+
+    //工艺梁酒
+    public function lj(){
+        $this->display();
+    }
+
+    //储存文化
+    public function chu(){
+        $this->display();
+    }
 }

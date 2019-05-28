@@ -1,0 +1,40 @@
+
+@import "init.css";
+@import "foot.css";
+
+.head {background: #edeef0;}
+.head .box {padding: 20px 0px;}
+.head .row-logo {float: left;width: 350px;}
+.head .row-logo a {display: block;overflow: hidden;}
+.head .row-logo img {display: block;height: 40px;overflow: hidden;}
+
+.head .row-search form {float: right;}
+.head .row-search input {float: left;overflow: hidden;}
+.head .row-search .c-input {
+    width: 200px;height: 38px;line-height: 38px;padding: 0px 10px;font-size: 16px;
+    border: 1px solid #ddd;border-right: none;border-radius: 3px;
+}
+.head .row-search .c-submit {
+    height: 40px;line-height: 42px;padding: 0px 10px;font-size: 16px;color: #eee;
+    border: none;background: #f80;
+}
+.head .row-search .c-submit:hover {color: #fff;background: #fa0;}
+
+.main {min-height: 500px;padding: 20px 0px;}
+
+.div-list .row-list li {padding: 15px 0px;border-top: 1px solid #ddd;}
+.div-list .row-list li:nth-of-type(1) {border-top: none;}
+.div-list .row-list li span {
+    float: left;min-width: 100px;font-size: 0;border-left: 2px solid #a00;
+}
+.div-list .row-list li span a {
+    display: inline-block;height: 30px;line-height: 32px;padding: 0px 10px;overflow: hidden;font-size: 18px;color: #111;
+}
+.div-list .row-list li dl {display: block;overflow: hidden;}
+.div-list .row-list li dd {float: left;min-width: 100px;overflow: hidden;font-size: 0;}
+.div-list .row-list li dd a {
+    display: inline-block;height: 30px;line-height: 32px;padding: 0px 10px;overflow: hidden;font-size: 16px;color: #666;
+}
+.div-list .row-list li a:hover {color: #f00;}
+.div-list .row-list li a.on-key {color: #eee;background: #f80}
+.div-list .row-list li a.on-key:hover {color: #fff;background: #fa0;}
