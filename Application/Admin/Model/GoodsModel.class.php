@@ -2,33 +2,34 @@
 /**
  * Created by PhpStorm.
  * User: Administrator
- * Date: 2019/5/20
- * Time: 14:08
+ * Date: 2019/5/28
+ * Time: 17:32
  */
+
 namespace Admin\Model;
 
 use Think\Model;
 
-class ProtuctModel extends Model
+class  GoodsModel extends Model
 {
 
-    //è·å–åˆ†ç±»åˆ—è¡¨
+    //»ñÈ¡·ÖÀàÁĞ±í
     public function getcates(){
-        $model = M('protuct_cates');
+        $model = M('goods_cates');
         $where = array('pid'=>0);
         $list = $model->where($where)->order('id desc')->select();
         return $list?$list:'';
     }
 
-    //æ·»åŠ åˆ†ç±»
+    //Ìí¼Ó·ÖÀà
     public function Create_cate($param)
     {
-        $model = M('protuct_cates');
-        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
+        $model = M('goods_cates');
+        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
         $flag = $model->where(array('title' => $param['title']))->find();
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
+                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -45,17 +46,17 @@ class ProtuctModel extends Model
         );
     }
 
-    //ä¿®æ”¹åˆ†ç±»
+    //ĞŞ¸Ä·ÖÀà
     public function Edit_cate($param)
     {
 
-        $model = M('protuct_cates');
-        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
+        $model = M('goods_cates');
+        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
         $flag = $model->where(array('title' => $param['title'], 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
+                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -71,7 +72,7 @@ class ProtuctModel extends Model
                 'title' => $param['title'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => 'ÄúÃ»ÓĞ½øĞĞĞŞ¸Ä£¬µã»÷Ìø×ªÁĞ±íÒ³£¡');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -79,20 +80,20 @@ class ProtuctModel extends Model
         );
     }
 
-    //åˆ é™¤åˆ†ç±»
+    //É¾³ı·ÖÀà
     public function Del_cates($param){
-        $model = M('protuct');
-        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
+        $model = M('goods');
+        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
         $flag = $model->where(array('pid' => array('eq', $param['id'])))->select();
         if ($flag) {
             return array(
-                'data' => 'åˆ†ç±»ä¸‹å­˜åœ¨ä¿¡æ¯,ä¸èƒ½åˆ é™¤ï¼',
+                'data' => '·ÖÀàÏÂ´æÔÚĞÅÏ¢,²»ÄÜÉ¾³ı£¡',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
         }
         $doDel = false;
-        $doDel = M('protuct_cates')->where(array('id' => array('in', $param['id'])))->delete();
+        $doDel = M('good_cates')->where(array('id' => array('in', $param['id'])))->delete();
         $res = $doDel ? array('msg' => $doDel . ' deleted') : array('msg' => 'no delete');
         return array(
             'data' => $res['msg'],
@@ -103,11 +104,11 @@ class ProtuctModel extends Model
 
 
     /**
-     * è·å–åˆ—è¡¨
+     * »ñÈ¡ÁĞ±í
      */
     public function getNews($id)
     {
-        $model = M('protuct');
+        $model = M('goods');
         $map['is_deleted'] = 0;
         $map['pid'] =$id;
         $list = $model->where($map)->order('create_time asc ,id desc')->select();
@@ -115,17 +116,17 @@ class ProtuctModel extends Model
     }
 
     /**
-     * åˆ›å»º
+     * ´´½¨
      */
     public function Create($param)
     {
 
-        $model = M('protuct');
-        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
-        $flag = $model->where(array('title' => $param['title'], 'pid'=>$param['pid'],'is_deleted' => 0))->find();
+        $model = M('goods');
+        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
+        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0))->find();
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
+                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -133,7 +134,7 @@ class ProtuctModel extends Model
         $doAdd = false;
         $doAdd = $model->add(array(
             'title' => $param['title'],
-            'create_time' => date('Y-m-d H:i:s'),
+            'desc' => $param['desc'],
             'img' => $param['img'],
             'content' => $param['content'],
             'is_show' => $param['is_show'],
@@ -156,19 +157,19 @@ class ProtuctModel extends Model
     }
 
     /**
-     * ä¿®æ”¹
+     * ĞŞ¸Ä
      */
     public function Edit($param)
     {
 
-        $model = M('protuct');
+        $model = M('goods');
 
-        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
+        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
         $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0,'pid'=>$param['pid'], 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
+                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -195,14 +196,12 @@ class ProtuctModel extends Model
                 'yuan'=>$param['yuan'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => 'ÄúÃ»ÓĞ½øĞĞĞŞ¸Ä£¬µã»÷Ìø×ªÁĞ±íÒ³£¡');
 
         return array(
 
             'data' => $res['msg'],
-
             'msg' => $model->getLastSql(),
-
             'status' => $doMod ? 1 : 0,
 
         );
@@ -210,13 +209,13 @@ class ProtuctModel extends Model
     }
 
     /**
-     * åˆ é™¤
+     * É¾³ı
      */
     public function Del($param)
     {
-        $model = M('protuct');
+        $model = M('good');
         $doDel = false;
-        $doDel = $model->where(array('id' => array('in', $param['id'])))->save(array('is_deleted' => 1));
+        $doDel = $model->where(array('id' => array('in', $param['id'])))->delete();
         $res = $doDel ? array('msg' => $doDel . ' deleted') : array('msg' => 'no delete');
         return array(
             'data' => $res['msg'],

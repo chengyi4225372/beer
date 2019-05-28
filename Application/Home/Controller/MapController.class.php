@@ -12,7 +12,12 @@ use Think\Controller;
 use Home\Controller\BaseController;
 class MapController extends  BaseController
 {
+    public $white ='white_cates';
+
+
    public  function index(){
+        $white = M($this->white)->select();
+        $this->assign('white',$white);
         $this->display();
     }
 }

@@ -84,10 +84,11 @@
                                     <dd class="col3 col-1"><a href="{:U('activity/index')}">纪念酒</a></dd>
                                 </dl>
                             </li>
-                            <li class="col8"><span><a href="/oem/">白酒贴牌</a></span>
+                            <li class="col8"><span><a href="{:U('oem/index')}">白酒贴牌</a></span>
                                 <dl>
-                                    <!-- todo -->
-                                        <dd class="col1"><a href="{:U('ding/index')}?id={$vo.id}">{$vo.title}</a></dd>
+                                    <volist name="white" id="vo" key="k">
+                                        <dd class="col{$k}"><a href="{:U('oem/index')}?id={$vo.id}">{$vo.title}</a></dd>
+                                    </volist>
                                 </dl>
                             </li>
                             <li class="col9"><span><a href="{:U('bao/index')}">定制包装</a></span>
