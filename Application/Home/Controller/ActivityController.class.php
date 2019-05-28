@@ -13,6 +13,6 @@ use Home\Controller\BaseController;
 class ActivityController extends  BaseController
 {
     public function index(){
-        return $this->display();
+         $this->display();
     }
 }
