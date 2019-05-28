@@ -12,7 +12,7 @@ use Think\Controller;
 use Home\Controller\BaseController;
 class MapController extends  BaseController
 {
-    function index(){
+   public  function index(){
         $this->display();
     }
 }

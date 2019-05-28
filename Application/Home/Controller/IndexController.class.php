@@ -27,8 +27,8 @@ class IndexController extends BaseController
         $service = M($this->service)->select();
         $this->assign('service',$service);
         //酒业新闻
-        $bai  =M($this->bai)->where(array('pid'=>12))->order('id desc')->limit(3)->select();
-        $this->assign('bai',$bai);
+        $bais  =M($this->bai)->where(array('pid'=>12))->order('id desc')->limit(3)->select();
+        $this->assign('bais',$bais);
         $this->display();
     }
 
