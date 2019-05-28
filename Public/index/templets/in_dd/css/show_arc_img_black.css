@@ -1,0 +1,33 @@
+
+@import "init.css";
+@import "head.css";
+@import "foot.css";
+@import "box_arc.css";
+
+#head {height: 90px;background: #333;}
+
+.main {background: #000;}
+
+.div-arc .row-title {display: none;}
+
+.div-arc .row-content .b-content * {color: #eee;}
+
+.div-arc .row-list {margin-top: 20px;}
+.div-arc .row-list .ul {width: calc(100% + 20px);transform: translate(-10px, 0px);}
+.div-arc .row-list li {float: left;width: 33.33%;}
+.div-arc .row-list li a {display: block;margin: 0px 10px;overflow: hidden;}
+.div-arc .row-list li span {
+    position: relative;height: 60px;line-height: 60px;text-align: center;font-size: 34px;color: #fff;
+}
+.div-arc .row-list li span::before, .div-arc .row-list li span::after {
+    display: block;position: absolute;left: 20%;top: 0;width: 100px;height: 100%;content: '';
+    opacity: 0;transition: opacity 0.2s;
+    background: url(../image/ccgy/icon_h2.png) left bottom no-repeat;
+}
+.div-arc .row-list li span::after {left: auto;right: 20%;background-position: right top;}
+.div-arc .row-list li .c-img {margin-top: 10px;padding-top: 71%;}
+.div-arc .row-list li img {transition: transform 0.2s;}
+.div-arc .row-list li:hover span::before, .div-arc .row-list li:hover span::after {
+    opacity: 1;
+}
+.div-arc .row-list li:hover img {transform: scale(1.1, 1.1);}
