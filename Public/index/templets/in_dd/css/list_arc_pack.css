@@ -1,0 +1,104 @@
+
+@import "init.css";
+@import "foot.css";
+@import "head.css";
+
+
+.head .row-logo {float: left;padding-top: 10px;}
+.head .row-logo h2 {overflow: hidden;}
+.head .row-info {float: right;height: 62px;line-height: 64px;font-size: 15px;}
+.head .row-info a {position: relative;padding-right: 10px;}
+.head .row-info a::after {
+    content: "";display: block;position: absolute;right: 0px;top: 50%;
+    transform: translate(0,-50%);height: 14px;border-right: solid 1px #333;
+}
+.head .row-info em {padding-left: 10px;}
+.head .row-info a:hover {color: #f00;}
+
+.div-slidex .div {width: 100%;}
+.div-slidex .row-slide {height: 800px;}
+.div-slidex .row-slide li {display: none;height: 800px;}
+.div-slidex .row-slide li:nth-of-type(1) {display: block;}
+.div-slidex .row-slide li .c-img {display: block;height: 100%;overflow: hidden;}
+.div-slidex .row-slide li img {width: 100%;height: 100%;background-size: auto 100%;}
+.div-slidex .row-slide .c-bar {bottom: 60px;}
+.div-slidex .row-slide .c-bar a {
+    width: 12px;height: 12px;border: 2px solid rgba(255, 0, 0, 0.3);border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);background-clip: padding-box;
+}
+
+.div-pack .row-title {text-align: center;font-size: 0px;}
+.div-pack .row-title .th1 {display: inline-block;font-size: 25px;margin-top: 10px;padding: 3px 20px;box-shadow: 0px 0px 1px 1px #333;letter-spacing: 2px;}
+.div-pack .row-title .th2 {position: relative;overflow: visible;font-size: 15px;width: 1200px; height: 2px;margin: 20px auto 30px auto;background: #333;}
+.div-pack .row-title .th2 span {
+    display: block;overflow: hidden;position: absolute;font-family: Arial;letter-spacing: 2px;
+    left: 50%;top: -50%;padding: 0px 10px;transform: translate(-50%,-50%);background: #fff;
+}
+.div-pack .row-list li {display: block;overflow: hidden;margin-bottom: 20px;}
+.div-pack .row-list li .c-box {padding: 2px;}
+.div-pack .row-list li .c-img {float: left;display: block;overflow: hidden;box-shadow: 0px 0px 2px 1px #8a8a8a;}
+.div-pack .row-list li ins {display: block;overflow: hidden;font-size: 0px;}
+.div-pack .row-list li ins u {display: block;margin-left: 35px;overflow: hidden;width: calc(100% + 20px);transform: translate(-10px,0px);}
+.div-pack .row-list li span {font-size: 12px;margin-top: 16px;letter-spacing: 2px;}
+.div-pack .row-list li b {display: inline-block;font-size: 18px;padding-top: 10px;}
+.div-pack .row-list li ul li {float: left;text-align: center;}
+.div-pack .row-list li ul li a {display: block;overflow: hidden;margin: 10px 15px;}
+.div-pack .row-list li ul li:nth-of-type(1) a {margin-left: 0px;}
+.div-pack .row-list li i {display: block;font-size: 0px;overflow: hidden;}
+.div-pack .row-list li i p {font-size: 16px;float: left;padding-left: 10px;line-height: 36px;}
+.div-pack .row-list li ins u li em {font-size: 15px;}
+.div-pack .row-list li i a {display: inline-block;float: right;padding: 3px 10px;margin: 0px;font-size: 20px;border: solid 1px #c00; color: #c00;}
+.div-pack .row-list li i a:hover {color: #f00;border-color: #f00;}
+
+.gvad .div { background: rgba(44, 44, 44, 0.23); width: 100%;}
+.gvad .row-info {text-align: center;font-size: 0px;}
+.gvad .row-info span {display: inline-block;font-size: 20px; color: #f00; padding: 10px 0px;}
+
+
+.main .row-title{ width: 100%; display: inline-block; overflow: hidden; text-align: center; margin-top: 10px;}
+.main .row-title .col-wz a{ height: 25px; line-height: 27px; margin-top: 3px; font-size: 26px; letter-spacing:4px; color: #f00;}
+.main .row-title .col-hx {display: block; overflow: hidden; width: 260px; margin: 0 auto; margin-top: 8px;  border:1px solid #f00; }
+.main .row-title .col-yw {  height: 25px; line-height: 27px; letter-spacing:2px; font-size: 14px; color: #f00; }
+.main .row-tu { border: 1px solid #666;}
+
+.div-dzjys .row-cont li{ width: 20%; float: left; color: #000; }
+.div-dzjys .row-cont li div {margin: 5px 45px;}
+.div-dzjys .row-cont li .c-img {
+    box-shadow: 0px 0px 0px 2px #9d9d9d inset; border-radius: 50%;
+}
+/* background: center no-repeat;background-size: 80px auto; */
+.div-dzjys .row-cont li .c-img img {left: 50%;top: 50%;width: 80px;transform: translate(-50%, -50%);}
+
+.div-dzjys .row-cont li span{
+    margin-top: 10px;text-align: center;font-size: 24px;
+}
+.div-dzjys .row-cont li p {
+    height: 160px; line-height: 24px;margin-top: 10px;font-size: 18px;color: #666;
+}
+
+.div-anli { margin-bottom: 10px;}
+
+.div-anli .row-more .c-more{ height: 45px; display: block; overflow: hidden; margin-bottom: 10px; }
+.div-anli .row-more .c-more span{
+    height: 45px; line-height: 47px;  display: block; overflow: hidden; text-align: center; font-size: 20px; color: #f00;
+}
+
+.div-anli .row-con li a {display: block;overflow: hidden;border: 1px solid #ccc;}
+.div-anli .row-con .b-l {float: left;width: 50%;margin-right: 10px;}
+.div-anli .row-con .b-l li .c-img {padding-top: 600px;}
+.div-anli .row-con .b-l li span{
+    height: 50px; line-height: 52px;margin-top: 30px;text-align: center;font-size: 30px; color: #666;
+}
+.div-anli .row-con .b-l li p {height: 25px;line-height: 27px;margin-bottom: 30px;text-align: center;font-size: 16px;}
+.div-anli .row-con .b-r li{ margin-bottom: 13px;}
+.div-anli .row-con .b-r li .c-img {float: left;width: 400px;padding-top: 360px;}
+.div-anli .row-con .b-r li div {display: table-cell;width: 190px;height: 360px;vertical-align: middle;}
+.div-anli .row-con .b-r li span {
+    float: left;width: 50px;line-height: 36px;margin-left: 50px;text-align: center;font-size: 30px; color: #666;
+}
+.div-anli .row-con .b-r li p { margin-top: 10px; width: 16px;line-height: 22px;margin-left: 15px;text-align: center;font-size: 16px;}
+.div-dzfw { margin-bottom: 10px;}
+.div-dzsl { margin-bottom: 10px;}
+.div-liuc .row-dzlc img{ display: block; overflow: hidden;}
+.div-content .div{ width: 100%;}
+.div-content .row-phone .d-phone img{ display: block; overflow: hidden;}

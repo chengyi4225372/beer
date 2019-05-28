@@ -1,0 +1,186 @@
+<include file="public/head" />
+
+    <link href="/Public/index/templets/in_dd/css/show_goods.css" type="text/css" rel="stylesheet" />
+
+
+
+
+<include file="public/top" />
+
+<include file="public/menu" />
+
+<style>
+    .div-zs .row-list .part-block {
+        margin: 0px 10px;
+        padding: 10px 20px 20px 20px;
+        background: #fff;
+    }
+    .div-zs .row-list .h2 a:hover {
+        color: #f00;
+    }
+    .h2 a:hover {
+        text-decoration: none;
+    }
+    .h2 h2 a {
+        font-weight: 200;
+        color: #333;
+    }
+    .div-zs .row-list li {
+        margin-top: 10px;
+    }
+    .ul li {
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap
+    }
+    .div-zs .row-list {
+        float: left;
+        width: 33.33%;
+    }
+</style>
+<div id="main" class="main">
+    <div class="div-banner"></div>
+
+    <div id="div-path" class="div-path">
+        <div class="div">
+            <div class="box">
+
+                <div class="block row-path">
+                    <div>
+                        <i>当前位置：</i>
+                        <span><a href="/">首页</a>
+                            <small>&gt;</small>
+                          <small>&gt;</small><a href="{:U('mai/lst',array('id'=>$info['pid']))}">{$cates.title}</a>
+                       </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div-goods" class="div-goods">
+        <div class="div">
+            <div class="box">
+                <div class="block row-gallery">
+                    <div class="ul">
+                        <ul>
+                            <li><img src="/Uploads/{$info.img}" /></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="block row-info">
+                    <div class="b-title">
+                        <h1>{$info.title|default=''}</h1>
+                    </div>
+                    <div class="ul b-attr">
+                        <ul>
+                            <li><b>香型：</b><span>{$info.xiang}</span></li>
+                            <li><b>原料：</b><span>{$info.yuan}</span></li>
+                            <li><b>净含量：</b><span>{$info.han}</span></li>
+                            <li><b>酒精度：</b><span>{$info.du}</span></li>
+                            <li><b>产地：</b><span>{$info.address}</span></li>
+                            <li><b>贮藏方法：</b><span>{$info.fun}</span></li>
+                            <li><b>适用场景：</b><span>{$info.chang}</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="div-content" class="div-content">
+        <div class="div">
+            <div class="box">
+                <div class="block row-content">
+                    <div class="h2"><h2>产品详情</h2></div>
+                    <div class="b-content">
+                        <div class="d-content">
+                            {$info.content|htmlspecialchars_decode}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="block row-recommend">
+                    <div class="h2"><h2>产品推荐</h2></div>
+                    <div class="ul d-img">
+                        <ul>
+                            <volist name="hot" id="vo">
+                                <li>
+                                    <div class="c-box">
+                                        <a class="c-img" href="{:U('mai/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="300" /><em>{$vo.title}</em></a>
+                                        <span><i>香型：{$vo.xiang}</i><i>酒精度：{$vo.du}</i></span>
+                                    </div>
+                                </li>
+                            </volist>
+
+                        </ul>
+                    </div>
+                </div>
+                <!--
+                <div id="div-zs" class="div-zs div-tab">
+                    <div class="div">
+                        <div class="box">
+                            <div class="part-list" style="background:#fff;">
+                                <div class="block row-list">
+                                    <div style="margin:20px 10px" class="part-block">
+                                        <div class="h2">
+                                            <h2><a href="{:U('cooperation/index',array('id'=>11))}">白酒专栏</a></h2>
+                                        </div>
+                                        <div class="ul d-img">
+                                            <ul>
+                                                <volist name="baijiu" id="vo">
+                                                    <li >
+                                                        <a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">◆ {$vo.title}</a>
+                                                    </li>
+                                                </volist>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div><div class="block row-list">
+                                <div style="margin:20px 10px" class="part-block">
+                                    <div class="h2">
+                                        <h2><a href="{:U('cooperation/index',array('id'=>10))}">合作案例</a></h2>
+                                    </div>
+                                    <div class="ul d-img">
+                                        <ul>
+                                            <volist name="hezuo" id="vo">
+                                                <li >
+                                                    <a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">◆{$vo.title} </a>
+                                                </li>
+                                            </volist>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="go2top" class="go2top">
+    <div class="div">
+        <div class="box">
+            <div class="block row-btn">
+                <a class="c-go2top" href="javascript:;"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<include file="public/foot" />
+<script src="/Public/index/templets/in_dd/js/show_goods.js" type="text/javascript"></script>
+
+
+<include file="public/kefu" />
+
+</body>
+</html>
