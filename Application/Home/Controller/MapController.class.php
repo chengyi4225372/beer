@@ -13,11 +13,13 @@ use Home\Controller\BaseController;
 class MapController extends  BaseController
 {
     public $white ='white_cates';
-
+    public $goods ='goods_cates';
 
    public  function index(){
         $white = M($this->white)->select();
         $this->assign('white',$white);
+        $goods=M($this->goods)->select();
+        $this->assign('goods',$goods);
         $this->display();
     }
 }

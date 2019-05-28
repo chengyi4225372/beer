@@ -93,7 +93,7 @@ class  GoodsModel extends Model
             );
         }
         $doDel = false;
-        $doDel = M('good_cates')->where(array('id' => array('in', $param['id'])))->delete();
+        $doDel = M('goods_cates')->where(array('id' => array('in', $param['id'])))->delete();
         $res = $doDel ? array('msg' => $doDel . ' deleted') : array('msg' => 'no delete');
         return array(
             'data' => $res['msg'],
@@ -213,7 +213,7 @@ class  GoodsModel extends Model
      */
     public function Del($param)
     {
-        $model = M('good');
+        $model = M('goods');
         $doDel = false;
         $doDel = $model->where(array('id' => array('in', $param['id'])))->delete();
         $res = $doDel ? array('msg' => $doDel . ' deleted') : array('msg' => 'no delete');

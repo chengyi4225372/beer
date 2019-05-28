@@ -99,13 +99,12 @@
                                     </dd>
                                 </dl>
                             </li>
-                            <li class="col10"><span><a href="/what/">原浆单页</a></span></li>
-                            <li class="col11 col-1"><span><a href="/lscp/">零售产品</a></span>
+                            <li class="col10"><span><a href="">原浆单页</a></span></li>
+                            <li class="col11 col-1"><span><a href="{:U('mai/lst')}">零售产品</a></span>
                                 <dl>
-                                    <dd class="col1"><a href="/qianchaojiuye/chanpin/qianchaoniang/">黔朝酿</a></dd>
-                                    <dd class="col2"><a href="/qianchaojiuye/chanpin/dongcangjingpin/">洞藏精品</a></dd>
-                                    <dd class="col3 col-1"><a href="/qianchaojiuye/chanpin/cangjianjiulou/">藏剑酒楼</a>
-                                    </dd>
+                                    <volist name="goods" id="vo" key="k">
+                                        <dd class="col{$k}"><a href="">{$vo.title}</a></dd>
+                                    </volist>
                                 </dl>
                             </li>
                         </ul>
