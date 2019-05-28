@@ -17,6 +17,8 @@ class IndexController extends BaseController
     public $banner ='banner';
     public $service='service';
     public $bai  ='bai';
+    public $new = 'news';
+    public $hezuo ='good';
 
     public function index(){
          $you = M($this->custom)->where(array('is_deleted'=>0))->select();
@@ -27,8 +29,20 @@ class IndexController extends BaseController
         $service = M($this->service)->select();
         $this->assign('service',$service);
         //酒业新闻
-        $bais  =M($this->bai)->where(array('pid'=>12))->order('id desc')->limit(3)->select();
+        $bais  =M($this->bai)->where(array('pid'=>12,'is_deleted'=>0))->order('id desc')->limit(3)->select();
         $this->assign('bais',$bais);
+        //白酒知识
+        $bknow = M($this->bai)->where(array('pid'=>9,'is_deleted'=>0))->order('id desc')->limit(3)->select();
+        $this->assign('bknow',$bknow);
+        //酒业新闻
+        $bnews =M($this->bai)->where(array('pid'=>10,'is_deleted'=>0))->order('id desc')->limit(3)->select();
+        $this->assign('bnews',$bnews);
+        //公司动态
+        $company =M($this->new)->where(array('pid'=>5,'is_deleted'=>0))->order('id desc')->limit(3)->select();
+        $this->assign('company',$company);
+        //合作案例
+        $hezuo = M($this->hezuo)->where(array('pid'=>10,'is_deleted'=>0))->order('id desc')->limit(3)->select();
+        $this->assign('hezuo',$hezuo);
         $this->display();
     }
 
