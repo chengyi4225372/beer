@@ -22,7 +22,7 @@ class OemController extends  BaseController
     }
 
     //分页
-    public function index(){
+    public function lst(){
         $pid =  I('get.id');
         $pages= 8;
         if(empty($pid)){
@@ -38,6 +38,8 @@ class OemController extends  BaseController
         $this->assign('list',$list);
         $hot = $this->hot($pid);
         $this->assign('hot',$hot);
+        $oem = M($this->cates)->select();
+        $this->assign('oem',$oem);
         $this->display();
     }
 
@@ -55,6 +57,10 @@ class OemController extends  BaseController
         $this->assign('next',$next);
         $cates = $this->cates($pid);
         $this->assign('cates',$cates);
+        $oem = M($this->cates)->select();
+        $this->assign('oem',$oem);
+        $pro = M($this->table)->where(array('pid'=>$pid))->order('lan desc')->limit(4)->select();
+        $this->assign('pro',$pro);
         $this->display();
     }
 
