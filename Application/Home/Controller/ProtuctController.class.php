@@ -59,6 +59,9 @@ class ProtuctController extends  BaseController
         //白酒专栏
         $baijiu = M($this->hezuo)->where(array('pid'=>11))->order('id desc')->limit(6)->select();
         $this->assign('baijiu',$baijiu);
+        //产品
+        $pro =M($this->table)->where(array('pid'=>$detail['pid']))->order('lan desc,id desc')->limit(2)->select();
+        $this->assign('pro',$pro);
         $this->display();
     }
 

@@ -1,0 +1,72 @@
+@import "head.css";
+@import "footer.css";
+.about-wrap{
+	margin-bottom:10px;
+}
+.about-wrap .box{
+	margin:0 10px;
+	
+}
+.about-wrap .about-content div{
+	display: block;position:relative; overflow: hidden;
+}
+.about-wrap .about-content div p img{
+	width:100%;height:auto !important;display:block; overflow:hidden;
+}
+.about-wrap .about-content p{
+	line-height:25px;font-size:14px; color:#999;
+}
+
+.left-wrap .div {
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    transform: translate(-100%, 0);
+    transition: transform 0.5s;
+
+}
+
+.left-wrap .box {
+	position:relative;display:block;
+	background:rgba(0,0,0,0.75);
+	border-radius:2px;
+}
+
+.left-wrap .box .left-list  span{
+	display:inline-block; padding:6px 3px;
+	color:#900; font-size:18px; font-weight:700;
+}
+.left-wrap .box .left-list ul { background:#901}
+.left-wrap .box .left-list ul li{
+	margin:10px;
+}
+
+.left-wrap .box .left-list ul li a{
+	color:#FFF; font-size:14px;
+}
+.left-wrap .box .left-list span i{
+	 position:absolute ;right:0;
+	 color:#900; font-size:12px;
+}
+
+
+.men-wrap{position: fixed; bottom:0; width:100%;}
+.men-wrap .box .row-list{
+	border-radius:2px;
+}
+.men-wrap .box .row-list ul{
+	list-style:none;
+}
+.men-wrap .box .row-list ul li{
+	float:left;
+	width:25%; height:40px; line-height:42px;
+	text-align:center; font-size:14px; color:#FFF;
+	background:#F00;
+}
+
+
+

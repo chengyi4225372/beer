@@ -92,6 +92,14 @@
                                 </div>
 
                                 <div class="am-form-group">
+                                    <label for="title" class="am-u-sm-3 am-form-label">浏览量<span class="tpl-form-line-small-title">Number</span></label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" class="tpl-form-input" id="lan" placeholder="请输入数字" value="{$news_detail.lan}">
+                                        <small>请填写数字</small>
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
                                     <label for="user-weibo" class="am-u-sm-3 am-form-label">展示图 <span class="tpl-form-line-small-title">Images</span></label>
                                     <div class="am-u-sm-9">
                                         <div class="am-form-group am-form-file">
@@ -215,7 +223,8 @@
                      pid : $('#pid option:selected').val(),
                      is_show : is_show,
                      img : _this._img_path,
-                     content : $('#content').val()
+                     content : $('#content').val(),
+                     lan:$("#lan").val(),
                 }
 
                 if (!_page_id) {
