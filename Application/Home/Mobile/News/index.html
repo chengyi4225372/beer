@@ -9,7 +9,7 @@
     <div id="position-wrap" class="position-wrap">
         <div class="div">
             <div class="box">
-                <div><a href="/xinwen/">&lt白酒文化</a></div>
+                <div><a href="{:U('news/index')}">&lt白酒文化</a></div>
             </div>
         </div>
     </div>
@@ -20,73 +20,20 @@
                 <div class="row-list">
                     <div class="ul d-img">
                         <ul>
-                            <li>
-                                <a href="/xinwen/jiuye/2583.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/190509/thumb_250_200_3-1Z50Z929255C.jpg" />
-                                        <i>2019-05-22</i>
-                                    </em>
-                                    <div>
-                                        <span>袁仁国被免去贵州省政协全部职务！</span>
-                                        <p>（2019年5月5日政协第十二届贵州省委员会常务委员会第十次会议通…</p>
-                                    </div>
-                                </a>
-                            </li><li>
-                            <a href="/xinwen/jiuye/2582.html">
-                                <em class="c-img">
-                                    <img src="http://www.daqianchao.com/templets/indd/images/default.jpg" />
-                                    <i>2019-04-30</i>
-                                </em>
-                                <div>
-                                    <span>五粮液集团华东市场一高管被检方决定逮捕</span>
-                                    <p>28日，记者从四川检察机关了解到，因涉嫌受贿罪，五粮液集团有限…</p>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="/xinwen/jiuye/2578.html">
-                                <em class="c-img">
-                                    <img src="http://www.daqianchao.com/uploads/allimg/190404/thumb_250_200_3-1Z4040930022b.jpg" />
-                                    <i>2019-04-04</i>
-                                </em>
-                                <div>
-                                    <span>横跨三省上亿元假烟酒案侦破！立功的竟是它...</span>
-                                    <p>可是近日，赣州瑞金警方依打掉一个“产运销”一条龙，横跨皖闵粤…</p>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="/xinwen/jiuye/2572.html">
-                                <em class="c-img">
-                                    <img src="http://www.daqianchao.com/uploads/allimg/190328/3_032P952321403.jpg" />
-                                    <i>2019-03-28</i>
-                                </em>
-                                <div>
-                                    <span>飞天茅台涨至2200元，商家预估还会涨价！恐迎历史最高价！</span>
-                                    <p>今日53度飞天茅台酒(500ml)批价涨到1900-1950之间，目前缺货严重…</p>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="/xinwen/jiuye/2571.html">
-                                <em class="c-img">
-                                    <img src="http://www.daqianchao.com/uploads/allimg/190323/thumb_250_200_3-1Z323095504F5.jpg" />
-                                    <i>2019-03-23</i>
-                                </em>
-                                <div>
-                                    <span>荷花酒是怎样的一种酒？</span>
-                                    <p>荷花酒到底是种什么酒？最近几年荷花酒频频出现在人们的视野中，…</p>
-                                </div>
-                            </a>
-                        </li><li>
-                            <a href="/xinwen/jiuye/2569.html">
-                                <em class="c-img">
-                                    <img src="http://www.daqianchao.com/templets/indd/images/default.jpg" />
-                                    <i>2019-01-29</i>
-                                </em>
-                                <div>
-                                    <span>第101届全国糖酒会落户天津</span>
-                                    <p>中新网1月29日电 28日，天津市人民政府与中国糖业酒类集团有限公…</p>
-                                </div>
-                            </a>
-                        </li>
+                            <volist name="list" id="vo" >
+                                <li>
+                                    <a href="{:U('news/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                        <em class="c-img">
+                                            <img src="/Uploads/{$vo.img}" />
+                                            <i>{$vo.create|strtotime|date="Y-m-d"}</i>
+                                        </em>
+                                        <div>
+                                            <span>{$vo.title}</span>
+                                            <p>{$co.desc|default=''}</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </volist>
                         </ul>
                     </div>
                 </div>
@@ -97,10 +44,10 @@
     <div class="dede_pages">
         <div class="div">
             <div class="box">
-                <ul class="d-pager"><li class="thisclass"><a>1</a></li>
-                    <li><a href='/xinwen/?tid=6&TotalResult=1408&PageNo=2'>2</a></li>
-                    <li><a href='/xinwen/?tid=6&TotalResult=1408&PageNo=3'>3</a></li>
-                    <li><a href='/xinwen/?tid=6&TotalResult=1408&PageNo=2'>下一页</a></li>
+                <ul class="d-pager">
+                    <for start="0" end="$size" name="i" >
+                        <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('news/index',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
+                    </for>
                 </ul>
             </div>
         </div>

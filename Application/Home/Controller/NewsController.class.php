@@ -28,11 +28,11 @@ class NewsController extends  BaseController
         if(empty($pid)){
             $count =  M($this->table)->where(array('is_deleted'=>0))->count();
             $size = $count/$pages;
-            $list  = M($this->table)->where(array('is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+            $list  = M($this->table)->where(array('is_deleted'=>0))->order('lan desc')->page($_GET['p'].','.$pages)->select();
         }else{
             $count =  M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->count();
             $size = $count/$pages;
-            $list  = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+            $list  = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->order('lan desc')->page($_GET['p'].','.$pages)->select();
         }
         $this->assign('size',$size);
         $this->assign('list',$list);
@@ -55,6 +55,9 @@ class NewsController extends  BaseController
         $this->assign('next',$next);
         $cates = $this->cates($pid);
         $this->assign('cates',$cates);
+        //同类新闻
+        $order = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->order('lan desc,id desc')->limit(4)->select();
+        $this->assign('order',$order);
         $this->display();
     }
 

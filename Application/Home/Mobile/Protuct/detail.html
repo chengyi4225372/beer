@@ -55,10 +55,9 @@
                     <div class="h2"><h2>相关资讯</h2></div>
                     <div class="ul">
                         <ul>
-                            <li><a href="/xinwen/jiuye/2585.html">茅台未来将涨至4000元、五粮液</a></li>
-                            <li><a href="/xinwen/jiuye/2583.html">袁仁国被免去贵州省政协全部职</a></li>
-                            <li><a href="/xinwen/jiuye/2582.html">五粮液集团华东市场一高管被检</a></li>
-                            <li><a href="/xinwen/jiuye/2578.html">横跨三省上亿元假烟酒案侦破！</a></li>
+                            <volist name="news_four" id="vo" >
+                                <li><a href="{:U('new/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a></li>
+                            </volist>
 
                         </ul>
                     </div>

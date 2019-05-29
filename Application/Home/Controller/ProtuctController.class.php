@@ -16,16 +16,26 @@ class ProtuctController extends  BaseController
 
    public $hezuo = 'good';
 
+   public $news = 'news';
+
     //产品推荐
     public function tui($id){
-        $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id))->order('id desc')->limit(4)->select();
+        $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id,'is_deleted'=>0))->order('id desc')->limit(4)->select();
         return $res?$res:'';
     }
 
     public function hot($id){
-        $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id))->order('id desc')->limit(10)->select();
+        $res = M($this->table)->where(array('is_show'=>1,'pid'=>$id,'is_deleted'=>0))->order('id desc')->limit(10)->select();
         return $res?$res:'';
     }
+
+    //手机端新闻
+    public function four(){
+        $four = M($this->news)->where(array('is_deleted'=>0))->order('lan desc')->limit(4)->select();
+        return $four?$four:'';
+    }
+
+
 
     //todo 分页
     public function index(){
@@ -62,6 +72,8 @@ class ProtuctController extends  BaseController
         //产品
         $pro =M($this->table)->where(array('pid'=>$detail['pid']))->order('lan desc,id desc')->limit(2)->select();
         $this->assign('pro',$pro);
+        $news_four =$this->four();
+        $this->assign('news_four',$news_four);
         $this->display();
     }
 
