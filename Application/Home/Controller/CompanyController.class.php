@@ -38,6 +38,8 @@ class CompanyController extends  BaseController
     }
 
     public function lianxi(){
+        $map = M('privacy')->find(1);
+        $this->assign('map',$map);
         $this->display();
     }
 
