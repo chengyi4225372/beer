@@ -83,6 +83,15 @@ class DingController extends  BaseController
         //定制酒新闻
         $news=M('ding')->where(array('pid'=>9,'is_deleted'=>0,'is_show'=>1))->order('lan desc,id desc')->limit(4)->select();
         $this->assign('news',$news);
+        //婚宴酒 按浏览推荐
+        $hun = M('protuct')->where(array('pid'=>10,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(4)->select();
+        $this->assign('hun',$hun);
+        //按id 倒序
+        $order_hun = M('protuct')->where(array('pid'=>10,'is_show'=>1,'is_deleted'=>0))->order('id desc')->limit(9)->select();
+        $this->assign('order_hun',$order_hun);
+        //原浆
+        $yuan = M('protuct')->where(array('pid'=>8,'is_show'=>1,'is_deleted'=>0))->order('lan desc,id desc')->limit(9)->select();
+        $this->assign('yuan',$yuan);
         $this->display();
     }
 
