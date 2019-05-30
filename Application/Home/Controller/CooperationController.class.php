@@ -16,6 +16,15 @@ class CooperationController extends  BaseController
     public $cates = 'good_cates';
 
     public function jiamen(){
+        //散酒
+        $san = M('protuct')->where(array('pid'=>7,'is_deleted'=>0,'is_show'=>1))->order('lan desc')->limit(10)->select();
+        $this->assign('san',$san);
+        //合作案例 招商代理
+        $hezuo = M('good')->where(array('pid'=>10,'is_deleted'=>0,'is_show'=>1))->order('lan desc')->limit(6)->select();
+        $this->assign('hezuo',$hezuo);
+        //酒业新闻
+        $news =M('news')->where(array('pid'=>7,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        $this->assign('news',$news);
         $this->display();
     }
 
