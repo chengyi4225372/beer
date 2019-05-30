@@ -138,6 +138,7 @@ class DingModel extends Model
             'pid'=>$param['pid'],
             'lan'=>$param['lan'],
             'desc'=>$param['desc'],
+            'img'=>$param['img'],
         ));
         $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
         return array(
@@ -178,6 +179,7 @@ class DingModel extends Model
                 'pid'=>$param['pid'],
                 'lan'=>$param['lan'],
                 'desc'=>$param['desc'],
+                'img'=>$param['img'],
             ));
 
         $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
