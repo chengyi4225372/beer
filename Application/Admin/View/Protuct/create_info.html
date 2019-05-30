@@ -31,6 +31,17 @@
                                     </div>
                                 </div>
 
+                                <div class="am-form-group">
+                                    <label for="is_style" class="am-u-sm-3 am-form-label">推荐系列<span class="tpl-form-line-small-title">Is_style</span></label>
+                                    <div class="am-u-sm-9">
+                                        <select data-am-selected="{searchBox: ''}" style="display: none;" id="is_style">
+                                                <option value="">请选择系列.....</option>
+                                                <option value="1">特色系列</option>
+                                                <option value="2">原浆系列</option>
+                                                <option value="3">热销系列</option>
+                                        </select>
+                                    </div>
+                                </div>
 
                                 <div class="am-form-group">
                                     <label for="title" class="am-u-sm-3 am-form-label">名称 <span class="tpl-form-line-small-title">Title</span></label>
@@ -113,6 +124,9 @@
                                     </div>
                                 </div>
 
+
+
+
                                 <div class="am-form-group">
                                     <label for="user-intro" class="am-u-sm-3 am-form-label">是否推荐热门<span class="tpl-form-line-small-title">IsShow</span></label>
                                     <div class="am-u-sm-9">
@@ -123,7 +137,6 @@
                                                 </div>
                                             </div>
                                         </div>
-
                                     </div>
                                 </div>
 
@@ -191,11 +204,10 @@
             if($news_detail) {
 
                 $("#pid").find("option[value="+$news_detail.pid+"]").attr("selected",true);
+                $("#is_style").find("option[value="+$news_detail.is_style+"]").attr("selected",true);
 
                 if($news_detail.is_show == 0) {
-
                     $("#is_show").attr('checked',false)
-
                 }
                 //图片显示
                 _this._img_path = $news_detail.img;
@@ -225,6 +237,7 @@
                      img : _this._img_path,
                      content : $('#content').val(),
                      lan:$("#lan").val(),
+                     is_style:$('#is_style option:selected').val(),
                 }
 
                 if (!_page_id) {

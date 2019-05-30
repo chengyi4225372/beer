@@ -34,6 +34,7 @@
                                             <th>酒精度</th>
                                             <th>产地</th>
                                             <th>浏览量</th>
+                                            <th>推荐系列</th>
                                             <th>时间</th>
                                             <th>操作</th>
                                         </tr>
@@ -50,6 +51,17 @@
                                                 <td>{$vo.du}</td>
                                                 <td>{$vo.address}</td>
                                                 <td>{$vo.lan}</td>
+                                                <td>
+                                                    <if condition="$vo.is_style eq 0">
+                                                        没有选择推荐系列
+                                                      <elseif condition="$vo.is_style eq 1" />
+                                                        特色系列
+                                                        <elseif condition="$vo.is_style eq 2" />
+                                                        原浆系列
+                                                        <else />
+                                                        热销系列
+                                                    </if>
+                                                </td>
                                                 <td>{$vo.create_time}</td>
                                                 <td>
                                                     <div class="tpl-table-black-operation">

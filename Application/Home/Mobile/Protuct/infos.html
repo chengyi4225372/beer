@@ -186,6 +186,7 @@
         </div>
     </div>
 
+    <!--
     <div id="div-video" class="div-video div-tab">
         <div class="div">
             <div class="box">
@@ -222,7 +223,7 @@
             </div>
         </div>
     </div>
-
+    -->
     <div id="div-jm" class="div-jm div-tab">
         <div class="div">
             <div class="box">
@@ -459,7 +460,7 @@
             <div class="box">
                 <div class="block row-th">
                     <div class="h2 th1">
-                        <h2><a href="http://www.daqianchao.com/cpzx/">产品推荐</a></h2>
+                        <h2><a href="{:U('protuct/index')}">产品推荐</a></h2>
                     </div>
                 </div>
                 <div class="block row-list slide">
@@ -468,70 +469,16 @@
                     <div class="part-block">
                         <div class="ul d-img">
                             <ul>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/yuanjiang/1538.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P5131645324W.jpg" width="300" height="300" /></em>
-                                            <span><i>原浆典藏定制酒</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/yuanjiang/1133.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P513151020341.jpg" width="300" height="300" /></em>
-                                            <span><i>大</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/sanjiu/2130.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180131/6-1P13111334QU.jpg" width="300" height="300" /></em>
-                                            <span><i>茅台镇酱香型白酒</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/hunyan/2250.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180317/thumb_300_300_9-1P31F95Z3P8.jpg" width="300" height="300" /></em>
-                                            <span><i>喜酒定制酒(布袋)</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/hunyan/2245.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P513143343263.jpg" width="300" height="300" /></em>
-                                            <span><i>家有喜事婚宴酒(布袋)</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/hunyan/2244.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P5131426261P.jpg" width="300" height="300" /></em>
-                                            <span><i>最新婚宴酒推荐(礼盒)</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/hunyan/2243.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180509/thumb_300_300_6-1P50914055A04.jpg" width="300" height="300" /></em>
-                                            <span><i>百年好合婚宴酒(礼盒)</i></span>
-                                        </a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a href="http://www.daqianchao.com/hunyan/2242.html">
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180511/thumb_300_300_3-1P5111K251135.jpg" width="300" height="300" /></em>
-                                            <span><i>洞藏婚宴酒定制(礼盒)</i></span>
-                                        </a>
-                                    </div>
-                                </li>
+                                <volist name="t_phone" id="vo" >
+                                    <li>
+                                        <div>
+                                            <a href="{:U('protuct/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                                <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="300" /></em>
+                                                <span><i>{$vo.title}</i></span>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </volist>
 
                             </ul>
                         </div>

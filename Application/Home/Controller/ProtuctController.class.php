@@ -71,6 +71,9 @@ class ProtuctController extends  BaseController
         $cates =M($this->cates)->select();
         $this->assign('cates',$cates);
         $this->assign('list',$list);
+        //手机端推荐
+        $t_phone =M($this->table)->where(array('is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(8)->select();
+        $this->assign('t_phone',$t_phone);
         $this->display();
     }
 

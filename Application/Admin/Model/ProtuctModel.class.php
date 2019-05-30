@@ -147,6 +147,7 @@ class ProtuctModel extends Model
             'du'=>$param['du'],
             'yuan'=>$param['yuan'],
             'lan'=>$param['lan'],
+            'is_style'=>$param['is_style'],
         ));
         $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
         return array(
@@ -195,6 +196,7 @@ class ProtuctModel extends Model
                 'du'=>$param['du'],
                 'yuan'=>$param['yuan'],
                 'lan'=>$param['lan'],
+                'is_style'=>$param['is_style'],
             ));
 
         $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
