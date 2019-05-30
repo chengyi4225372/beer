@@ -6,7 +6,7 @@
  * Time: 10:35
  */
 
-//手机端 白酒 控制器 todo 白酒和 产品重叠 估计需要更换
+//手机端 白酒 控制器
 
 namespace Home\Controller;
 use Think\Controller;
@@ -16,7 +16,6 @@ class DrinkController extends  BaseController
 {
     public $table = 'bai';
     public $cates ='bai_cates';
-
 
 
     public function hot($pid){
