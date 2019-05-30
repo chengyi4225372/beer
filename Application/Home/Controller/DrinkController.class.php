@@ -11,7 +11,6 @@
 namespace Home\Controller;
 use Think\Controller;
 use Home\Controller\BaseController;
-
 class DrinkController extends  BaseController
 {
     public $table = 'bai';
@@ -23,8 +22,6 @@ class DrinkController extends  BaseController
         return $arr?$arr:'';
     }
 
-
-
     public function baijiu(){
          $this->display();
      }
@@ -35,11 +32,11 @@ class DrinkController extends  BaseController
         if(empty($pid)){
             $count =  M($this->table)->where(array('is_deleted'=>0))->count();
             $size = $count/$pages;
-            $list  = M($this->table)->where(array('is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+            $list  = M($this->table)->where(array('is_deleted'=>0))->order('lan desc')->page($_GET['p'].','.$pages)->select();
         }else{
             $count =  M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->count();
             $size = $count/$pages;
-            $list  = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->page($_GET['p'].','.$pages)->select();
+            $list  = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->order('lan desc')->page($_GET['p'].','.$pages)->select();
         }
         $this->assign('size',$size);
         $this->assign('list',$list);
@@ -61,6 +58,9 @@ class DrinkController extends  BaseController
         $this->assign('next',$next);
         $cates = $this->cates($pid);
         $this->assign('cates',$cates);
+        //同类新闻
+        $order = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->order('lan desc,id desc')->limit(4)->select();
+        $this->assign('order',$order);
         $this->display();
     }
 
@@ -77,6 +77,7 @@ class DrinkController extends  BaseController
         $top =  M($this->table)->where(array('id'=>array('lt',$id),'is_deleted'=>0))->order(array('id'=>'desc'))->limit(1)->find();
         return $top?$top:'';
     }
+
 
     //下一篇
     public function next($id){

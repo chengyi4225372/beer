@@ -14,6 +14,8 @@ class ProtuctController extends  BaseController
 {
    public $table='protuct';
 
+   public $cates = 'protuct_cates';
+
    public $hezuo = 'good';
 
    public $news = 'news';
@@ -56,6 +58,26 @@ class ProtuctController extends  BaseController
         $this->assign('size',$size);
         $this->display();
     }
+
+
+    public function infos(){
+
+        $pid =I('get.id');
+        if(empty($pid)){
+            $list  =M($this->table)->where(array('is_deleted'=>0))->order('lan desc,id desc')->limit(4)->select();
+        }else{
+            $list  =M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->order('lan desc,id desc')->limit(4)->select();
+        }
+        $cates =M($this->cates)->select();
+        $this->assign('cates',$cates);
+        $this->assign('list',$list);
+        $this->display();
+    }
+
+
+     //查询
+
+
 
     public function detail(){
         $id=I('get.id');
