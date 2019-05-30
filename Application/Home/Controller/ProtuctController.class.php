@@ -78,9 +78,6 @@ class ProtuctController extends  BaseController
     }
 
 
-     //查询
-
-
 
     public function detail(){
         $id=I('get.id');
@@ -103,6 +100,19 @@ class ProtuctController extends  BaseController
     }
 
     public function cp(){
+        $goods = M('goods_cates')->order('id desc')->select();
+        $this->assign('goods',$goods);
+        $id=I('get.id');
+        if(isset($id)){
+            $id =  M('goods_cates')->min('id');
+        }
+       $new_goods = M('goods')->where(array('pid'=>$id,'is_deleted'=>0))->order('id desc')->select();
+        $this->assign('new_goods',$new_goods);
+        //合作案例
+        $hezuo  = M($this->hezuo)->where(array('pid'=>10))->order('id desc')->limit(10)->select();
+        $this->assign('hezuo',$hezuo);
+        $cates = M('protuct_cates')->select();
+        $this->assign('cates',$cates);
         $this->display();
     }
 }

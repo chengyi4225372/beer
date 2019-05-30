@@ -20,7 +20,7 @@
         </div>
     </div>
 
-    <div id="div-cont" class="div-cont">
+    <div  class="div-cont">
         <div class="div">
             <div class="box">
                 <div class="row-hx">
@@ -37,136 +37,31 @@
                 <!-- 新闻资讯de 导航标签-->
                 <div class="row-nav">
                     <ul>
-                        <li><a href="javascript:;">黔朝酿</a></li>
-                        <li><a href="javascript:;">洞藏精品</a></li>
-                        <li><a href="javascript:;">藏剑酒楼</a></li>
+                        <volist name="goods" id="vo" >
+                            <li <eq name="Think.get.id" value="$vo.id">class="on" </eq> ><a href="{:U('protuct/cp',array('id'=>$vo['id']))}">{$vo.title}</a></li>
+                        </volist>
+
                     </ul>
                 </div>
 
                 <div class="block row-list">
                     <div class="ul b-list d-img">
                         <ul>
-                            <li>
-                                <a href="/qianchaojiuye/2258.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/180512/thumb_300_300_3-1P512114259543.jpg" />
-                                        <i>黔朝酿酒＂精品＂</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2257.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121056050-L.jpg" />
-                                        <i>黔朝酿</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2259.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121230350-L.jpg" />
-                                        <i>黔朝酿酒定制</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2260.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121232530-L.jpg" />
-                                        <i>酿酒之酒精品</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
+                            <volist name="new_goods" id="vo">
+                                <li>
+                                    <a href="{:U('mai/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                        <em class="c-img">
+                                            <img src="/Uploads/{$vo.img}" />
+                                            <i>{$vo.title}</i>
+                                        </em>
+                                        <div><i>香型:{$vo.xiang}</i><ins>酒精度:{$vo.du}</ins></div>
+                                    </a>
+                                </li>
+                            </volist>
 
                         </ul>
                     </div>
-                    <div class="ul b-list d-img">
-                        <ul>
-                            <li>
-                                <a href="/qianchaojiuye/2265.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/180512/thumb_300_300_3-1P5121613191B.jpg" />
-                                        <i>洞藏酒之自然美</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2264.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121236260-L.jpg" />
-                                        <i>洞藏老酒之洞藏精品</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2262.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121234590-L.jpg" />
-                                        <i>洞藏精品之洞藏美</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2261.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121233570-L.jpg" />
-                                        <i>洞藏、精品</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
 
-                        </ul>
-                    </div>
-                    <div class="ul b-list d-img">
-                        <ul>
-                            <li>
-                                <a href="/qianchaojiuye/2267.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/180512/thumb_300_300_3-1P512161242952.jpg" />
-                                        <i>藏剑酒之酒楼</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2266.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/180512/thumb_300_300_3-1P512114230U0.jpg" />
-                                        <i>藏剑酒</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2268.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121239420-L.jpg" />
-                                        <i>藏剑酒之自然美</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/2269.html">
-                                    <em class="c-img">
-                                        <img src="http://www.daqianchao.com/uploads/allimg/180412/thumb_300_300_3-1P4121240140-L.jpg" />
-                                        <i>藏剑酒、真心好喝</i>
-                                    </em>
-                                    <div><i>香型:酱香型</i><ins>酒精度:53%</ins></div>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
                 </div>
             </div>
         </div>
@@ -211,15 +106,9 @@
                         <div class="ul">
                             <h2>热门推荐<hr></h2>
                             <ul>
-                                <li><a href="http://www.daqianchao.com/kehu/2364.html"><i>1021</i><em>1</em><span>四川省巴中市2018年5月2日，签订</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1545.html"><i>669</i><em>2</em><span>福建宁德市陈姐和林姐成功代理</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/2362.html"><i>599</i><em>3</em><span>山东省临沂市张总2018年7月10日</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1317.html"><i>598</i><em>4</em><span>热烈庆祝重庆市习老板成功成为公</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/2213.html"><i>597</i><em>5</em><span>祝贺江西赣州欧阳总成功成为洞藏</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/2363.html"><i>523</i><em>6</em><span>海南省海口市林总与公司美女招商</span></a></li>
-                                <li><a href="http://www.daqianchao.com/kehu/1640.html"><i>520</i><em>7</em><span>热烈庆贺钟先生加盟贵州大黔朝开</span></a></li>
-                                <li><a href="http://www.daqianchao.com/xinwen/zhangshang/874.html"><i>515</i><em>8</em><span>洞藏老陈白酒坛装的好喝还是瓶装</span></a></li>
-
+                                <volist name="hezuo" id="vo" key="k">
+                                    <li><a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><i>{$vo.lan}</i><em>{$k}</em><span>{$vo.title|mb_substr='0','20','utf-8'}</span></a></li>
+                                </volist>
                             </ul>
                         </div>
                     </div>
@@ -266,7 +155,6 @@
                                     <span><a href="">华山论剑酒</a></span>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                     <div class="ul d-img">
@@ -307,7 +195,6 @@
                                     <span><a href="">窖泥封坛酒木箱装</a></span>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                     <div class="ul d-img">
@@ -471,7 +358,6 @@
                                     <span><a href="">婚宴酒水团购(礼盒)</a></span>
                                 </div>
                             </li>
-
                         </ul>
                     </div>
                 </div>
