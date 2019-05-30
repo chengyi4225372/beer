@@ -99,6 +99,7 @@ class ProtuctController extends  BaseController
         $this->display();
     }
 
+    //todo 未完成
     public function cp(){
         $goods = M('goods_cates')->order('id desc')->select();
         $this->assign('goods',$goods);
@@ -106,7 +107,7 @@ class ProtuctController extends  BaseController
         if(isset($id)){
             $id =  M('goods_cates')->min('id');
         }
-       $new_goods = M('goods')->where(array('pid'=>$id,'is_deleted'=>0))->order('id desc')->select();
+        $new_goods = M('goods')->where(array('pid'=>$id,'is_deleted'=>0))->order('id desc')->select();
         $this->assign('new_goods',$new_goods);
         //合作案例
         $hezuo  = M($this->hezuo)->where(array('pid'=>10))->order('id desc')->limit(10)->select();

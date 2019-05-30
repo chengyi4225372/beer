@@ -79,4 +79,11 @@ class DingController extends  BaseController
     }
 
 
+    public function dingzhi(){
+        //定制酒新闻
+        $news=M('ding')->where(array('pid'=>9,'is_deleted'=>0,'is_show'=>1))->order('lan desc,id desc')->limit(4)->select();
+        $this->assign('news',$news);
+        $this->display();
+    }
+
 }

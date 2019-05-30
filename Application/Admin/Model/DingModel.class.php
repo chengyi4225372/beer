@@ -81,7 +81,7 @@ class DingModel extends Model
 
     //删除分类
     public function Del_cates($param){
-        $model = M('ding_cates');
+        $model = M('ding');
         // 判断是否存在
         $flag = $model->where(array('pid' => array('eq', $param['id'])))->select();
         if ($flag) {
@@ -121,7 +121,7 @@ class DingModel extends Model
     {
         $model = M('ding');
         // 判断是否存在
-        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0))->find();
+        $flag = $model->where(array('title' => $param['title'],'pid'=>$param['pid'], 'is_deleted' => 0))->find();
         if ($flag) {
             return array(
                 'data' => $param['title'] . '已经存在了',
@@ -156,7 +156,7 @@ class DingModel extends Model
         $model = M('ding');
 
         // 判断是否存在
-        $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0, 'id' => array('neq', $param['id'])))->find();
+        $flag = $model->where(array('title' => $param['title'],'pid'=>$param['pid'], 'is_deleted' => 0, 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(

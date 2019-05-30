@@ -371,39 +371,22 @@
                 <div class="block row-list">
                     <div class="ul b-list d-img">
                         <ul>
-                            <li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/dingzhi/xinwen/1809.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/171205/thumb_200_120_3-1G205141643I7-lp.jpg" width="200" height="120" /></a>
-                                    <span><a href="http://www.daqianchao.com/dingzhi/xinwen/1809.html">个性化定制酒为什么受到越来越多</a></span>
-                                    <p><a href="http://www.daqianchao.com/dingzhi/xinwen/1809.html">个性化定制酒是属于私人品,按照消费者的需求,个性化设计定制属于自己的风格元素在酒瓶上一对一的服务量身打造。......</a></p>
-                                </div>
-                                <em>
-                                    <div>05</div>
-                                    <i>2017-12</i>
-                                </em>
-                            </li>
-                            <li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/dingzhi/xinwen/1811.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/171205/thumb_200_120_3-1G205141305939-lp.jpg" width="200" height="120" /></a>
-                                    <span><a href="http://www.daqianchao.com/dingzhi/xinwen/1811.html">为什么越来越多人选择定制酒？</a></span>
-                                    <p><a href="http://www.daqianchao.com/dingzhi/xinwen/1811.html">企业定制酒是按照企业自身文化和品牌诉求需要,制造商对企业所需的白酒外包装的设计风格和白酒品质满足其独特要求的一款定制白酒.......</a></p>
-                                </div>
-                                <em>
-                                    <div>05</div>
-                                    <i>2017-12</i>
-                                </em>
-                            </li>
-                            <li>
-                                <div class="c-box">
-                                    <a class="c-img" href="http://www.daqianchao.com/dingzhi/xinwen/1810.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/171205/thumb_200_120_3-1G205141513127-lp.jpg" width="200" height="120" /></a>
-                                    <span><a href="http://www.daqianchao.com/dingzhi/xinwen/1810.html">企业定制酒有什么作用？</a></span>
-                                    <p><a href="http://www.daqianchao.com/dingzhi/xinwen/1810.html">企业定制酒是按照企业自身文化和品牌诉求需要,制造商对企业所需的白酒外包装的设计风格和白酒品质满足其独特要求的一款定制白酒.......</a></p>
-                                </div>
-                                <em>
-                                    <div>05</div>
-                                    <i>2017-12</i>
-                                </em>
-                            </li>
+                            <volist name="news" id="vo" key="k">
+                                <li>
+                                    <div class="c-box">
+                                        <a class="c-img" href="{:U('ding/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/uploads/{$vo.img}" width="200" height="120" /></a>
+                                        <span>
+                                            <a href="{:U('ding/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">个性化定制酒为什么受到越来越多</a></span>
+                                        <p>
+                                            <a href="{:U('ding/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">个性化定制酒是属于私人品,按照消费者的需求,个性化设计定制属于自己的风格元素在酒瓶上一对一的服务量身打造。......</a></p>
+                                    </div>
+                                    <em>
+                                        <div>{$k}</div>
+                                        <i>{$vo.create_time|strtotime|date="Y-m-d",###}</i>
+                                    </em>
+                                </li>
+                            </volist>
 
                         </ul>
                     </div>
