@@ -1,0 +1,85 @@
+<include file="public/head" />
+
+    <link href="/Public/index/templets/inddwap/css/show_goods.css" type="text/css" rel="stylesheet" />
+
+<include file="public/menu" />
+
+
+<div id="main" class="main">
+    <div id="div-goods" class="div-goods">
+        <div class="div">
+            <div class="box">
+                <div class="block row-title">
+                    <h1>{$info.title}</h1>
+                </div>
+
+                <div class="block row-gallery">
+                    <div class="ul">
+                        <ul>
+                            <li><img src="/Uploads/{$info.img}" /></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block row-attr">
+                    <div class="h2"><h2>产品参数</h2></div>
+                    <div class="ul">
+                        <ul>
+                            <li><b>香型：</b><span>{$info.xiang}</span></li>
+                            <li><b>产地：</b><span>{$info.address}</span></li>
+                            <li><b>酒精度：</b><span>{$info.du}</span></li>
+                            <li><b>规格：</b><span>{$info.han}</span></li>
+                            <li><b>原料：</b><span>{$info.yuan}</span></li>
+                            <li><b>储存条件：</b><span>{$info.fun}</span></li>
+                            <li><b>适用场景：</b><span>{$info.chang}</span></li>
+                            <li><b>生产日期：</b><span>见瓶口或装箱单</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="block row-content">
+                    <div class="h2"><h2>产品详情</h2></div>
+                    <div class="b-content">
+                        <div class="d-content">
+                            {$info.content|htmlspecialchars_decode}
+                        </div>
+                    </div>
+                </div>
+               <!--
+                <div class="block row-relate-arc">
+                    <div class="h2"><h2>相关资讯</h2></div>
+                    <div class="ul">
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+                -->
+                <div class="block row-relate">
+                    <div class="h2"><h2>相关产品</h2></div>
+                    <div class="ul d-img">
+                        <ul>
+                            <volist name="hot" id="vo" >
+                            <li>
+                                <div class="c-box">
+                                    <a class="c-img" href="{:U('mai/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}"><img src="/Uploads/{$vo.img}" /><em>{$vo.title}</em></a>
+                                </div>
+                            </li>
+                            </volist>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<include file="public/kefu" />
+
+<include file="public/foot" />
+
+<script src="/Public/index/templets/inddwap/js/show_goods.js" type="text/javascript"></script>
+
+</body>
+</html>
+
