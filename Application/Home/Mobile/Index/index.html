@@ -237,28 +237,29 @@
 
                 <div class="row-form">
                     <div class="ul">
-                        <form action="http://www.daqianchao.com/plus/diy.php" enctype="multipart/form-data" method="post">
-                            <input type="hidden" name="action" value="post" />
-                            <input type="hidden" name="diyid" value="2" />
-                            <input type="hidden" name="do" value="2" />
-                            <input type="hidden" name="time" value="" />
-                            <input type="hidden" name="dede_fieldshash" value="" />
-                            <input type="hidden" name="dede_fields" value="chenghu,text;dh,text;qq,text;neirong,multitext;time,datetime" />
+                        <!--<form action="http://www.daqianchao.com/plus/diy.php" enctype="multipart/form-data" method="post">-->
+                      <form>
+                            <!--<input type="hidden" name="action" value="post" />-->
+                            <!--<input type="hidden" name="diyid" value="2" />-->
+                            <!--<input type="hidden" name="do" value="2" />-->
+                            <!--<input type="hidden" name="time" value="" />-->
+                            <!--<input type="hidden" name="dede_fieldshash" value="" />-->
+                            <!--<input type="hidden" name="dede_fields" value="chenghu,text;dh,text;qq,text;neirong,multitext;time,datetime" />-->
                             <ul>
                                 <li class="col-name">
-                                    <em>名字：</em><span><input class="c-input" type="text" name="chenghu" placeholder="" /></span>
+                                    <em>名字：</em><span><input class="c-input" type="text" name="names" placeholder="" /></span>
                                 </li>
                                 <li class="col-tel">
-                                    <em>手机：</em><span><input class="c-input" type="text" name="dh" placeholder="" /></span>
+                                    <em>手机：</em><span><input class="c-input" type="text" name="tel" placeholder="" /></span>
                                 </li>
                                 <li class="col-qq">
-                                    <em>QQ：</em><span><input class="c-input" type="text" name="qq" placeholder="" /></span>
+                                    <em>QQ：</em><span><input class="c-input" type="text" name="wei" placeholder="" /></span>
                                 </li>
                                 <li class="col-content">
-                                    <em>留言：</em><span><textarea name="neirong" placeholder=""></textarea></span>
+                                    <em>留言：</em><span><textarea id="info" placeholder=""></textarea></span>
                                 </li>
                                 <li class="col-submit">
-                                    <span><input class="c-ok" type="submit" value="提交" /><input class="c-reset" type="reset" value="重置" /></span>
+                                    <span><input class="c-ok" type="button" value="提交" /><input class="c-reset" type="reset" value="重置" /></span>
                                 </li>
                             </ul>
                         </form>
@@ -299,9 +300,49 @@
 <include file="public/foot" />
 
 <script src="/Public/index/templets/inddwap/js/index.js" type="text/javascript"></script>
+<script src="/Public/index/templets/inddwap/js/jquery.1.8.2.min.js" type="text/javascript"></script>
+
+<script>
+    function isPhoneNo(phones) {
+        var isPhone = /^1[3|4|5|7|8][0-9]{9}$/;
+        return  isPhone.test(phones);
+    }
+
+    $(document).ready(function(){
+        $(".c-ok").click(function(){
+            var names = $("input[name='names']").val();
+            var tel = $("input[name='tel']").val();
+            var wei = $("input[name='wei']").val();
+            var info = $("#info").val();
+            if(names == ''){
+                alert('请输入用户姓名！');
+            }else if(tel=='' || isPhoneNo(tel)==false){
+                alert('手机号码不合法！');
+            }else if(wei ==''){
+                alert('请输入微信或者qq号码！');
+            }else {
+                $.ajax({
+                    url:"{:U('index/message')}",
+                    type:'post',
+                    data:{'names':names,'tel':tel,'wei':wei,'info':info},
+                    success:function(res){
+                        if(res.code == 200){
+                            alert(res.msg);
+                            window.location.reload();
+                        }else{
+                            alert(res.msg);
+                            window.location.reload();
+                        }
+                    }
+                })
+            }
+        })
+    })
+</script>
+
+
+
+
 
 </body>
-</html><!--script type="text/javascript" src="https://hm.baidu.com/hm.js?a267108febeef6c754ac832c0fb2d5d4"></script-->
-<!--<script type="text/javascript" src="http://push.zhanzhang.baidu.com/push.js"></script>-->
-<!--<script type="text/javascript" src="https://hm.baidu.com/hm.js?164310c093786d37d8ff75844e3ef608"></script>-->
-<!--<script type="text/javascript" charset="utf-8" src="http://lxbjs.baidu.com/lxb.js?sid=9834759"></script>-->
+</html>
