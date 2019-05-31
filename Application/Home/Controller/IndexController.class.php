@@ -46,7 +46,7 @@ class IndexController extends BaseController
         $this->display();
     }
 
-    //todo 后期优化
+    //留言板
     public function message(){
         $data['names'] = I('post.names');
         $data['wei'] = I('post.wei');
@@ -56,9 +56,9 @@ class IndexController extends BaseController
         $model = M($this->message);
         $res = $model->add($data);
         if($res >0){
-            $this->success('申请成功，请耐心等待审核！');
+            $this->ajaxReturn(array('code'=>200,'msg'=>'提交成功'),'json');
         }else{
-            $this->error('申请失败，请刷新页面重新尝试！');
+            $this->ajaxReturn(array('code'=>400,'msg'=>'提交失败，请重新尝试！'),'json');
         }
     }
 }
