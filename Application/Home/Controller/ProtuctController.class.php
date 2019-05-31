@@ -39,7 +39,6 @@ class ProtuctController extends  BaseController
 
 
 
-    //todo 分页
     public function index(){
         $pid= I('get.id');
         $hot=$this->hot($pid);
@@ -99,7 +98,6 @@ class ProtuctController extends  BaseController
         $this->display();
     }
 
-    //todo 未完成
     public function cp(){
         $goods = M('goods_cates')->order('id desc')->select();
         $this->assign('goods',$goods);
@@ -112,8 +110,16 @@ class ProtuctController extends  BaseController
         //合作案例
         $hezuo  = M($this->hezuo)->where(array('pid'=>10))->order('id desc')->limit(10)->select();
         $this->assign('hezuo',$hezuo);
+        //产品类别
         $cates = M('protuct_cates')->select();
         $this->assign('cates',$cates);
+        $pid =I('get.pid');
+        if(empty($pid)){
+            $list_pros = M('protuct')->where(array('is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        }else{
+            $list_pros = M('protuct')->where(array('pid'=>$pid,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        }
+        $this->assign('list_pros',$list_pros);
         $this->display();
     }
 }
