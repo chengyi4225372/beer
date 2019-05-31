@@ -108,7 +108,7 @@
         <div class="div">
             <div class="box">
                 <div class="block row-th">
-                    <a href="http://www.daqianchao.com/baijiu/xiangxing/">
+                    <a href="{:U('drink/index',array('id'=>10))}">
                         <span>专属·定制</span>
                         <i>送上独一无二的"醉"美祝福</i>
                         <img src="http://www.daqianchao.com/templets/indd/image/dzal/dzal_huab1.png" />
@@ -117,15 +117,21 @@
                 <div class="block row-list">
                     <div class="ul d-img">
                         <ul>
-                            <li>
-                                <div>
-                                    <em><a href="http://www.daqianchao.com/baijiu/xiangxing/1839.html"><i>凤香型</i><u>FENG - FLAVOR TYPE</u></a></em>
-                                    <ins>
-                                        <a class="c-img" href="http://www.daqianchao.com/baijiu/xiangxing/1839.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/171212/6-1G212162455544.jpg" width="300" height="300" /></a>
-                                        <p><a href="http://www.daqianchao.com/baijiu/xiangxing/1839.html">如今的市场上酒的种类繁多，比如说红酒、啤酒、 白酒 等等，但是喝白酒和啤酒的人占大多数。啤酒的种类也有很多，比如说燕京、雪...</a></p>
-                                    </ins>
-                                </div>
-                            </li>
+                            <volist name="beer" id="vo" key="k" >
+                                <li>
+                                    <div>
+                                        <em><a href="{:U('drink/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <i>凤香型</i><u>FENG - FLAVOR TYPE</u>
+                                        </a></em>
+                                        <ins>
+                                            <a class="c-img" href="{:U('drink/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                                <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="300" /></a>
+                                            <p><a href="{:U('drink/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.desc|default=''}</a></p>
+                                        </ins>
+                                    </div>
+                                </li>
+                            </volist>
+                           <!--
                             <li>
                                 <div>
                                     <em><a href="http://www.daqianchao.com/baijiu/xiangxing/1841.html"><i>兼香型</i><u>JIAN - FLAVOR TYPE</u></a></em>
@@ -171,7 +177,7 @@
                                     </ins>
                                 </div>
                             </li>
-
+                         -->
                         </ul>
                     </div>
                 </div>

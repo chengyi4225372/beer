@@ -93,6 +93,10 @@ class DingController extends  BaseController
         //原浆
         $yuan = M('protuct')->where(array('pid'=>8,'is_show'=>1,'is_deleted'=>0))->order('lan desc,id desc')->limit(9)->select();
         $this->assign('yuan',$yuan);
+
+        //香型种类
+        $beer = M('bai')->where(array('pid'=>10,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        $this->assign('beer',$beer);
         $this->display();
     }
 

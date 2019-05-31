@@ -123,7 +123,7 @@ class BaiModel extends Model
 
     $model = M('bai');
     // 判断是否存在
-    $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0))->find();
+    $flag = $model->where(array('title' => $param['title'],'pid'=>$param['pid'], 'is_deleted' => 0))->find();
     if ($flag) {
         return array(
             'data' => $param['title'] . '已经存在了',
@@ -159,7 +159,7 @@ class BaiModel extends Model
     $model = M('bai');
 
     // 判断是否存在
-    $flag = $model->where(array('title' => $param['title'], 'is_deleted' => 0, 'id' => array('neq', $param['id'])))->find();
+    $flag = $model->where(array('title' => $param['title'],'pid'=>$param['pid'],'is_deleted' => 0, 'id' => array('neq', $param['id'])))->find();
 
     if ($flag) {
         return array(
@@ -183,7 +183,9 @@ class BaiModel extends Model
             'lan'=>$param['lan'],
         ));
 
-    $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+
+    ;
+    $res = $doMod ? array('msg' => 'success') : array('msg' => '你没有修改，跳转回列表页！');
 
     return array(
 
