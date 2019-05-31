@@ -11,7 +11,7 @@ use Think\Model;
 
 class WhiteModel extends Model
 {
-    //»ñÈ¡·ÖÀàÁĞ±í
+    //è·å–åˆ†ç±»åˆ—è¡¨
     public function getcates(){
         $model = M('white_cates');
         $where = array('pid'=>0);
@@ -19,15 +19,15 @@ class WhiteModel extends Model
         return $list?$list:'';
     }
 
-    //Ìí¼Ó·ÖÀà
+    //æ·»åŠ åˆ†ç±»
     public function Create_cate($param)
     {
         $model = M('white_cates');
-        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
+        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
         $flag = $model->where(array('title' => $param['title']))->find();
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
+                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -36,7 +36,7 @@ class WhiteModel extends Model
         $doAdd = $model->add(array(
             'title' => $param['title'],
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'ÄúÃ»ÓĞ±à¼­£¬×Ô¶¯Ìø»ØÁĞ±íÒ³!');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'æ‚¨æ²¡æœ‰ç¼–è¾‘ï¼Œè‡ªåŠ¨è·³å›åˆ—è¡¨é¡µ!');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -44,17 +44,17 @@ class WhiteModel extends Model
         );
     }
 
-    //ĞŞ¸Ä·ÖÀà
+    //ä¿®æ”¹åˆ†ç±»
     public function Edit_cate($param)
     {
 
         $model = M('white_cates');
-        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
+        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
         $flag = $model->where(array('title' => $param['title'], 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
+                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -70,7 +70,7 @@ class WhiteModel extends Model
                 'title' => $param['title'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'ÄúÃ»ÓĞ±à¼­£¬×Ô¶¯Ìø»ØÁĞ±íÒ³!');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => 'æ‚¨æ²¡æœ‰ç¼–è¾‘ï¼Œè‡ªåŠ¨è·³å›åˆ—è¡¨é¡µ!');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -78,14 +78,14 @@ class WhiteModel extends Model
         );
     }
 
-    //É¾³ı·ÖÀà
+    //åˆ é™¤åˆ†ç±»
     public function Del_cates($param){
         $model = M('white_cates');
-        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
+        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
         $flag = $model->where(array('pid' => array('eq', $param['id'])))->select();
         if ($flag) {
             return array(
-                'data' => '·ÖÀàÏÂ´æÔÚĞÅÏ¢,²»ÄÜÉ¾³ı£¡',
+                'data' => 'åˆ†ç±»ä¸‹å­˜åœ¨ä¿¡æ¯,ä¸èƒ½åˆ é™¤ï¼',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -102,7 +102,7 @@ class WhiteModel extends Model
 
 
     /**
-     * »ñÈ¡ÁĞ±í
+     * è·å–åˆ—è¡¨
      */
     public function getNews($id)
     {
@@ -113,17 +113,17 @@ class WhiteModel extends Model
     }
 
     /**
-     * ´´½¨
+     * åˆ›å»º
      */
     public function Create($param)
     {
 
         $model = M('white');
-        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
+        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
         $flag = $model->where(array('title' => $param['title'], 'pid'=>$param['pid']))->find();
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
+                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -146,18 +146,18 @@ class WhiteModel extends Model
     }
 
     /**
-     * ĞŞ¸Ä
+     * ä¿®æ”¹
      */
     public function Edit($param)
     {
 
         $model = M('white');
-        // ÅĞ¶ÏÊÇ·ñ´æÔÚ
+        // åˆ¤æ–­æ˜¯å¦å­˜åœ¨
         $flag = $model->where(array('title' => $param['title'],'pid'=>$param['pid'], 'id' => array('neq', $param['id'])))->find();
 
         if ($flag) {
             return array(
-                'data' => $param['title'] . 'ÒÑ¾­´æÔÚÁË',
+                'data' => $param['title'] . 'å·²ç»å­˜åœ¨äº†',
                 'msg' => $model->getLastSql(),
                 'status' => 0,
             );
@@ -176,7 +176,7 @@ class WhiteModel extends Model
                 'create_time' => date('Y-m-d H:i:s'),
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'ÄúÃ»ÓĞ±à¼­£¬×Ô¶¯Ìø»ØÁĞ±íÒ³£¡');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => 'æ‚¨æ²¡æœ‰ç¼–è¾‘ï¼Œè‡ªåŠ¨è·³å›åˆ—è¡¨é¡µï¼');
 
         return array(
 
@@ -191,7 +191,7 @@ class WhiteModel extends Model
     }
 
     /**
-     * É¾³ı
+     * åˆ é™¤
      */
     public function Del($param)
     {

@@ -10,8 +10,6 @@ namespace Admin\Controller;
 use Think\Controller;
 
 class BaiController extends BaseController
-
-
 {
     //分类列表
     public function index(){

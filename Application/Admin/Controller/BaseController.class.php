@@ -35,7 +35,7 @@ class BaseController extends Controller
 
         $upload->maxSize   =     3145728 ;// 设置附件上传大小
 
-        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+        $upload->exts      =     array('jpg', 'gif', 'png', 'jpeg',);// 设置附件上传类型
 
         $upload->rootPath  =     './Uploads/'; // 设置附件上传根目录
 
@@ -71,7 +71,7 @@ class BaseController extends Controller
 
             $upload->maxSize   =     999999999 ;// 设置附件上传大小
 
-            $upload->exts      =    array('jpg', 'gif', 'png', 'jpeg');// 设置附件上传类型
+            $upload->exts      =    array('jpg', 'gif', 'png', 'jpeg','mp4','avi');// 设置附件上传类型
 
             $upload->rootPath  =     './Uploads/'; // 设置附件上传根目录
 

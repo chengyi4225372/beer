@@ -11,20 +11,20 @@ use Think\Controller;
 
 class WhiteController extends BaseController{
 
-    //分类列表
+    //鍒嗙被鍒楄〃
     public function index(){
         $newscate = D('white')->getcates();
         $this->assign('newscate', $newscate);
         $this->display();
     }
-    //分类添加 修改 todo 编辑分类时不跳转
+    //鍒嗙被娣诲姞 淇敼 todo 缂栬緫鍒嗙被鏃朵笉璺宠浆
     public function create(){
         $do = I('do');
         if (empty($do)) {
-            $title = "添加分类";
+            $title = "娣诲姞鍒嗙被";
             $param = I();
             if ($param){
-                $title = "修改分类";
+                $title = "淇敼鍒嗙被";
                 $map['id'] = $param['id'];
                 $news_detail = M('white_cates')->where($map)->order('id desc')->find();
                 $this->assign('news_detail', $news_detail);
@@ -42,7 +42,7 @@ class WhiteController extends BaseController{
             $this->ajaxReturn($result);
         }
     }
-    //删除分类
+    //鍒犻櫎鍒嗙被
     public  function del_cates(){
         $param = I();
         $result = D('white')->Del_cates($param);
@@ -50,7 +50,7 @@ class WhiteController extends BaseController{
     }
 
     /**
-     * 获取分类列表
+     * 鑾峰彇鍒嗙被鍒楄〃
      */
     public function index_info()
     {
@@ -61,7 +61,7 @@ class WhiteController extends BaseController{
     }
 
     /**
-     * 新增/修改
+     * 鏂板/淇敼
      */
     public function create_info()
     {
@@ -70,13 +70,13 @@ class WhiteController extends BaseController{
 
         if (empty($do)) {
 
-            $title = "新建";
+            $title = "鏂板缓";
 
             $param = I();
 
             if ($param){
 
-                $title = "修改";
+                $title = "淇敼";
                 $map['id'] = $param['id'];
 
                 $news_detail = M('white')->where($map)->order('id desc')->find();
@@ -103,7 +103,7 @@ class WhiteController extends BaseController{
     }
 
     /**
-     * 删除
+     * 鍒犻櫎
      */
     public function del_info()
     {
