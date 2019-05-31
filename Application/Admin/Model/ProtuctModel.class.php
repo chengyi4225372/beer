@@ -83,7 +83,7 @@ class ProtuctModel extends Model
     public function Del_cates($param){
         $model = M('protuct');
         // 判断是否存在
-        $flag = $model->where(array('pid' => array('eq', $param['id'])))->select();
+        $flag = $model->where(array('pid' => array('eq', $param['id']),'is_deleted'=>0))->select();
         if ($flag) {
             return array(
                 'data' => '分类下存在信息,不能删除！',

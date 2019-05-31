@@ -83,21 +83,19 @@
         </div>
     </div>
 
-    <div id="div-goods" class="div-goods div-tab">
+    <div  class="div-goods div-tab">
         <div class="div">
             <div class="box">
                 <div class="block row-menu">
                     <div class="h2">
-                        <h2><a href="http://www.daqianchao.com/cpzx/">白酒系列</a></h2>
+                        <h2><a href="{:U('drink/index')}">白酒系列</a></h2>
                     </div>
                     <div class="ul">
                         <ul>
-                            <li class="col1"><a href="/jnftj/">泥巴土坛酒系列</a></li>
-                            <li class="col2"><a href="/sanjiu/">散酒系列</a></li>
-                            <li class="col3"><a href="">窖藏系列</a></li>
-                            <li class="col4"><a href="/yuanjiang/">定制酒系列</a></li>
-                            <li class="col5"><a href="">原浆酒系列</a></li>
-                            <li class="col6 col-1"><a href="">白酒系列</a></li>
+                            <volist name="cates" id="vo" key="k">
+                                <li  <eq name="Think.get.pid" value="$vo.id"> class="col{$k} on" </eq> ><a href="{:U('drink/baijiu',array('pid'=>$vo['id']))}">{$vo.title}</a></li>
+                            </volist>
+
                         </ul>
                     </div>
                 </div>
@@ -105,140 +103,15 @@
                     <div class="part-block">
                         <div class="ul d-img">
                             <ul>
+                                <volist name="list_pros" id="vo">
                                 <li>
                                     <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/851.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170405/6-1F4051151095K.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/jnftj/851.html">酒醅原浆窖泥封坛酒</a></span>
+                                        <a class="c-img" href="{:U('protuct/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="300" /></a>
+                                        <span><a href="{:U('protuct/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a></span>
                                     </div>
                                 </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/1128.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180125/6-1P1251F525102.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/jnftj/1128.html">茅台镇酒醅原浆古坛老酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/1139.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q62339551.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/jnftj/1139.html">窖泥封坛酒一坛装</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/1140.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q62535515.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/jnftj/1140.html">窖泥封坛酒纸盒装</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/1141.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q62600a6.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/jnftj/1141.html">窖泥封坛酒手提袋版</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/jnftj/1142.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/170418/3-1F41Q6264B17.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/jnftj/1142.html">窖泥封坛酒木箱装</a></span>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="ul d-img">
-                            <ul>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/sanjiu/2130.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180131/6-1P13111334QU.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/sanjiu/2130.html">茅台镇酱香型白酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/sanjiu/860.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180507/thumb_300_300_6-1P50G53445O9.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/sanjiu/860.html">茅台镇酱香散酒六号酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/sanjiu/1210.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180507/thumb_300_300_3-1P50F93950144.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/sanjiu/1210.html">茅台镇酱香型散白酒批发</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/sanjiu/1257.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180507/thumb_300_300_6-1P50G53412120.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/sanjiu/1257.html">茅台镇酱香散酒一号酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/sanjiu/1211.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180507/thumb_300_300_6-1P50G5353A35.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/sanjiu/1211.html">茅台镇酱香散酒特1号酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/sanjiu/1258.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180507/thumb_300_300_6-1P50G5331ST.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/sanjiu/1258.html">茅台镇酱香散酒二号酒</a></span>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="ul d-img">
-                            <ul>
-
-                            </ul>
-                        </div>
-                        <div class="ul d-img">
-                            <ul>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/yuanjiang/1538.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P5131645324W.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/yuanjiang/1538.html">原浆典藏定制酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/yuanjiang/1539.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P51316451Hc.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/yuanjiang/1539.html">贵宾接待酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/yuanjiang/1130.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/171207/thumb_300_300_6-1G20F95U4a5.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/yuanjiang/1130.html">大黔朝私人珍藏定制酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/yuanjiang/1131.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180510/thumb_300_300_3-1P510151423J8.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/yuanjiang/1131.html">大黔朝珍藏纪念定制酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/yuanjiang/1132.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/171207/thumb_300_300_6-1G20F959522Z.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/yuanjiang/1132.html">大黔朝婚宴定制酒</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div>
-                                        <a class="c-img" href="http://www.daqianchao.com/yuanjiang/1133.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/180513/thumb_300_300_3-1P513151020341.jpg" width="300" height="300" /></a>
-                                        <span><a href="http://www.daqianchao.com/yuanjiang/1133.html">大</a></span>
-                                    </div>
-                                </li>
-
-                            </ul>
-                        </div>
-                        <div class="ul d-img">
-                            <ul>
-
-                            </ul>
-                        </div>
-                        <div class="ul d-img">
-                            <ul>
-
+                                    </volist>
                             </ul>
                         </div>
                     </div>
@@ -300,26 +173,21 @@
                     <div class="block row-list">
                         <div class="part-block">
                             <div class="h2">
-                                <a class="c-more" href="http://www.daqianchao.com/baijiuzt/goudui/">更多</a>
-                                <h2><a href="http://www.daqianchao.com/baijiuzt/goudui/">白酒勾兑</a></h2>
+                                <a class="c-more" href="{:U('drink/index')}">更多</a>
+                                <h2><a href="{:U('drink/index',array('id'=>16))}">白酒勾兑</a></h2>
                             </div>
                             <div class="ul d-img">
                                 <ul>
-                                    <li>
-                                        <a class="c-img" href="http://www.daqianchao.com/baijiuzt/goudui/2470.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/181108/3_110Q12HH043.jpg" width="200" height="120" /></a>
-                                        <ins>
-                                            <span><a href="http://www.daqianchao.com/baijiuzt/goudui/2470.html">喝酒时不能吃这6种水果！你知道</a></span>
-                                            <p><a href="http://www.daqianchao.com/baijiuzt/goudui/2470.html">如果吃了榴莲后喝酒，因人体对酒精的代谢受到影响，就容易引起酒精中毒，严重者可能致...</a></p>
-                                        </ins>
-                                    </li>
-                                    <li>
-                                        <a class="c-img" href="http://www.daqianchao.com/baijiuzt/goudui/2418.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/180927/thumb_200_120_3-1P92G35432306-lp.jpg" width="200" height="120" /></a>
-                                        <ins>
-                                            <span><a href="http://www.daqianchao.com/baijiuzt/goudui/2418.html">如何鉴别原浆酒与勾兑酒？</a></span>
-                                            <p><a href="http://www.daqianchao.com/baijiuzt/goudui/2418.html">所谓原浆酒就是不添加粮食以外任何物质，采用传统固态发酵方式生产的白酒。勾兑酒是用...</a></p>
-                                        </ins>
-                                    </li>
-
+                                    <volist name="gou" id="vo">
+                                        <li>
+                                            <a class="c-img" href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                                <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="200" height="120" /></a>
+                                            <ins>
+                                                <span><a href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a></span>
+                                                <p><a href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.desc|mb_substr='0','30','utf-8'}</a></p>
+                                            </ins>
+                                        </li>
+                                    </volist>
                                 </ul>
                             </div>
                         </div>
@@ -327,25 +195,23 @@
                     <div class="block row-list">
                     <div class="part-block">
                         <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiuzt/baocun/">更多</a>
-                            <h2><a href="http://www.daqianchao.com/baijiuzt/baocun/">白酒保存</a></h2>
+                            <a class="c-more" href="{:U('drink/index')}">更多</a>
+                            <h2><a href="{:U('drink/index',array('id'=>16))}">白酒保存</a></h2>
                         </div>
                         <div class="ul d-img">
                             <ul>
-                                <li>
-                                    <a class="c-img" href="http://www.daqianchao.com/baijiuzt/baocun/2458.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/181018/thumb_200_120_3-1Q01Q60023464-lp.jpg" width="200" height="120" /></a>
-                                    <ins>
-                                        <span><a href="http://www.daqianchao.com/baijiuzt/baocun/2458.html">喝酒的四种讲究</a></span>
-                                        <p><a href="http://www.daqianchao.com/baijiuzt/baocun/2458.html">喝酒讲究的人，对酒都有种独到理解，和朋友聊酒也是滔滔不绝！...</a></p>
-                                    </ins>
-                                </li>
-                                <li>
-                                    <a class="c-img" href="http://www.daqianchao.com/baijiuzt/baocun/2456.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/yi/thumb_200_120_1 (12).jpg" width="200" height="120" /></a>
-                                    <ins>
-                                        <span><a href="http://www.daqianchao.com/baijiuzt/baocun/2456.html">教你一招如何拒绝被灌酒</a></span>
-                                        <p><a href="http://www.daqianchao.com/baijiuzt/baocun/2456.html">饮酒分场合，酒好却不能贪杯哦，根据情况拒绝被灌酒，教你一招。...</a></p>
-                                    </ins>
-                                </li>
+
+
+                                <volist name="bao" id="vo">
+                                    <li>
+                                        <a class="c-img" href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="200" height="120" /></a>
+                                        <ins>
+                                            <span><a href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a></span>
+                                            <p><a href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.desc|mb_substr='0','30','utf-8'}</a></p>
+                                        </ins>
+                                    </li>
+                                </volist>
 
                             </ul>
                         </div>
@@ -354,25 +220,21 @@
                     <div class="block row-list">
                     <div class="part-block">
                         <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiuzt/shoucang/">更多</a>
-                            <h2><a href="http://www.daqianchao.com/baijiuzt/shoucang/">白酒收藏</a></h2>
+                            <a class="c-more" href="{:U('drink/index')}">更多</a>
+                            <h2><a href="{:U('drink/index',array('id'=>16))}">白酒收藏</a></h2>
                         </div>
                         <div class="ul d-img">
                             <ul>
-                                <li>
-                                    <a class="c-img" href="http://www.daqianchao.com/baijiuzt/shoucang/2451.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/181013/thumb_200_120_3-1Q013160Q0524-lp.jpg" width="200" height="120" /></a>
-                                    <ins>
-                                        <span><a href="http://www.daqianchao.com/baijiuzt/shoucang/2451.html">从酒香、酿造、品质、价值四大方</a></span>
-                                        <p><a href="http://www.daqianchao.com/baijiuzt/shoucang/2451.html">无论酒香、酿造、品质、价值都是酱香型白酒更有价值，所以收藏酒还是推荐酱香型。...</a></p>
-                                    </ins>
-                                </li>
-                                <li>
-                                    <a class="c-img" href="http://www.daqianchao.com/baijiuzt/shoucang/2435.html"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/181006/3-1Q0061K50J10-lp.jpg" width="200" height="120" /></a>
-                                    <ins>
-                                        <span><a href="http://www.daqianchao.com/baijiuzt/shoucang/2435.html">白酒主体香型有哪些？如何挑选适</a></span>
-                                        <p><a href="http://www.daqianchao.com/baijiuzt/shoucang/2435.html">白酒是中国传统的蒸馏酒。它是世界上七大蒸馏酒之一。白酒的主要成分是乙醇和水（占总...</a></p>
-                                    </ins>
-                                </li>
+                                <volist name="shou" id="vo">
+                                    <li>
+                                        <a class="c-img" href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="200" height="120" /></a>
+                                        <ins>
+                                            <span><a href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a></span>
+                                            <p><a href="{:U('drink.detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.desc|mb_substr='0','30','utf-8'}</a></p>
+                                        </ins>
+                                    </li>
+                                </volist>
 
                             </ul>
                         </div>
@@ -431,20 +293,21 @@
             <div class="box">
                 <div class="block row-th">
                     <div class="h2 th1">
-                        <h2><a href="http://www.daqianchao.com/kehu/">白酒加盟案例。</a></h2>
+                        <h2><a href="{:U('')}">白酒加盟案例。</a></h2>
                     </div>
                 </div>
                 <div class="part-list">
                     <div class="block row-img">
                         <div class="ul d-img">
                             <ul>
+                                <volist name="hezuo" id="vo" offset="0" lenght="1">
                                 <li>
-                                    <a class="c-img" href="http://www.daqianchao.com/kehu/1545.html">
-                                        <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/190516/thumb_400_300_3-1Z516102933140.jpg" width="400" height="300" />
-                                        <i class="c-text">福建宁德市陈姐和林姐成功代理</i>
+                                    <a class="c-img" href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                        <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="400" height="300" />
+                                        <i class="c-text">{$vo.title}</i>
                                     </a>
                                 </li>
-
+                                </volist>
                             </ul>
                         </div>
                     </div>
@@ -453,88 +316,34 @@
                             <div class="block row-list">
                                 <div class="part-block">
                                     <div class="h2">
-                                        <a class="c-more" href="http://www.daqianchao.com/xinwen/zhangshang/">更多</a>
-                                        <h2><a href="http://www.daqianchao.com/xinwen/zhangshang/">常见问题</a></h2>
+                                        <a class="c-more" href="{:U('cooperation/index')}">更多</a>
+                                        <h2><a href="{:U('cooperation/index',array('id'=>11))}">常见问题</a></h2>
                                     </div>
                                     <div class="ul d-dot">
                                         <ul>
-                                            <li>
-                                                <i>2017-09-11</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/47.html">大黔朝诚招全国白酒加盟商</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-12-23</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/874.html">洞藏老陈白酒坛装的好喝还是瓶装</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-09-21</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/750.html">大黔朝小编告诉你：做代理要有远</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-08-15</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/633.html">贵州洞藏老坛酒如何加盟</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-08-10</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/596.html">茅台镇的洞藏老坛代理什么品牌好</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-08-03</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/488.html">洞藏老坛酒加盟生意做得起来吗?</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-08-03</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/495.html">加盟茅台镇老酒哪个品牌比较好?</a>
-                                            </li>
-                                            <li>
-                                                <i>2016-08-03</i>
-                                                <a href="http://www.daqianchao.com/xinwen/zhangshang/498.html">大黔朝洞藏老坛酒诚邀全国事业合</a>
-                                            </li>
-
+                                            <volist name="que" id="vo">
+                                                <li>
+                                                    <i>{$vo.create_time|strtotime|date="Y-m-d",###}</i>
+                                                    <a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a>
+                                                </li>
+                                            </volist>
                                         </ul>
                                     </div>
                                 </div>
                             </div><div class="block row-list">
                             <div class="part-block">
                                 <div class="h2">
-                                    <a class="c-more" href="http://www.daqianchao.com/kehu/">更多</a>
-                                    <h2><a href="http://www.daqianchao.com/kehu/">合作案例</a></h2>
+                                    <a class="c-more" href="{:U('cooperation/index')}">更多</a>
+                                    <h2><a href="{:U('cooperation/index',array('id'=>10))}">合作案例</a></h2>
                                 </div>
                                 <div class="ul d-dot">
                                     <ul>
-                                        <li>
-                                            <i>2019-05-22</i>
-                                            <a href="http://www.daqianchao.com/kehu/1287.html">福建三明地区胡总代理我公司洞藏</a>
-                                        </li>
-                                        <li>
-                                            <i>2019-05-22</i>
-                                            <a href="http://www.daqianchao.com/kehu/1314.html">祝贺四川包中杜老板成为公司洞藏</a>
-                                        </li>
-                                        <li>
-                                            <i>2019-05-22</i>
-                                            <a href="http://www.daqianchao.com/kehu/1315.html">恭喜西安临潼的朱总成功成为公司</a>
-                                        </li>
-                                        <li>
-                                            <i>2019-05-22</i>
-                                            <a href="http://www.daqianchao.com/kehu/1316.html">浙江金华李老板成为公司洞藏老酒</a>
-                                        </li>
-                                        <li>
-                                            <i>2019-05-16</i>
-                                            <a href="http://www.daqianchao.com/kehu/2364.html">四川省巴中市2018年5月2日，签订</a>
-                                        </li>
-                                        <li>
-                                            <i>2019-05-16</i>
-                                            <a href="http://www.daqianchao.com/kehu/1545.html">福建宁德市陈姐和林姐成功代理</a>
-                                        </li>
-                                        <li>
-                                            <i>2018-09-30</i>
-                                            <a href="http://www.daqianchao.com/kehu/2428.html">2018年9月28日广东潮州代理商张</a>
-                                        </li>
-                                        <li>
-                                            <i>2018-08-06</i>
-                                            <a href="http://www.daqianchao.com/kehu/2361.html">广东潮州张总、签约品牌产品2000</a>
-                                        </li>
-
+                                        <volist name="hezuo" id="vo">
+                                            <li>
+                                                <i>{$vo.create_time|strtotime|date="Y-m-d",###}</i>
+                                                <a href="{:U('cooperation/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">{$vo.title}</a>
+                                            </li>
+                                        </volist>
                                     </ul>
                                 </div>
                             </div>
@@ -551,21 +360,21 @@
             <div class="box">
                 <div class="block row-th">
                     <div class="h2 th1">
-                        <h2><a href="http://www.daqianchao.com/baijiu/wenti/">白酒相关问题</a></h2>
+                        <h2><a href="{:U('drink/index')}">白酒相关问题</a></h2>
                     </div>
                 </div>
                 <div class="part-list">
                     <div class="block row-list">
                         <div class="part-block">
                             <div class="h2">
-                                <a class="c-more" href="http://www.daqianchao.com/baijiu/jiage/">MORE<small>+</small></a>
-                                <h2><a href="http://www.daqianchao.com/baijiu/jiage/">白酒价格</a></h2>
+                                <a class="c-more" href="{:U('drink/index')}">MORE<small>+</small></a>
+                                <h2><a href="{:U('drink/index',array('id'=>13))}">白酒价格</a></h2>
                             </div>
                             <div class="ul d-dot">
                                 <ul>
                                     <li>
-                                        <span><a href="http://www.daqianchao.com/baijiu/jiage/1860.html">白酒价格走势将会如何？</a></span>
-                                        <p><a href="http://www.daqianchao.com/baijiu/jiage/1860.html">随着生活水平的提高，很多商品的价格也在无形中上涨，在市场上比较热销的上商品在价格上自然也会上涨，但是对于不热销的商品价格...</a></p>
+                                        <span><a href="{:U('drink/detail',array('id'=>$price['id'],'pid'=>$price['pid']))}">{$price.title}</a></span>
+                                        <p><a href="{:U('drink/detail',array('id'=>$price['id'],'pid'=>$price['pid']))}">{$price.desc|mb_substr='0','30','utf-8'}</a></p>
                                     </li>
 
                                 </ul>
@@ -575,14 +384,46 @@
                     <div class="block row-list">
                     <div class="part-block">
                         <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiu/diqu/">MORE<small>+</small></a>
-                            <h2><a href="http://www.daqianchao.com/baijiu/diqu/">地区白酒</a></h2>
+                            <a class="c-more" href="{:U('drink/index')}">MORE<small>+</small></a>
+                            <h2><a href="{:U('drink/index',array('id'=>14))}">白酒品牌</a></h2>
                         </div>
                         <div class="ul d-dot">
                             <ul>
                                 <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/diqu/1872.html">贵州品牌白酒有哪些？</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/diqu/1872.html">说到 贵州白酒 ，相信大多数人第一时间想到的就是茅台，毕竟茅台是我国的国酒，贵州主要生产的就是酱香型白酒，并且是我国酱香型...</a></p>
+                                    <span><a href="{:U('drink/detail',array('id'=>$pai['id'],'pid'=>$pai['pid']))}">{$pai.title}</a></span>
+                                    <p><a href="{:U('drink/detail',array('id'=>$pai['id'],'pid'=>$pai['pid']))}">{$pai.desc|mb_substr='0','30','utf-8'}</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    <div class="block row-list">
+                    <div class="part-block">
+                        <div class="h2">
+                            <a class="c-more" href="{:U('drink/index')}">MORE<small>+</small></a>
+                            <h2><a href="{:U('drink/index',array('id'=>9))}">白酒文化</a></h2>
+                        </div>
+                        <div class="ul d-dot">
+                            <ul>
+                                <li>
+                                    <span><a href="{:U('drink/detail',array('id'=>$know['id'],'pid'=>$know['pid']))}">{$know.title}</a></span>
+                                    <p><a href="{:U('drink/detail',array('id'=>$know['id'],'pid'=>$know['pid']))}">{$know.desc|mb_substr='0','30','utf-8'}</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                    <div class="block row-list">
+                    <div class="part-block">
+                        <div class="h2">
+                            <a class="c-more" href="{:U('drink/index')}">MORE<small>+</small></a>
+                            <h2><a href="{:U('drink/index',array('id'=>15))}">白酒度数</a></h2>
+                        </div>
+                        <div class="ul d-dot">
+                            <ul>
+                                <li>
+                                    <span><a href="{:U('drink/detail',array('id'=>$du['id'],'pid'=>$du['pid']))}">{$du.title}</a></span>
+                                    <p><a href="{:U('drink/detail',array('id'=>$du['id'],'pid'=>$du['pid']))}">{$du.desc|mb_substr='0','30','utf-8'}</a></p>
                                 </li>
 
                             </ul>
@@ -592,73 +433,14 @@
                     <div class="block row-list">
                     <div class="part-block">
                         <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiu/pinpai/">MORE<small>+</small></a>
-                            <h2><a href="http://www.daqianchao.com/baijiu/pinpai/">白酒品牌</a></h2>
+                            <a class="c-more" href="{:U('drink/index')}">MORE<small>+</small></a>
+                            <h2><a href="{:U('drink/index',array('id'=>18))}">白酒保存</a></h2>
                         </div>
                         <div class="ul d-dot">
                             <ul>
                                 <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/pinpai/1930.html">什么牌子的白酒比较好？</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/pinpai/1930.html">随着 白酒 的出现，白酒已经占据了整个市场，可以说白酒已经离不开人们的生活。白酒的品牌也有很多，面对市场上眼花缭乱的白酒品...</a></p>
-                                </li>
-                                <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/pinpai/1876.html">中国白酒品牌排行榜！</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/pinpai/1876.html">我国是酒的故乡，并且在我国酒也是一种文化。中国的酒有很多，但是能称得上是名酒的也不是很多，但是也不少。就比如说我国的国酒...</a></p>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                    <div class="block row-list">
-                    <div class="part-block">
-                        <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiu/pifa/">MORE<small>+</small></a>
-                            <h2><a href="http://www.daqianchao.com/baijiu/pifa/">白酒批发</a></h2>
-                        </div>
-                        <div class="ul d-dot">
-                            <ul>
-                                <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/pifa/1931.html">各种白酒批发价格表大全</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/pifa/1931.html">随着 白酒 的出现 ， 现如今的市场上各式各样的白酒 ， 并且都比较热销 。 从我国的国酒到红星二锅头均有着不同的价格 ， 如果是...</a></p>
-                                </li>
-                                <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/pifa/1877.html">2017年白酒最新批发价格表</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/pifa/1877.html">市场上的每一样商品在不同的阶段都会有一个最新的报价，但是即便是最新的报价，也只是一个估计值，并不是一个准确的值。就像 白...</a></p>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                    <div class="block row-list">
-                    <div class="part-block">
-                        <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiu/wenhua/">MORE<small>+</small></a>
-                            <h2><a href="http://www.daqianchao.com/baijiu/wenhua/">白酒文化</a></h2>
-                        </div>
-                        <div class="ul d-dot">
-                            <ul>
-                                <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/wenhua/1878.html">白酒文化有何意义？</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/wenhua/1878.html">我国是酒的故乡，从古自今喝酒的人越来越多，可以说酒已经是如今饭桌上必不可少的饮品。特别是我国的国酒茅台，在我国乃至国外都...</a></p>
-                                </li>
-
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                    <div class="block row-list">
-                    <div class="part-block">
-                        <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiu/paiming/">MORE<small>+</small></a>
-                            <h2><a href="http://www.daqianchao.com/baijiu/paiming/">白酒排名</a></h2>
-                        </div>
-                        <div class="ul d-dot">
-                            <ul>
-                                <li>
-                                    <span><a href="http://www.daqianchao.com/baijiu/paiming/1879.html">中国酱香型白酒排名</a></span>
-                                    <p><a href="http://www.daqianchao.com/baijiu/paiming/1879.html">一说到 酱香型白酒 ，相信绝大多数人想到的就是茅台酒，毕竟茅台是我国的国酒，不仅在我国出名，甚至在好多年前就闻名海外。我国...</a></p>
+                                    <span><a href="{:U('drink/detail',array('id'=>$bao['id'],'pid'=>$bao['pid']))}">{$bao.title}</a></span>
+                                    <p><a href="{:U('drink/detail',array('id'=>$bao['id'],'pid'=>$bao['pid']))}">{$bao.desc|mb_substr='0','30','utf-8'}</a></p>
                                 </li>
 
                             </ul>

@@ -32,6 +32,42 @@ class DrinkController extends  BaseController
         //尾部导航
         $foot =M('Custom')->where(array('is_deleted'=>0))->select();
         $this->assign('foot',$foot);
+        //白酒勾兑
+        $gou = M($this->table)->where(array('id'=>10,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(2)->select();
+        $this->assign('gou',$gou);
+        $bao = M($this->table)->where(array('id'=>18,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(2)->select();
+        $this->assign('bao',$bao);
+        $shou = M($this->table)->where(array('id'=>17,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(2)->select();
+        $this->assign('shou',$shou);
+        //常见问题
+        $que = M('good')->where(array('pid'=>11,'is_deleted'=>0))->order('id desc')->limit(8)->select();
+        //合作案例
+        $hezuo = M('good')->where(array('pid'=>10,'is_deleted'=>0))->order('id desc')->limit(8)->select();
+        $this->assign('hezuo',$hezuo);
+        $this->assign('que',$que);
+        //白酒价格
+        $price = M($this->table)->where(array('id'=>13,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(1)->find();
+        $pai = M($this->table)->where(array('id'=>14,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(1)->find();
+        $du = M($this->table)->where(array('id'=>15,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(1)->find();
+        $bao = M($this->table)->where(array('id'=>18,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(1)->find();
+        $know = M($this->table)->where(array('id'=>9,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(1)->find();
+        $this->assign('price',$price);
+        $this->assign('pai',$pai);
+        $this->assign('du',$du);
+        $this->assign('bao',$bao);
+        $this->assign('know',$know);
+
+        //产品类别
+        $cates = M('protuct_cates')->select();
+        $this->assign('cates',$cates);
+        $pid =I('get.pid');
+        if(empty($pid)){
+            $list_pros = M('protuct')->where(array('is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        }else{
+            $list_pros = M('protuct')->where(array('pid'=>$pid,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        }
+        $this->assign('list_pros',$list_pros);
+
         $this->display();
      }
 
