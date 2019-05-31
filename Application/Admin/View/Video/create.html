@@ -27,11 +27,20 @@
                                 </div>
 
                                 <div class="am-form-group">
+                                    <label for="title" class="am-u-sm-3 am-form-label">浏览量 </label>
+                                    <div class="am-u-sm-9">
+                                        <input type="text" class="tpl-form-input" id="lan" placeholder="" value="{$cases_detail.lan}">
+                                    </div>
+                                </div>
+
+                                <div class="am-form-group">
                                     <label for="desc" class="am-u-sm-3 am-form-label">简介<span class="tpl-form-line-small-title">Desc</span></label>
                                     <div class="am-u-sm-9">
                                         <textarea class="" rows="4" id="desc" placeholder="请输入简介">{$cases_detail.desc}</textarea>
                                     </div>
                                 </div>
+
+
 
                                 <div class="am-form-group">
                                     <label for="content" class="am-u-sm-3 am-form-label">详细内容<span class="tpl-form-line-small-title">Content</span></label>
@@ -98,6 +107,7 @@
                      title : $('#title').val(),
                      desc : $('#desc').val(),
                      content : $('#content').val(),
+                     lan : $('#lan').val(),
 
                 }
                 if (!_page_id) {

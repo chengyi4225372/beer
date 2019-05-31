@@ -13,6 +13,8 @@ class CompanyController extends  BaseController
 {
     public $table ='moves';
 
+
+
     public function index(){
         $id =I('get.id');
         $res= M($this->table)->where(array('id'=>$id))->find();
@@ -20,7 +22,7 @@ class CompanyController extends  BaseController
         $this->display();
     }
 
-    //藏酒洞
+    //藏酒洞视频
     public  function cjd(){
         $this->display();
     }
@@ -33,9 +35,6 @@ class CompanyController extends  BaseController
         $this->display();
     }
 
-    public function cvideo(){
-        $this->display();
-    }
 
     public function lianxi(){
         $map = M('privacy')->find(1);
