@@ -121,8 +121,17 @@
                                 <li>
                                     <div>
                                         <em><a href="{:U('drink/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
-                                            <i>凤香型</i><u>FENG - FLAVOR TYPE</u>
-                                        </a></em>
+
+                                            <switch name="k">
+                                                <case value="1"> <i>凤香型</i><u>FENG - FLAVOR TYPE</u>.</case>
+                                                <case value="2"> <i>兼香型</i><u>JIAN - FLAVOR TYPE</u></case>
+                                                <case value="3"><i>米香型</i><u>MI - FLAVOR TYPE</u></case>
+                                                <case value="4"> <i>清香型</i><u>QING - FLAVOR TYPE</u></case>
+                                                <case value="5"> <i>浓香型</i><u>NONG - FLAVOR TYPE</u></case>
+                                                <default /><i>酱香型</i><u>JIANG - FLAVOR TYPE</u>
+                                            </switch>
+                                        </a>
+                                        </em>
                                         <ins>
                                             <a class="c-img" href="{:U('drink/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
                                                 <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="300" height="300" /></a>

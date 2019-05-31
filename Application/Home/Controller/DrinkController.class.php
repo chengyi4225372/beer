@@ -23,7 +23,16 @@ class DrinkController extends  BaseController
     }
 
     public function baijiu(){
-         $this->display();
+        //香型种类
+        $beer = M('bai')->where(array('pid'=>10,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        $this->assign('beer',$beer);
+        //按浏览推荐
+        $hun = M('protuct')->where(array('pid'=>10,'is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(4)->select();
+        $this->assign('hun',$hun);
+        //尾部导航
+        $foot =M('Custom')->where(array('is_deleted'=>0))->select();
+        $this->assign('foot',$foot);
+        $this->display();
      }
 
     public function index(){
