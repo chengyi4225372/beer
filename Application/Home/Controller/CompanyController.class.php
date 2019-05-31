@@ -14,7 +14,6 @@ class CompanyController extends  BaseController
     public $table ='moves';
 
 
-
     public function index(){
         $id =I('get.id');
         $res= M($this->table)->where(array('id'=>$id))->find();
@@ -22,9 +21,18 @@ class CompanyController extends  BaseController
         $this->display();
     }
 
-    //藏酒洞视频
+    //藏酒洞
     public  function cjd(){
-        $this->display();
+      //酒业新闻 7
+      $jiu_news  =M('news')->where(array('id'=>7,'is_deleted'=>0))->order('lan desc')->limit(3)->select();
+      //合作案例 10
+      $good =M('good')->where(array('id'=>10,'is_deleted'=>0))->order('lan desc')->limit(3)->select();
+      //公司新闻
+      $com_news  =M('news')->where(array('id'=>5,'is_deleted'=>0))->order('lan desc')->limit(3)->select();
+      $this->assign('jiu_news',$jiu_news);
+      $this->assign('com_news',$com_news);
+      $this->assign('good',$good);
+      $this->display();
     }
 
     public function fz(){
@@ -34,7 +42,6 @@ class CompanyController extends  BaseController
     public function gy(){
         $this->display();
     }
-
 
     public function lianxi(){
         $map = M('privacy')->find(1);

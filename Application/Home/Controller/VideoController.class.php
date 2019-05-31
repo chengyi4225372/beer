@@ -30,6 +30,7 @@ class VideoController extends  BaseController
         $this->display();
     }
 
+    //todo 视频播放出在问题
     public function detail(){
         $id =I('get.id');
         $info = M($this->table)->where(array('id'=>$id))->find();
