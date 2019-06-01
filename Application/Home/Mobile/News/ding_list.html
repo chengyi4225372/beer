@@ -9,7 +9,7 @@
     <div id="position-wrap" class="position-wrap">
         <div class="div">
             <div class="box">
-                <div><a href="{:U('news/index')}">&lt白酒文化</a></div>
+                <div><a href="{:U('news/ding_list')}">&lt定制酒咨询</a></div>
             </div>
         </div>
     </div>
@@ -20,16 +20,16 @@
                 <div class="row-list">
                     <div class="ul d-img">
                         <ul>
-                            <volist name="list" id="vo" >
+                            <volist name="dnews" id="vo" >
                                 <li>
-                                    <a href="{:U('news/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                    <a href="{:U('news/ding_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
                                         <em class="c-img">
                                             <img src="/Uploads/{$vo.img}" />
                                             <i>{$vo.create|strtotime|date="Y-m-d"}</i>
                                         </em>
                                         <div>
                                             <span>{$vo.title}</span>
-                                            <p>{$co.desc|default=''}</p>
+                                            <p>{$vo.desc|default=''}</p>
                                         </div>
                                     </a>
                                 </li>
@@ -46,7 +46,7 @@
             <div class="box">
                 <ul class="d-pager">
                     <for start="0" end="$size" name="i" >
-                        <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('news/index',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
+                        <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('news/ding_list',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
                     </for>
                 </ul>
             </div>

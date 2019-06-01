@@ -47,7 +47,6 @@ class IndexController extends BaseController
         //定制酒咨询
         $dnews = M($this->ding)->where(array('pid'=>9,'is_deleted'=>0))->order('id desc')->limit(3)->select();
         $this->assign('dnews',$dnews);
-
         $this->display();
     }
 
