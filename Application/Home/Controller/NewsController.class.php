@@ -169,4 +169,58 @@ class NewsController extends  BaseController
         $this->display();
     }
 
+
+    //白酒代理问题
+    public function dai_list(){
+        $pages =  8;
+        $count =  M('good')->where(array('pid'=>12,'is_deleted'=>0))->count();
+        $size = $count/$pages;
+        $dainews = M('good')->where(array('pid'=>12,'is_deleted'=>0))->order('lan desc ,id desc')->page($_GET['p'].','.$pages)->select();
+        $this->assign('dainews',$dainews);
+        $this->assign('size',$size);
+        $this->display();
+    }
+
+    public function dai_info(){
+        $id =I('get.id');
+        $pid = I('get.pid');
+        $info = M('good')->where(array('id'=>$id,'pid'=>$pid,'is_deleted'=>0))->find();
+        $this->assign('info',$info);
+        $top =  M('good')->where(array('id'=>array('lt',$id),'is_deleted'=>0,'pid'=>$pid))->order(array('id'=>'desc'))->limit(1)->find();
+        $next =  M('good')->where(array('id'=>array('gt',$id),'is_deleted'=>0,'pid'=>$pid))->order('id asc')->limit(1)->find();
+        //同类新闻
+        $order = M('good')->where(array('pid'=>$pid,'is_deleted'=>0))->order('id desc')->limit(4)->select();
+        $this->assign('order',$order);
+        $this->assign('top',$top);
+        $this->assign('next',$next);
+        $this->display();
+    }
+
+    //白酒相关问题
+    public function bque_list(){
+        $pages =  8;
+        $count =  M('bai')->where(array('pid'=>11,'is_deleted'=>0))->count();
+        $size = $count/$pages;
+        $bnews = M('bai')->where(array('pid'=>11,'is_deleted'=>0))->order('lan desc ,id desc')->page($_GET['p'].','.$pages)->select();
+        $this->assign('bnews',$bnews);
+        $this->assign('size',$size);
+        $this->display();
+    }
+
+    public function bque_info(){
+        $id =I('get.id');
+        $pid = I('get.pid');
+        $info = M('bai')->where(array('id'=>$id,'pid'=>$pid,'is_deleted'=>0))->find();
+        $this->assign('info',$info);
+        $top =  M('bai')->where(array('id'=>array('lt',$id),'is_deleted'=>0,'pid'=>$pid))->order(array('id'=>'desc'))->limit(1)->find();
+        $next =  M('bai')->where(array('id'=>array('gt',$id),'is_deleted'=>0,'pid'=>$pid))->order('id asc')->limit(1)->find();
+        //同类新闻
+        $order = M('bai')->where(array('pid'=>$pid,'is_deleted'=>0))->order('id desc')->limit(4)->select();
+        $this->assign('order',$order);
+        $this->assign('top',$top);
+        $this->assign('next',$next);
+        $this->display();
+    }
+
+
 }

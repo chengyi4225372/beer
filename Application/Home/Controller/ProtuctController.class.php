@@ -73,6 +73,15 @@ class ProtuctController extends  BaseController
         //手机端推荐
         $t_phone =M($this->table)->where(array('is_show'=>1,'is_deleted'=>0))->order('lan desc')->limit(8)->select();
         $this->assign('t_phone',$t_phone);
+        //白酒知识
+        $bknow = M('bai')->where(array('pid'=>9,'is_deleted'=>0))->order('id desc')->limit(4)->select();
+        $this->assign('bknow',$bknow);
+        //白酒代理问题
+        $dai = M('good')->where(array('pid'=>12,'is_deleted'=>0))->order('id desc')->limit(2)->select();
+        $this->assign('dai',$dai);
+        //白酒相关问题
+        $bque = M('bai')->where(array('pid'=>11,'is_deleted'=>0))->order('lan desc')->limit(6)->select();
+        $this->assign('bque',$bque);
         $this->display();
     }
 

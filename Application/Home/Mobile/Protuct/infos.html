@@ -93,38 +93,34 @@
             <div class="box">
                 <div class="block row-th">
                     <div class="h2 th1">
-                        <h2><a href="http://www.daqianchao.com/baijiu/zhishi/">白酒知识</a></h2>
+                        <h2><a href="{:U('news/que_list')}">白酒知识</a></h2>
                     </div>
                 </div>
                 <div class="part-list">
                     <div class="block row-list">
-                        <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiuzt/goudui/">更多</a>
-                            <h2><a href="http://www.daqianchao.com/baijiuzt/goudui/">白酒勾兑</a></h2>
-                        </div>
+                        <!--<div class="h2">-->
+                            <!--<a class="c-more" href="http://www.daqianchao.com/baijiuzt/goudui/">更多</a>-->
+                            <!--<h2><a href="http://www.daqianchao.com/baijiuzt/goudui/">白酒勾兑</a></h2>-->
+                        <!--</div>-->
                         <div class="ul d-img">
                             <ul>
-                                <li>
-                                    <a href="http://www.daqianchao.com/baijiuzt/goudui/2470.html">
-                                        <ins>
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/181108/3_110Q12HH043.jpg" width="200" height="120" /></em>
-                                            <span>喝酒时不能吃这6种水果！你知道</span>
-                                        </ins>
-                                        <p>如果吃了榴莲后喝酒，因人体对酒精的代谢受到影响，就容易引起酒精中毒，严重者可能致死。 喝酒的时候同样不宜吃西红柿，一来西...</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="http://www.daqianchao.com/baijiuzt/goudui/2418.html">
-                                        <ins>
-                                            <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/180927/thumb_200_120_3-1P92G35432306-lp.jpg" width="200" height="120" /></em>
-                                            <span>如何鉴别原浆酒与勾兑酒？</span>
-                                        </ins>
-                                        <p>所谓原浆酒就是不添加粮食以外任何物质，采用传统固态发酵方式生产的白酒。勾兑酒是用食用酒精与香精模仿传统白酒勾兑而成的所谓...</p>
-                                    </a>
-                                </li>
+                                <volist name="bknow" id="vo">
+                                    <li>
+                                        <a href="{:U('news/que_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <ins>
+                                                <em class="c-img"><img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="200" height="120" /></em>
+                                                <span>{$vo.title}</span>
+                                            </ins>
+                                            <p>{$vo.desc|mb_substr='0','30','utf-8'}</p>
+                                        </a>
+                                    </li>
+                                </volist>
+
                             </ul>
                         </div>
-                    </div><div class="block row-list">
+                    </div>
+                    <!--
+                    <div class="block row-list">
                     <div class="h2">
                         <a class="c-more" href="http://www.daqianchao.com/baijiuzt/baocun/">更多</a>
                         <h2><a href="http://www.daqianchao.com/baijiuzt/baocun/">白酒保存</a></h2>
@@ -152,7 +148,8 @@
 
                         </ul>
                     </div>
-                </div><div class="block row-list">
+                </div>
+                    <div class="block row-list">
                     <div class="h2">
                         <a class="c-more" href="http://www.daqianchao.com/baijiuzt/shoucang/">更多</a>
                         <h2><a href="http://www.daqianchao.com/baijiuzt/shoucang/">白酒收藏</a></h2>
@@ -181,6 +178,7 @@
                         </ul>
                     </div>
                 </div>
+                    -->
                 </div>
             </div>
         </div>
@@ -229,22 +227,25 @@
             <div class="box">
                 <div class="block row-th">
                     <div class="h2 th1">
-                        <h2><a href="http://www.daqianchao.com/baijiu/jiameng/">白酒加盟案例</a></h2>
+                        <h2><a href="{:U('news/dai_list',array('id'=>12))}">白酒加盟案例</a></h2>
                     </div>
                 </div>
+
                 <div class="block row-img">
                     <div class="ul d-img">
                         <ul>
-                            <li>
-                                <a class="c-img" href="http://www.daqianchao.com/baijiu/daili/1857.html">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/171213/thumb_400_300_6-1G213095312B6.JPG" width="400" height="300" />
-                                    <i class="c-text">白酒代理需要多少钱?</i>
-                                </a>
-                            </li>
-
+                            <volist name="dai" id="vo" >
+                                <li>
+                                    <a class="c-img" href="{:U('news/dai_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                        <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="400" height="300" />
+                                        <i class="c-text">{$vo.title}</i>
+                                    </a>
+                                </li>
+                            </volist>
                         </ul>
                     </div>
                 </div>
+              <!--
                 <div class="part-arc">
                     <div class="block row-list">
                         <div class="h2">
@@ -284,6 +285,7 @@
                     </div>
                 </div>
                 </div>
+              -->
             </div>
         </div>
     </div>
@@ -293,163 +295,28 @@
             <div class="box">
                 <div class="block row-th">
                     <div class="h2 th1">
-                        <h2><a href="http://www.daqianchao.com/baijiu/wenti/">白酒相关问题</a></h2>
+                        <h2><a href="{:U('news/bque_list')}">白酒相关问题</a></h2>
                     </div>
                 </div>
                 <div class="part-list">
                     <div class="block row-list">
                         <div class="h2">
-                            <a class="c-more" href="http://www.daqianchao.com/baijiu/jiage/">MORE<small>+</small></a>
-                            <h2><a href="http://www.daqianchao.com/baijiu/jiage/">白酒价格</a></h2>
+                            <a class="c-more" href="{:U('news/bque_list')}">MORE<small>+</small></a>
+                            <h2><a href="{:U('news/bque_list')}">白酒相关问题</a></h2>
                         </div>
                         <div class="ul">
                             <ul>
-                                <li>
-                                    <a href="http://www.daqianchao.com/baijiu/jiage/1860.html">
-                                        <span>白酒价格走势将会如何？</span>
-                                        <p>随着生活水平的提高，很多商品的价格也在无形中上涨，在市场上比较热销的上商品在价格上自然也会上涨，但是对于不热销的商品价格...</p>
-                                    </a>
-                                </li>
-
+                                <volist name="bque" id="vo" >
+                                    <li>
+                                        <a href="{:U('news/bque_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                            <span>{$vo.title}</span>
+                                            <p>{$vo.desc|mb_substr='0','40','utf-8'}</p>
+                                        </a>
+                                    </li>
+                                </volist>
                             </ul>
                         </div>
-                    </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/diqu/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/diqu/">地区白酒</a></h2>
                     </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/diqu/1872.html">
-                                    <span>贵州品牌白酒有哪些？</span>
-                                    <p>说到 贵州白酒 ，相信大多数人第一时间想到的就是茅台，毕竟茅台是我国的国酒，贵州主要生产的就是酱香型白酒，并且是我国酱香型...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/pinpai/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/pinpai/">白酒品牌</a></h2>
-                    </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/pinpai/1930.html">
-                                    <span>什么牌子的白酒比较好？</span>
-                                    <p>随着 白酒 的出现，白酒已经占据了整个市场，可以说白酒已经离不开人们的生活。白酒的品牌也有很多，面对市场上眼花缭乱的白酒品...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/pinpai/1876.html">
-                                    <span>中国白酒品牌排行榜！</span>
-                                    <p>我国是酒的故乡，并且在我国酒也是一种文化。中国的酒有很多，但是能称得上是名酒的也不是很多，但是也不少。就比如说我国的国酒...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/pifa/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/pifa/">白酒批发</a></h2>
-                    </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/pifa/1931.html">
-                                    <span>各种白酒批发价格表大全</span>
-                                    <p>随着 白酒 的出现 ， 现如今的市场上各式各样的白酒 ， 并且都比较热销 。 从我国的国酒到红星二锅头均有着不同的价格 ， 如果是...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/pifa/1877.html">
-                                    <span>2017年白酒最新批发价格表</span>
-                                    <p>市场上的每一样商品在不同的阶段都会有一个最新的报价，但是即便是最新的报价，也只是一个估计值，并不是一个准确的值。就像 白...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/wenhua/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/wenhua/">白酒文化</a></h2>
-                    </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/wenhua/1878.html">
-                                    <span>白酒文化有何意义？</span>
-                                    <p>我国是酒的故乡，从古自今喝酒的人越来越多，可以说酒已经是如今饭桌上必不可少的饮品。特别是我国的国酒茅台，在我国乃至国外都...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/paiming/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/paiming/">白酒排名</a></h2>
-                    </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/paiming/1879.html">
-                                    <span>中国酱香型白酒排名</span>
-                                    <p>一说到 酱香型白酒 ，相信绝大多数人想到的就是茅台酒，毕竟茅台是我国的国酒，不仅在我国出名，甚至在好多年前就闻名海外。我国...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/dushu/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/dushu/">白酒度数</a></h2>
-                    </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/dushu/1901.html">
-                                    <span>白酒度数高好还是低好</span>
-                                    <p>在喝酒这一块也有着一定的学问，有的饮酒者喜欢喝高度 白酒 ，而有的饮酒者则喜欢低度的白酒，有人觉得高度酒纯度高、不上头、醒...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/dushu/1880.html">
-                                    <span> 白酒度数跟酒精含量有何关系？</span>
-                                    <p>现在市场上大多数的 白酒 一般都是53度，有的白酒都是纯粮酿造的，有的是食用酒精勾兑的，但是不管是怎样的白酒，它的度数和酒精...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div><div class="block row-list">
-                    <div class="h2">
-                        <a class="c-more" href="http://www.daqianchao.com/baijiu/qita/">MORE<small>+</small></a>
-                        <h2><a href="http://www.daqianchao.com/baijiu/qita/">其他白酒</a></h2>
-                    </div>
-                    <div class="ul">
-                        <ul>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/qita/1902.html">
-                                    <span>什么白酒好喝不贵？</span>
-                                    <p>本来我国就是酒的故乡，要说没人喝酒那肯定是假的，从古自今我国喝酒的人就没少过，可以说是越来越多。就像我国的国酒茅台，不但...</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="http://www.daqianchao.com/baijiu/qita/1881.html">
-                                    <span>喝白酒对人都有哪些好处？</span>
-                                    <p>现如今 白酒 已经融入了人们的生活，不论是在饭桌上还是作为礼品送人，都少不了酒这个饮品。现在市场上各式各样的白酒，面对市场...</p>
-                                </a>
-                            </li>
-
-                        </ul>
-                    </div>
-                </div>
                 </div>
             </div>
         </div>
