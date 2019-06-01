@@ -62,6 +62,10 @@ class NewsController extends  BaseController
     }
 
 
+
+
+
+
     //当前所属分类
     public function cates($pid){
       $cates = M($this->cates)->field('title')->where(array('id'=>$pid))->find();

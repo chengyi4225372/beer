@@ -50,7 +50,7 @@ class CompanyController extends  BaseController
     }
 
      public function beer(){
-        $this->display(T('company/beer','Mobile'));
+        $this->display();
      }
 
      //原料

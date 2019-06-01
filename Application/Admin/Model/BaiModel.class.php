@@ -82,7 +82,7 @@ class BaiModel extends Model
 
     //删除分类
     public function Del_cates($param){
-    $model = M('bai_cates');
+    $model = M('bai');
     // 判断是否存在
     $flag = $model->where(array('pid' => array('eq', $param['id'])))->select();
     if ($flag) {

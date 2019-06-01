@@ -98,126 +98,69 @@
                 <!-- 新闻资讯de 导航标签-->
                 <div class="row_nav">
                     <ul>
-                        <li class="col-item on"><a href="javascript:;">酒业新闻知识</a></li>
-                        <li class="col-item"><a href="javascript:;">定制酒市场分析</a></li>
-                        <li class="col-item"><a href="javascript:;">白酒资讯</a></li>
+                        <li class="col-item on"><a href="javascript:;">酒业新闻</a></li>
+                        <li class="col-item"><a href="javascript:;">定制酒咨询</a></li>
+                        <li class="col-item"><a href="javascript:;">白酒知识</a></li>
                     </ul>
                 </div>
                 <!-- 新闻资讯de 文字部分-->
                 <div class="row-list">
                     <div class="ul d-img on" style="display: block;">
                         <ul>
-                            <li>
-                                <a href="/xinwen/jiuye/2585.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/190529/thumb_250_210_3-1Z52Z95154453.jpg" data-src="http://www.daqianchao.com/uploads/allimg/190529/thumb_250_210_3-1Z52Z95154453.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                    <div>
-                                        <span>茅台未来将涨至4000元、五粮液2200元？酱酒成为1000元价位强有力</span>
-                                        <p>“建议投资者在未来5-10年，重仓茅台、五粮液，适度配置泸州老窖”！
-
-                                            “茅台、五粮…...</p>
-                                        <b><i>酒业新闻</i><u>2019-05-29</u></b>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/xinwen/jiuye/2583.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/190509/thumb_250_210_3-1Z50Z929255C.jpg" data-src="http://www.daqianchao.com/uploads/allimg/190509/thumb_250_210_3-1Z50Z929255C.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                    <div>
-                                        <span>袁仁国被免去贵州省政协全部职务！</span>
-                                        <p>（2019年5月5日政协第十二届贵州省委员会常务委员会第十次会议通过）
-
-                                            政协第十二届…...</p>
-                                        <b><i>酒业新闻</i><u>2019-05-22</u></b>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/xinwen/jiuye/2582.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/templets/indd/images/default.jpg" data-src="http://www.daqianchao.com/templets/indd/images/default.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                    <div>
-                                        <span>五粮液集团华东市场一高管被检方决定逮捕</span>
-                                        <p>28日，记者从四川检察机关了解到，因涉嫌受贿罪，五粮液集团有限公司华东营销中心上海…...</p>
-                                        <b><i>酒业新闻</i><u>2019-04-30</u></b>
-                                    </div>
-                                </a>
-                            </li>
-
+                           <volist name="bnews" id="vo">
+                               <li>
+                                   <a href="{:U('news/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                       <em class="c-img"><img src="/Uploads/{$vo.img}" data-src="/Uploads/{$vo.img}" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
+                                       <div>
+                                           <span>{$vo.title}</span>
+                                           <p>{$vo.desc|mb_substr='0','30','utf-8'}</p>
+                                           <b><i>酒业新闻</i><u>{$vo.create_time|strtotime|date="Y-m-d",###}</u></b>
+                                       </div>
+                                   </a>
+                               </li>
+                           </volist>
                         </ul>
                         <div class="c-more">
-                            <a href="/xinwen/jiuye/">MORE+</a>
+                            <a href="{:U('news/index')}">MORE+</a>
+
                         </div>
                     </div>
                     <div class="ul d-img" style="display: none;">
                     <ul>
-                        <li>
-                            <a href="/xinwen/dingzhijiu/2202.html">
-                                <em class="c-img"><img src="http://www.daqianchao.com/uploads/180211/thumb_250_210_6-1P211143Z2646.jpg" data-src="http://www.daqianchao.com/uploads/180211/thumb_250_210_6-1P211143Z2646.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                <div>
-                                    <span>婚宴定制酒必备知识：2018年2月14日可以办理结婚证？</span>
-                                    <p>2018年2月14日是一个特殊的日子，作为除夕的前一天，同时也是西方的情人节。想要在这…...</p>
-                                    <b><i>定制酒市场分析</i><u>2018-02-11</u></b>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/xinwen/dingzhijiu/2196.html">
-                                <em class="c-img"><img src="http://www.daqianchao.com/uploads/180209/thumb_250_210_6-1P209144143c1.jpg" data-src="http://www.daqianchao.com/uploads/180209/thumb_250_210_6-1P209144143c1.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                <div>
-                                    <span>定制酒+直播文化，网友们你怎么看</span>
-                                    <p>高品质定制服务的定制酒与相对低端的网络直播文化的能否结合在一起，这是一个值得深思…...</p>
-                                    <b><i>定制酒市场分析</i><u>2018-02-09</u></b>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/xinwen/dingzhijiu/2190.html">
-                                <em class="c-img"><img src="http://www.daqianchao.com/uploads/180208/thumb_250_210_6-1P20Q42I6200.jpg" data-src="http://www.daqianchao.com/uploads/180208/thumb_250_210_6-1P20Q42I6200.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                <div>
-                                    <span>定制酒价格带，是否由决定品牌</span>
-                                    <p>定制酒价格 带分为三个层次，第一层次200~300元价格带；第二层3次00~400元价格带；第…...</p>
-                                    <b><i>定制酒市场分析</i><u>2018-02-08</u></b>
-                                </div>
-                            </a>
-                        </li>
+                        <volist name="dnews" id="vo">
+                            <li>
+                                <a href="{:U('news/ding_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                    <em class="c-img"><img src="/Uploads/{$vo.img}" data-src="/Uploads/{$vo.img}" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
+                                    <div>
+                                        <span>{$vo.title}</span>
+                                        <p>{$vo.desc|mb_substr='0','30','utf-8'}</p>
+                                        <b><i>定制酒咨询</i><u>{$vo.create_time|strtotime|date="Y-m-d",###}</u></b>
+                                    </div>
+                                </a>
+                            </li>
+                        </volist>
                     </ul>
                     <div class="c-more">
-                        <a href="/xinwen/dingzhijiu/">MORE+</a>
+                        <a href="{:U('news/ding_list')}">MORE+</a>
                     </div>
                 </div><div class="ul d-img" style="display: none;">
                     <ul>
-                        <li>
-                            <a href="/baijiu/zhishi/2584.html">
-                                <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/190522/thumb_250_210_3-1Z522155553940.jpg" data-src="http://www.daqianchao.com/uploads/allimg/190522/thumb_250_210_3-1Z522155553940.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                <div>
-                                    <span>洋河全国提价，最高上涨20%！</span>
-                                    <p>5月21日，洋河将在全国范围内大幅度提高经销商向终端供货指导价，最高上涨幅度超20%，…...</p>
-                                    <b><i>白酒知识</i><u>2019-05-22</u></b>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/baijiu/zhishi/2581.html">
-                                <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/190426/thumb_250_210_3-1Z426092642130.jpg" data-src="http://www.daqianchao.com/uploads/allimg/190426/thumb_250_210_3-1Z426092642130.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                <div>
-                                    <span>突发|茅台经销商减少533家，一季度净利112.21亿元同比增32%！茅</span>
-                                    <p>据中国证券网，贵州茅台披露一季报，公司2019年一季度实现营收216.44亿元，同比增长23…...</p>
-                                    <b><i>白酒知识</i><u>2019-04-26</u></b>
-                                </div>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/baijiu/zhishi/2580.html">
-                                <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/190413/thumb_250_210_3-1Z41309400cG.jpg" data-src="http://www.daqianchao.com/uploads/allimg/190413/thumb_250_210_3-1Z41309400cG.jpg" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
-                                <div>
-                                    <span>告诉你茅台镇酱香酒的真正成本......拒绝忽悠！</span>
-                                    <p>今天带酒友们从成本的角度来分析一下，正常的一瓶酱香型粮食酒从购料生产到出厂在市面…...</p>
-                                    <b><i>白酒知识</i><u>2019-04-13</u></b>
-                                </div>
-                            </a>
-                        </li>
+                        <volist name="bknow" id="vo">
+                            <li>
+                                <a href="{:U('news/que_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                    <em class="c-img"><img src="/Uploads/{$vo.img}" data-src="/Uploads/{$vo.img}" width="250" height="210" class="" data-loaded="1" style="min-height: 0px; max-height: none;"></em>
+                                    <div>
+                                        <span>{$vo.title}</span>
+                                        <p>{$vo.desc|mb_substr='0','30','utf-8'}</p>
+                                        <b><i>白酒知识</i><u>{$vo.create_time|strtotime|date="Y-m-d",###}</u></b>
+                                    </div>
+                                </a>
+                            </li>
+                        </volist>
+
                     </ul>
                     <div class="c-more">
-                        <a href="/baijiu/zhishi/">MORE+</a>
+                        <a href="{:U('news/que_list')}">MORE+</a>
                     </div>
                 </div>
                 </div>
