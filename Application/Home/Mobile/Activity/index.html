@@ -40,54 +40,17 @@
                 <div class="block row-img">
                     <div class="ul">
                         <ul>
-                            <li>
-                                <a href="" class="c-img">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/190329/thumb_560_415_3-1Z329112K50-L.jpg" width="560" height="415" />
-                                </a>
-                                <a href="#call" class="zi">
-                                    <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="c-img">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/190328/thumb_560_415_3-1Z32QK0440-L.jpg" width="560" height="415" />
-                                </a>
-                                <a href="#call" class="zi">
-                                    <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="c-img">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/190328/thumb_560_415_3-1Z32QF2240-L.jpg" width="560" height="415" />
-                                </a>
-                                <a href="#call" class="zi">
-                                    <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="c-img">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/190328/thumb_560_415_3-1Z32Q556300-L.jpg" width="560" height="415" />
-                                </a>
-                                <a href="#call" class="zi">
-                                    <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="c-img">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/171111/thumb_560_415_6-1G111112A3118.jpg" width="560" height="415" />
-                                </a>
-                                <a href="#call" class="zi">
-                                    <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="" class="c-img">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/171111/thumb_560_415_6-1G1111122293O.jpg" width="560" height="415" />
-                                </a>
-                                <a href="#call" class="zi">
-                                    <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
-                                </a>
-                            </li>
+                            <volist name="phot" id="vo">
+                                <li>
+                                    <a href="#" class="c-img">
+                                        <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="560" height="415" />
+                                    </a>
+                                    <a href="#" class="zi">
+                                        <img src="/Public/index/templets/inddwap/image/zixun_btn.png">
+                                    </a>
+                                </li>
+                            </volist>
+
                         </ul>
                     </div>
                 </div>
@@ -97,20 +60,23 @@
                 <div class="block row-list">
                     <div class="ul d-img">
                         <ul>
+                            <volist name="pstyle" id="vo">
                             <li class="on-hide">
                                 <a class="c-img" href="">
-                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="http://www.daqianchao.com/uploads/allimg/181229/thumb_560_415_3-1Q2291G431133.jpg" width="560" height="415" />
-                                    <span class="c-text">黔朝·魂酒</span>
+                                    <img  src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7" data-src="/Uploads/{$vo.img}" width="560" height="415" />
+                                    <span class="c-text">{$vo.title}</span>
                                 </a>
                             </li>
+                            </volist>
                         </ul>
                     </div>
                     <div class="ul d-pager">
                         <ul>
-
+                            <for start="0" end="$size" name="i" >
+                                <li <eq name="Think.get.p" value="$i+1"> class="thisclass" </eq> ><a href="{:U('activity/index',array('id'=>$_GET['id'],'p'=>$i+1))}">{$i+1}</a></li>
+                            </for>
                         </ul>
                     </div>
-
                 </div>
                 <div class="block list_bt">
                     <em><img src="/Public/index/templets/inddwap/image/list_img/act_bg4.jpg"></em>
