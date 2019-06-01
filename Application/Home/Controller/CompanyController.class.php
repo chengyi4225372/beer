@@ -50,7 +50,13 @@ class CompanyController extends  BaseController
     }
 
      public function beer(){
-        $this->display();
+        //产品最高4
+         $pro =M('protuct')->where()->order(array('is_deleted'=>0))->order('lan desc')->limit(4)->select();
+         $this->assign('pro',$pro);
+         //公司新闻
+         $news =M('news')->where(array('pid'=>5,'is_deleted'=>0))->order('lan desc')->limit(3)->select();
+         $this->assign('news',$news);
+         $this->display();
      }
 
      //原料

@@ -48,7 +48,7 @@
         <div class="div">
             <div class="box">
                 <div class="row-title"><span>头条：</span></div>
-                <div class="row-more"><a href="/qianchaojiuye/xinwen/">更多</a></div>
+                <div class="row-more"><a href="{:U('news/index')}">更多</a></div>
                 <div class="row-list">
                     <div class="ul">
                         <ul>
@@ -68,36 +68,20 @@
                 <div class="row-title th1">
                     <div class="h2">
                         <span class="c1">产品中心</span>
-                        <a class="c2" href="/qianchaojiuye/chanpin/">更多&gt;&gt;</a>
+                        <a class="c2" href="{:U('protuct/index')}">更多&gt;&gt;</a>
                     </div>
                 </div>
                 <div class="row-list">
                     <div class="ul d-img">
                         <ul>
-                            <li>
-                                <a href="/qianchaojiuye/2254.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/180408/thumb_300_300_3-1P40QP13ab.jpg" /></em>
-                                    <span>贵州醇酒、黔朝十五</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/1718.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/171114/6-1G11414160VZ.jpg" /></em>
-                                    <span>四色“原浆基酒”</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/1714.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/171114/6-1G114141645259.jpg" /></em>
-                                    <span>贵州黔朝集团“黔朝品</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/1699.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/171114/6-1G114141K3Z5.jpg" /></em>
-                                    <span>全国唯一一款新型产品</span>
-                                </a>
-                            </li>
+                            <volist name="pro" id="vo">
+                                <li>
+                                    <a href="{:U('protuct/detail',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                        <em class="c-img"><img src="/Uploads/{$vo.img}" /></em>
+                                        <span>{$vo.title}</span>
+                                    </a>
+                                </li>
+                            </volist>
 
                         </ul>
                     </div>
@@ -127,7 +111,7 @@
                             <p>
                                 “中国第一酒镇”茅台镇，位于贵州省遵义仁怀市赤水河畔，是川黔水路交通的咽喉要地，古有“川盐走贵州，秦商聚茅台”的写照，茅台镇是中国酱酒圣地，域内白酒业兴盛。1995年8月，大黔朝烧坊正式成立；1999年6月，大黔朝烧坊正式更名大黔朝酒厂，投入巨资在茅台镇上坪村倾力打造酱香型白酒生产基地...
                             </p>
-                            <a class="c-btn" href="http://www.daqianchao.com/qiye/">了解详情<small>&gt;</small></a>
+                            <a class="c-btn" href="{:U('company/index',array('id'=>44))}">了解详情<small>&gt;</small></a>
                         </div>
                     </div>
                 </div>
@@ -140,42 +124,23 @@
             <div class="box">
                 <div class="row-list">
                     <div class="h2 th1">
-                        <span class="c1">酒类动态</span>
-                        <a class="c2" href="/qianchaojiuye/xinwen/">更多&gt;&gt;</a>
+                        <span class="c1">公司新闻</span>
+                        <a class="c2" href="{:U('news/com_list')}">更多&gt;&gt;</a>
                     </div>
                     <div class="ul d-img">
                         <ul>
-                            <li>
-                                <a href="/qianchaojiuye/yuanjiangjiu/1897.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/171218/thumb_250_200_6-1G21Q44346196-lp.jpg" /></em>
-                                    <div>
-                                        <span>茅台镇原浆基酒多少钱一瓶</span>
-                                        <p>茅台镇原浆基酒 作为一款健康的原浆酒，酒中不添加任…</p>
-                                        <b><i>原浆基酒</i><u>2018-07-24</u></b>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/nibajiu/1788.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/171127/thumb_250_200_6-1G12GG22Y48-lp.JPG" /></em>
-                                    <div>
-                                        <span>自带“窖池”的泥巴土坛酒</span>
-                                        <p>2017年9月黔朝酒业集团推出一款新酒 泥巴土坛酒 。采…</p>
-                                        <b><i>泥巴土坛酒</i><u>2017-11-27</u></b>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="/qianchaojiuye/yuanjiangjiu/1757.html">
-                                    <em class="c-img"><img src="http://www.daqianchao.com/uploads/allimg/171116/thumb_250_200_6-1G1161GT4235-lp.jpg" /></em>
-                                    <div>
-                                        <span> 茅台镇原浆酒与茅台酒的区别！</span>
-                                        <p>茅台镇原浆酒 和茅台酒都产于贵州茅台镇，两者都以当…</p>
-                                        <b><i>原浆基酒</i><u>2017-11-16</u></b>
-                                    </div>
-                                </a>
-                            </li>
-
+                            <volist name="news" id="vo">
+                                <li>
+                                    <a href="{:U('news/com_info',array('id'=>$vo['id'],'pid'=>$vo['pid']))}">
+                                        <em class="c-img"><img src="/Uploads/{$vo.img}" /></em>
+                                        <div>
+                                            <span>{$vo.title}</span>
+                                            <p>{$vo.desc|mb_substr='0','30','utf-8'}</p>
+                                            <b><i>原浆基酒</i><u>{$vo.create_time|strtotime|date="Y-m-d",###}</u></b>
+                                        </div>
+                                    </a>
+                                </li>
+                            </volist>
                         </ul>
                     </div>
                 </div>

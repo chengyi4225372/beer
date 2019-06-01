@@ -89,7 +89,7 @@ class NewsController extends  BaseController
 
 
 
-    //手机端
+    //手机端 定制白酒
     public  function ding_list(){
         //定制酒咨询
         $pages =  8;
@@ -117,6 +117,7 @@ class NewsController extends  BaseController
         $this->display();
     }
 
+    //白酒知识
     public function que_list(){
         $pages =  8;
         $count =  M($this->bai)->where(array('pid'=>9,'is_deleted'=>0))->count();
@@ -142,6 +143,30 @@ class NewsController extends  BaseController
         $this->display();
     }
 
+    //公司新闻
+    public function com_list(){
+        $pages =  8;
+        $count =  M($this->table)->where(array('pid'=>5,'is_deleted'=>0))->count();
+        $size = $count/$pages;
+        $comnews = M($this->table)->where(array('pid'=>5,'is_deleted'=>0))->order('id desc')->page($_GET['p'].','.$pages)->select();
+        $this->assign('comnews',$comnews);
+        $this->assign('size',$size);
+        $this->display();
+    }
 
+    public function com_info(){
+        $id =I('get.id');
+        $pid = I('get.pid');
+        $info = M($this->table)->where(array('id'=>$id,'pid'=>$pid,'is_deleted'=>0))->find();
+        $this->assign('info',$info);
+        $top =  M($this->table)->where(array('id'=>array('lt',$id),'is_deleted'=>0,'pid'=>$pid))->order(array('id'=>'desc'))->limit(1)->find();
+        $next =  M($this->table)->where(array('id'=>array('gt',$id),'is_deleted'=>0,'pid'=>$pid))->order('id asc')->limit(1)->find();
+        //同类新闻
+        $order = M($this->table)->where(array('pid'=>$pid,'is_deleted'=>0))->order('id desc')->limit(4)->select();
+        $this->assign('order',$order);
+        $this->assign('top',$top);
+        $this->assign('next',$next);
+        $this->display();
+    }
 
 }
