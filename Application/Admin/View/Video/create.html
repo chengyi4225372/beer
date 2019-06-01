@@ -1,6 +1,15 @@
 
 <include file="Share/header" />
 
+<link rel="stylesheet" href="/Public/index/templets/layui/css/layui.css"  media="all">
+
+
+<script src="/Public/index/templets/layui/layui.js" charset="utf-8"></script>
+
+<script src="/Public/index/templets/inddwap/js/jquery.1.8.2.min.js"></script>
+<script src="/Public/index/templets/Upload/ajaxfileupload.js"></script>
+
+
    <!-- 内容区域 -->
     <div class="tpl-content-wrapper">
 
@@ -27,6 +36,21 @@
                                 </div>
 
                                 <div class="am-form-group">
+                                    <label for="user-img" class="am-u-sm-3 am-form-label">视频预览图 <span class="tpl-form-line-small-title">Images</span></label>
+                                    <div class="am-u-sm-9">
+                                        <div class="am-form-group am-form-file">
+                                            <div class="tpl-form-file-img">
+                                                <img data-src="/Uploads/{$cases_detail.img}" alt="" id="cover-img">
+                                            </div>
+                                            <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                                                <i class="am-icon-cloud-upload "></i> 添加预览图片</button>
+                                            <input id="file_upload" type="file" multiple="" name="file_upload">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="am-form-group">
                                     <label for="title" class="am-u-sm-3 am-form-label">浏览量 </label>
                                     <div class="am-u-sm-9">
                                         <input type="text" class="tpl-form-input" id="lan" placeholder="" value="{$cases_detail.lan}">
@@ -40,14 +64,13 @@
                                     </div>
                                 </div>
 
-
-
                                 <div class="am-form-group">
                                     <label for="content" class="am-u-sm-3 am-form-label">详细内容<span class="tpl-form-line-small-title">Content</span></label>
                                     <div class="am-u-sm-9">
-                                        <textarea class="" rows="10" id="content" placeholder="请输入文章内容">{$cases_detail.content}</textarea>
+                                        <textarea class="" rows="40" id="content" placeholder="请输入文章内容">{$cases_detail.content}</textarea>
                                     </div>
                                 </div>
+
 
 
                                 <div class="am-form-group">
@@ -69,13 +92,9 @@
     var editor;
 
     KindEditor.ready(function(K) {
-
         editor = K.create('#content', {
-
             allowFileManager : true,
-
             uploadJson:'{:U("fileUpload")}', //上传控制器所在url
-
             afterBlur: function(){this.sync();}
 
         });
@@ -84,20 +103,42 @@
 
 </script>
 
-
-    <script type="text/javascript">
+ <script type="text/javascript">
         $(function(){
-
-            // 获取新闻ID 
+            var _this = this;
+            // 获取新闻ID
             var _search = window.location.search;
 
             var _page_id = ''
 
+            //图片路径
+            var _img_path = ''
+
+
             if (_search.indexOf('?id') != -1){
 
-            _page_id = _search.split('id=')[1];
+                _page_id = _search.split('id=')[1];
 
             }
+
+            //还原值
+            var $cases_detail = {$cases_detail | json_encode}
+
+            if($cases_detail) {
+
+                $("#pid").find("option[value="+$cases_detail.pid+"]").attr("selected",true);
+
+                if($cases_detail.is_show == 0) {
+
+                    $("#is_show").attr('checked',false)
+
+                }
+                //图片显示
+                _this._img_path = $cases_detail.img;
+                $('#cover-img').attr('src','/Uploads/'+_this._img_path)
+
+            }
+
 
             // 提交
             $('.j-submit').on('click',function(){
@@ -108,6 +149,7 @@
                      desc : $('#desc').val(),
                      content : $('#content').val(),
                      lan : $('#lan').val(),
+                     img : _this._img_path,
 
                 }
                 if (!_page_id) {
@@ -143,9 +185,33 @@
                 });
             })
 
-        })
+            //上传图片
+            file_upload.onchange = function(e){
+                var files = this.files
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append('file[]', files[i]);
+                }
+                $.ajax({
+                    url: "uploadImg",
+                    data: data,
+                    type:'post',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:function(res) {
+                        if(res) {
+                            _this._img_path = res
+                            $('#cover-img').attr('src','/Uploads/'+_this._img_path);
+                        }
+                    }
+                });
+            }
 
+        })
     </script>
+
+
 
 
 <include file="Share/footer" />

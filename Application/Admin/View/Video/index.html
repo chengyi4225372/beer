@@ -27,6 +27,7 @@
                                         <tr>
                                             <th>ID</th>
                                             <th>标题名称</th>
+                                            <th>预览图</th>
                                             <th>浏览量</th>
                                             <th>简介</th>
                                             <th>操作</th>
@@ -36,6 +37,7 @@
                                             <volist name="list" id="vo"  >
                                                 <tr class="gradeX">
                                                 <td>{$vo.id}</td>
+                                                <td><img src="/Uploads/{$vo.img}" class="tpl-table-line-img" alt=""></td>
                                                 <td>{$vo.title}</td>
                                                 <td>{$vo.lan}</td>
                                                 <td>{$vo.desc|mb_substr='0','30','utf-8'}</td>

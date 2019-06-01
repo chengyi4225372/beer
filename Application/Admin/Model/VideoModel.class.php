@@ -36,6 +36,7 @@ class VideoModel extends Model
             'desc' => $param['desc'],
             'content'=>$param['content'],
             'lan'=>$param['lan'],
+            'img'=>$param['img'],
             'create_time' => date('Y-m-d H:i:s'),
         ));
         $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
@@ -64,6 +65,8 @@ class VideoModel extends Model
                 'desc' => $param['desc'],
                 'content'=>$param['content'],
                 'lan'=>$param['lan'],
+                'img'=>$param['img'],
+
             ));
 
         $res = $doMod ? array('msg' => 'success') : array('msg' => "您没有修改，跳转回列表页！");
