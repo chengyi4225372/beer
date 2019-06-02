@@ -51,6 +51,24 @@
 
 
                                 <div class="am-form-group">
+                                    <label for="user-img" class="am-u-sm-3 am-form-label">上传视频<span class="tpl-form-line-small-title">Video</span></label>
+                                    <div class="am-u-sm-9">
+                                        <div class="am-form-group am-form-file">
+                                            <div class="tpl-form-file-img">
+                                                <!--<img data-src="/Uploads/{$cases_detail.img}" alt="" id="cover-img">-->
+                                                <input type="text" name="content" id="content" value="{$cases_detail.content}">
+                                            </div>
+                                            <button type="button" class="am-btn am-btn-danger am-btn-sm">
+                                                <i class="am-icon-cloud-upload "></i> 添加视频</button>
+                                            <input id="file_video" type="file" multiple="" name="file_video">
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="am-form-group">
                                     <label for="title" class="am-u-sm-3 am-form-label">浏览量 </label>
                                     <div class="am-u-sm-9">
                                         <input type="text" class="tpl-form-input" id="lan" placeholder="" value="{$cases_detail.lan}">
@@ -64,12 +82,13 @@
                                     </div>
                                 </div>
 
-                                <div class="am-form-group">
-                                    <label for="content" class="am-u-sm-3 am-form-label">详细内容<span class="tpl-form-line-small-title">Content</span></label>
-                                    <div class="am-u-sm-9">
-                                        <textarea class="" rows="40" id="content" placeholder="请输入文章内容">{$cases_detail.content}</textarea>
-                                    </div>
-                                </div>
+                                <!--<div class="am-form-group">-->
+                                    <!--<label for="content" class="am-u-sm-3 am-form-label">详细内容<span class="tpl-form-line-small-title">Content</span></label>-->
+                                    <!--<div class="am-u-sm-9">-->
+                                        <!--<textarea class="" rows="40" id="content" placeholder="请输入文章内容">{$cases_detail.content}</textarea>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+
 
 
 
@@ -87,21 +106,7 @@
         </div>
     </div>
 
-<script type="text/javascript">
 
-    var editor;
-
-    KindEditor.ready(function(K) {
-        editor = K.create('#content', {
-            allowFileManager : true,
-            uploadJson:'{:U("fileUpload")}', //上传控制器所在url
-            afterBlur: function(){this.sync();}
-
-        });
-
-    });
-
-</script>
 
  <script type="text/javascript">
         $(function(){
@@ -207,10 +212,31 @@
                     }
                 });
             }
+            //上传视频
+            file_video.onchange = function(e){
+                var files = this.files
+                var data = new FormData();
+                for (var i = 0; i < files.length; i++) {
+                    data.append('file[]', files[i]);
+                }
+                $.ajax({
+                    url: "uploadvideo",
+                    data: data,
+                    type:'post',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success:function(res) {
+                        if(res) {
+                            alert('上传成功！');
+                            $('#content').val('/Uploads/'+res);
+                        }
+                    }
+                });
+            }
 
         })
     </script>
-
 
 
 
