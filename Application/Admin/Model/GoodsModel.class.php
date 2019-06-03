@@ -38,7 +38,7 @@ class  GoodsModel extends Model
         $doAdd = $model->add(array(
             'title' => $param['title'],
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '您没有进行修改，点击跳转列表页！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
