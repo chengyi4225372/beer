@@ -46,7 +46,7 @@ class UserModel extends Model
             'status' => 1,
             'create_time' => date('Y-m-d H:i:s'),
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '添加失败！');
 
         return array(
             'data' => $res['msg'],
@@ -89,7 +89,7 @@ class UserModel extends Model
 
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有进行编辑，确定跳转回列表页！');
 
         return array(
             'data' => $res['msg'],

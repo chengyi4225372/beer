@@ -39,7 +39,7 @@ class VideoModel extends Model
             'img'=>$param['img'],
             'create_time' => date('Y-m-d H:i:s'),
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '添加失败!');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -69,7 +69,7 @@ class VideoModel extends Model
 
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => "您没有修改，跳转回列表页！");
+        $res = $doMod ? array('msg' => 'success') : array('msg' => "您没有编辑，跳转回列表页！");
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
