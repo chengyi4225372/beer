@@ -198,14 +198,12 @@
                     success:function(res) {
 
                         if(res.status == 1){
-
                             alert("操作成功！")
-
                             window.location.href = '{:U("Ding/index")}';
 
                         } else {
-
                             alert(res.data);
+                            window.location.href = '{:U("Ding/index")}';
 
                         }
 
