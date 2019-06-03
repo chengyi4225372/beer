@@ -89,7 +89,7 @@ class NewsModel extends Model
                 'lan'=>$param['lan'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '你没有进行修改！');
 
         return array(
 
@@ -146,7 +146,7 @@ class NewsModel extends Model
         $doAdd = $model->add(array(
             'title' => $param['title'],
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '您没有进行修改！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
