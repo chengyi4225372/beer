@@ -39,7 +39,7 @@ class MessageModel extends Model
                 'info' => $param['info'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有修改，请返回列表页面!');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有修改，确认返回列表页面!');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
