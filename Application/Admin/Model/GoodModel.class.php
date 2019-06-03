@@ -37,7 +37,7 @@ class  GoodModel extends Model
         $doAdd = $model->add(array(
             'title' => $param['title'],
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '您没有进行编辑，自动跳转回列表页！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -71,7 +71,7 @@ class  GoodModel extends Model
                 'title' => $param['title'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有进行修改，点击跳转列表页！');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有进行编辑，自动跳转回列表页！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -181,7 +181,7 @@ class  GoodModel extends Model
                 'lan'=>$param['lan'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有进行修改，点击跳转列表页！');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有进行编辑，自动跳转回列表页！');
 
         return array(
 
