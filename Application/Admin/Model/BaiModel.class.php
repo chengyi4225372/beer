@@ -38,7 +38,7 @@ class BaiModel extends Model
     $doAdd = $model->add(array(
         'title' => $param['title'],
     ));
-    $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+    $res = $doAdd ? array('msg' => 'success') : array('msg' => '您没有进行编辑，点击跳转回列表页！');
     return array(
         'data' => $res['msg'],
         'msg' => $model->getLastSql(),
@@ -72,7 +72,7 @@ class BaiModel extends Model
             'title' => $param['title'],
         ));
 
-    $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+    $res = $doMod ? array('msg' => 'success') : array('msg' => '您没有进行编辑，点击跳转回列表页！');
     return array(
         'data' => $res['msg'],
         'msg' => $model->getLastSql(),
