@@ -35,7 +35,7 @@ class SbeerModel extends Model
             'url' => $param['url'],
             'title' => $param['title'],
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '添加失败！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
