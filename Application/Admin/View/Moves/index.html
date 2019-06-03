@@ -37,7 +37,7 @@
                                         <td>{$vo.title}</td>
                                         <td>
                                             <div class="tpl-table-black-operation">
-                                                <a href="/Admin/moves/create?id={$vo.id}">
+                                                <a href="/index.php/Admin/moves/create?id={$vo.id}">
                                                     <i class="am-icon-pencil"></i> 详情
                                                 </a>
                                                 <a href="javascript:;" class="tpl-table-black-operation-del j-del" data-id="{$vo.id}">
@@ -114,7 +114,9 @@
 
                             } else {
 
-                                alert(res.data)
+                                alert(res.data);
+                                window.location.href = '{:U("moves/index")}';
+
 
                             }
 
