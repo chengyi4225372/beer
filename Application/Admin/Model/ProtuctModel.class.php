@@ -149,7 +149,7 @@ class ProtuctModel extends Model
             'lan'=>$param['lan'],
             'is_style'=>$param['is_style'],
         ));
-        $res = $doAdd ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doAdd ? array('msg' => 'success') : array('msg' => '你没有进行修改，跳转回列表页！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),
@@ -199,7 +199,7 @@ class ProtuctModel extends Model
                 'is_style'=>$param['is_style'],
             ));
 
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '你没有进行修改，跳转回列表页！');
 
         return array(
 
