@@ -99,8 +99,6 @@
             var param = {
                 img : _this._img_path,
                 url : $("#url").val(),
-                title:$("#titles").val(),
-                info:$('#info').val(),
             }
 
             if (!_page_id) {
@@ -124,25 +122,17 @@
             }
 
             $.ajax({
-
                 url: "create",
-
                 data:param,
-
                 type:'post',
 
                 success:function(res) {
-
                     if(res.status == 1){
-
                         alert("操作成功！")
-
                         window.location.href = '{:U("banner/index")}';
-
                     } else {
-
-                        alert(res.data)
-
+                        alert(res.data);
+                        window.location.href = '{:U("banner/index")}';
                     }
 
                 }

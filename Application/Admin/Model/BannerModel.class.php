@@ -61,8 +61,7 @@ class BannerModel extends Model
                 'url' => $param['url'],
                 'img' => $param['img'],
             ));
-
-        $res = $doMod ? array('msg' => 'success') : array('msg' => 'failed');
+        $res = $doMod ? array('msg' => 'success') : array('msg' => '你没有修改，跳转会列表页！');
         return array(
             'data' => $res['msg'],
             'msg' => $model->getLastSql(),

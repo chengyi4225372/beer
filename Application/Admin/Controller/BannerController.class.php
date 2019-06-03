@@ -37,7 +37,7 @@ class BannerController extends BaseController
 
                 $map['id'] = $param['id'];
 
-                $cases_detail = D('banner')->where($map)->order('id desc')->find();
+                $cases_detail = D('Banner')->where($map)->order('id desc')->find();
 
                 $this->assign('cases_detail', $cases_detail);
 
@@ -51,7 +51,7 @@ class BannerController extends BaseController
 
             $param = I();
 
-            $result = D('banner')->Create($param);
+            $result = D('Banner')->Create($param);
 
             $this->ajaxReturn($result);
 
